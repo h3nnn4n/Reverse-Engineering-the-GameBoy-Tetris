@@ -62,6 +62,7 @@
 
 
 
+// VBLANK interrupt executes the code at 0040, which jumtps to 01fd
  0040 : c3 fd 01    JP 0xfd01
 
 
@@ -254,8 +255,9 @@
 
 
 
+// This is the entry point
  0100 : 00          NOP
- 0101 : c3 50 01    JP 0x5001
+ 0101 : c3 50 01    JP 0x5001 // Jumps to 0150
 
 
 
@@ -333,7 +335,7 @@
 
 
 
-
+// Jumps to 028b, why 2 jumps in a row?
  0150 : c3 8b 02    JP 0x8b02
 
 
@@ -699,50 +701,50 @@
 
  02b4 : fe 94       CP A, 0x94                      // Tests if it is 148
 
- 02b6 : 20 fa       JR NZ, 0xfa
+ 02b6 : 20 fa       JR NZ, 0xfa                     // If not then loop again, else continue
 
- 02b8 : 3e 03       LD A, 0x03
+ 02b8 : 3e 03       LD A, 0x03                      // Sets A to 0x03
 
- 02ba : e0 40       LD (0xFF00 + 0x40), A           // ?
+ 02ba : e0 40       LD (0xFF00 + 0x40), A           // Writes 0x03( bit 1 and 2) to the lcd control, which sets sprite size to 8x16 and enable sprite drawing
 
- 02bc : 3e e4       LD A, 0xe4
+ 02bc : 3e e4       LD A, 0xe4                      // Sets a to 0xe4
 
- 02be : e0 47       LD (0xFF00 + 0x47), A           // ?
+ 02be : e0 47       LD (0xFF00 + 0x47), A           // Sets the color map for the bg. 0xe4 = 3 2 1 0, which is the "normal" map. Color 3 had index 3, 2 has index 2 and so on
 
- 02c0 : e0 48       LD (0xFF00 + 0x48), A           // ?
+ 02c0 : e0 48       LD (0xFF00 + 0x48), A           // Object palette data, same as above
 
- 02c2 : 3e c4       LD A, 0xc4
+ 02c2 : 3e c4       LD A, 0xc4                      // Sets a to 0xc4
 
- 02c4 : e0 49       LD (0xFF00 + 0x49), A           // ?
+ 02c4 : e0 49       LD (0xFF00 + 0x49), A           // Sets the object palette data to 0xc4 = 3 0 1 0
 
- 02c6 : 21 26 ff    LD HL, 0x26ff
+ 02c6 : 21 26 ff    LD HL, 0x26ff                   // Sets HL to ff26 (Sound on/off)
 
 
- 02c9 : 3e 80       LD A, 0x80
+ 02c9 : 3e 80       LD A, 0x80                      // Sets A to 0x80
 
- 02cb : 32          LDD (HL), A
- 02cc : 3e ff       LD A, 0xff
+ 02cb : 32          LDD (HL), A                     // Writes 0x80 to ff26, which disables the sound, and decreases HL
+ 02cc : 3e ff       LD A, 0xff                      // Sets A to 0xff
 
- 02ce : 32          LDD (HL), A
+ 02ce : 32          LDD (HL), A                     // Writes 0xff to ff25 which makes the sound mono (I guess) FIXME
  02cf : 36 77       LD (HL), 0x77
 
- 02d1 : 3e 01       LD A, 0x01
+ 02d1 : 3e 01       LD A, 0x01                      // Sets A to 0x01
 
- 02d3 : ea 00 20    LD (0x0020), A
-
-
- 02d6 : 31 ff cf    LD SP, (0xffcf)
+ 02d3 : ea 00 20    LD (0x0020), A                  // Writes 0x01 to the pointer at 2000. 2000 is read only, but since this is a pointer, I think it reads the address at 2000 from the rom and places 0x01 there FIXME
 
 
- 02d9 : af          XOR A, A
- 02da : 21 ff df    LD HL, 0xffdf
+ 02d6 : 31 ff cf    LD SP, (0xffcf)                 // sets  the stackpointer to the content at cfff, which should be zero, see 0293
 
 
- 02dd : 06 00       LD B, 0x00
+ 02d9 : af          XOR A, A                        // Looks like this code is the same(or similar) as the one at 028b, 0291
+ 02da : 21 ff df    LD HL, 0xffdf                   //
 
- 02df : 32          LDD (HL), A
- 02e0 : 05          DEC B
- 02e1 : 20 fc       JR NZ, 0xfc
+
+ 02dd : 06 00       LD B, 0x00                      //
+
+ 02df : 32          LDD (HL), A                     // this loop writes zero from dfff to df00
+ 02e0 : 05          DEC B                           // but that range should already be zero
+ 02e1 : 20 fc       JR NZ, 0xfc                     // TODO review this
 
  02e3 : 21 ff cf    LD HL, 0xffcf
 
