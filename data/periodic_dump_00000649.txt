@@ -649,64 +649,71 @@
  0288 : c1          POP BC
  0289 : f1          POP AF
  028a : d9          RETI
- 028b : af          XOR A, A
- 028c : 21 ff df    LD HL, 0xffdf
+
+----------------------------------------------------
+
+ // Function to initialize the memory
+ // 028b to 0298 is a loop to clear the WRAM ( d000 to dfff ), note that e000-dfff is mapped to c000-ddff,
+ // which means that all the WRAM is cleared ( c000 to dfff )
+
+ 028b : af          XOR A, A                        // Looks like it starts here, since the RETI is always executed. This is also the entry point
+ 028c : 21 ff df    LD HL, 0xffdf                   // Loads the value 0xffdf in HL
 
 
- 028f : 0e 10       LD C, 0x10
+ 028f : 0e 10       LD C, 0x10                      // Initializes C to 0x10
 
- 0291 : 06 00       LD B, 0x00
+ 0291 : 06 00       LD B, 0x00                      // Initializes B to 0x00
 
- 0293 : 32          LDD (HL), A
- 0294 : 05          DEC B
- 0295 : 20 fc       JR NZ, 0xfc
+ 0293 : 32          LDD (HL), A                     // Inner loop. This sets (0xffdf) to A, which is zero due to the opcode in 028b (xor a, a) and decrements HL
+ 0294 : 05          DEC B                           // B starts as 0x00 and is decreased before the first check. So this will run for 0xff(256) loops
+ 0295 : 20 fc       JR NZ, 0xfc                     // jumps to 0293 if B is not zero
 
- 0297 : 0d          DEC C
- 0298 : 20 f9       JR NZ, 0xf9
+ 0297 : 0d          DEC C                           // This Decrements C, which starts at 0x10 and goes down to zero (total 16 iterations)
+ 0298 : 20 f9       JR NZ, 0xf9                     // Jumps back to 0293
 
- 029a : 3e 01       LD A, 0x01
+ 029a : 3e 01       LD A, 0x01                      // Sets a to 0x01
 
- 029c : f3          DI
- 029d : e0 0f       LD (0xFF00 + 0x0f), A
+ 029c : f3          DI                              // Disable interruptions
+ 029d : e0 0f       LD (0xFF00 + 0x0f), A           // Sets the interrpt flag to 0x01 (vblank)
 
- 029f : e0 ff       LD (0xFF00 + 0xff), A
+ 029f : e0 ff       LD (0xFF00 + 0xff), A           // Sets the interrpt enable to 0x01 (vblank)
 
- 02a1 : af          XOR A, A
- 02a2 : e0 42       LD (0xFF00 + 0x42), A
+ 02a1 : af          XOR A, A                        // Clears A to zero
+ 02a2 : e0 42       LD (0xFF00 + 0x42), A           // Clears the scrollY
 
- 02a4 : e0 43       LD (0xFF00 + 0x43), A
+ 02a4 : e0 43       LD (0xFF00 + 0x43), A           // Clears the scrollX
 
- 02a6 : e0 a4       LD (0xFF00 + 0xa4), A
+ 02a6 : e0 a4       LD (0xFF00 + 0xa4), A           // ?
 
- 02a8 : e0 41       LD (0xFF00 + 0x41), A
+ 02a8 : e0 41       LD (0xFF00 + 0x41), A           // Clears the LCD status register
 
- 02aa : e0 01       LD (0xFF00 + 0x01), A
+ 02aa : e0 01       LD (0xFF00 + 0x01), A           // Clears the serial transfer register
 
- 02ac : e0 02       LD (0xFF00 + 0x02), A
+ 02ac : e0 02       LD (0xFF00 + 0x02), A           // Clears the serial control register
 
  02ae : 3e 80       LD A, 0x80
 
- 02b0 : e0 40       LD (0xFF00 + 0x40), A
+ 02b0 : e0 40       LD (0xFF00 + 0x40), A           // Clears the LCD control register
 
- 02b2 : f0 44       LD A, (0xFF00 + 0x44)
+ 02b2 : f0 44       LD A, (0xFF00 + 0x44)           // Reads the current scan line into A
 
- 02b4 : fe 94       CP A, 0x94
+ 02b4 : fe 94       CP A, 0x94                      // Tests if it is 148
 
  02b6 : 20 fa       JR NZ, 0xfa
 
  02b8 : 3e 03       LD A, 0x03
 
- 02ba : e0 40       LD (0xFF00 + 0x40), A
+ 02ba : e0 40       LD (0xFF00 + 0x40), A           // ?
 
  02bc : 3e e4       LD A, 0xe4
 
- 02be : e0 47       LD (0xFF00 + 0x47), A
+ 02be : e0 47       LD (0xFF00 + 0x47), A           // ?
 
- 02c0 : e0 48       LD (0xFF00 + 0x48), A
+ 02c0 : e0 48       LD (0xFF00 + 0x48), A           // ?
 
  02c2 : 3e c4       LD A, 0xc4
 
- 02c4 : e0 49       LD (0xFF00 + 0x49), A
+ 02c4 : e0 49       LD (0xFF00 + 0x49), A           // ?
 
  02c6 : 21 26 ff    LD HL, 0x26ff
 
