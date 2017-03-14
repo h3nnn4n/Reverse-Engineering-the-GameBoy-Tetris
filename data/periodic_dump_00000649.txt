@@ -38,18 +38,18 @@
 
 
 
- 0028 : 87          ADD A, A                
- 0029 : e1          POP HL                  
- 002a : 5f          LD E, A                 
- 002b : 16 00       LD D, 0x00              
+ 0028 : 87          ADD A, A
+ 0029 : e1          POP HL
+ 002a : 5f          LD E, A
+ 002b : 16 00       LD D, 0x00
 
- 002d : 19          ADD HL, DE              
- 002e : 5e          LD E, (HL)              
- 002f : 23          INC HL                  
- 0030 : 56          LD D, (HL)              
- 0031 : d5          PUSH DE                 
- 0032 : e1          POP HL                  
- 0033 : e9          JP HL                   
+ 002d : 19          ADD HL, DE
+ 002e : 5e          LD E, (HL)
+ 002f : 23          INC HL
+ 0030 : 56          LD D, (HL)
+ 0031 : d5          PUSH DE
+ 0032 : e1          POP HL
+ 0033 : e9          JP HL
 
 
 
@@ -62,7 +62,7 @@
 
 
 
- 0040 : c3 fd 01    JP 0xfd01               
+ 0040 : c3 fd 01    JP 0xfd01
 
 
 
@@ -254,8 +254,8 @@
 
 
 
- 0100 : 00          NOP                     
- 0101 : c3 50 01    JP 0x5001               
+ 0100 : 00          NOP
+ 0101 : c3 50 01    JP 0x5001
 
 
 
@@ -334,7 +334,7 @@
 
 
 
- 0150 : c3 8b 02    JP 0x8b02               
+ 0150 : c3 8b 02    JP 0x8b02
 
 
 
@@ -356,24 +356,24 @@
 
 
 
- 0166 : 7b          LD A, E                 
- 0167 : 86          ADD A, (HL)             
- 0168 : 27          DAA                     
- 0169 : 22          LDI (HL), A             
- 016a : 7a          LD A, D                 
- 016b : 8e          ADC A, (HL)             
- 016c : 27          DAA                     
- 016d : 22          LDI (HL), A             
- 016e : 3e 00       LD A, 0x00              
+ 0166 : 7b          LD A, E
+ 0167 : 86          ADD A, (HL)
+ 0168 : 27          DAA
+ 0169 : 22          LDI (HL), A
+ 016a : 7a          LD A, D
+ 016b : 8e          ADC A, (HL)
+ 016c : 27          DAA
+ 016d : 22          LDI (HL), A
+ 016e : 3e 00       LD A, 0x00
 
- 0170 : 8e          ADC A, (HL)             
- 0171 : 27          DAA                     
- 0172 : 77          LD (HL), A              
- 0173 : 3e 01       LD A, 0x01              
+ 0170 : 8e          ADC A, (HL)
+ 0171 : 27          DAA
+ 0172 : 77          LD (HL), A
+ 0173 : 3e 01       LD A, 0x01
 
- 0175 : e0 e0       LD (0xFF00 + 0xe0), A   
+ 0175 : e0 e0       LD (0xFF00 + 0xe0), A
 
- 0177 : d0          RET NC                  
+ 0177 : d0          RET NC
 
 
 
@@ -507,14 +507,14 @@
 
 
 
- 01fd : f5          PUSH AF                 
- 01fe : c5          PUSH BC                 
- 01ff : d5          PUSH DE                 
- 0200 : e5          PUSH HL                 
- 0201 : f0 ce       LD A, (0xFF00 + 0xce)   
+ 01fd : f5          PUSH AF
+ 01fe : c5          PUSH BC
+ 01ff : d5          PUSH DE
+ 0200 : e5          PUSH HL
+ 0201 : f0 ce       LD A, (0xFF00 + 0xce)
 
- 0203 : a7          AND A, A                
- 0204 : 28 12       JR Z, 0x12              
+ 0203 : a7          AND A, A
+ 0204 : 28 12       JR Z, 0x12
 
 
 
@@ -534,360 +534,360 @@
 
 
 
- 0218 : cd 40 22    CALL 0x4022             
+ 0218 : cd 40 22    CALL 0x4022
 
 
- 021b : cd 2c 24    CALL 0x2c24             
+ 021b : cd 2c 24    CALL 0x2c24
 
 
- 021e : cd 17 24    CALL 0x1724             
+ 021e : cd 17 24    CALL 0x1724
 
 
- 0221 : cd fe 23    CALL 0xfe23             
+ 0221 : cd fe 23    CALL 0xfe23
 
 
- 0224 : cd ec 23    CALL 0xec23             
+ 0224 : cd ec 23    CALL 0xec23
 
 
- 0227 : cd dd 23    CALL 0xdd23             
+ 0227 : cd dd 23    CALL 0xdd23
 
 
- 022a : cd ce 23    CALL 0xce23             
+ 022a : cd ce 23    CALL 0xce23
 
 
- 022d : cd bf 23    CALL 0xbf23             
+ 022d : cd bf 23    CALL 0xbf23
 
 
- 0230 : cd b0 23    CALL 0xb023             
+ 0230 : cd b0 23    CALL 0xb023
 
 
- 0233 : cd a1 23    CALL 0xa123             
+ 0233 : cd a1 23    CALL 0xa123
 
 
- 0236 : cd 92 23    CALL 0x9223             
+ 0236 : cd 92 23    CALL 0x9223
 
 
- 0239 : cd 83 23    CALL 0x8323             
+ 0239 : cd 83 23    CALL 0x8323
 
 
- 023c : cd 58 23    CALL 0x5823             
+ 023c : cd 58 23    CALL 0x5823
 
 
- 023f : cd 49 23    CALL 0x4923             
+ 023f : cd 49 23    CALL 0x4923
 
 
- 0242 : cd 3a 23    CALL 0x3a23             
+ 0242 : cd 3a 23    CALL 0x3a23
 
 
- 0245 : cd 2b 23    CALL 0x2b23             
+ 0245 : cd 2b 23    CALL 0x2b23
 
 
- 0248 : cd 1c 23    CALL 0x1c23             
+ 0248 : cd 1c 23    CALL 0x1c23
 
 
- 024b : cd 0d 23    CALL 0x0d23             
+ 024b : cd 0d 23    CALL 0x0d23
 
 
- 024e : cd fe 22    CALL 0xfe22             
+ 024e : cd fe 22    CALL 0xfe22
 
 
- 0251 : cd 32 1f    CALL 0x321f             
+ 0251 : cd 32 1f    CALL 0x321f
 
 
- 0254 : cd b6 ff    CALL 0xb6ff             
+ 0254 : cd b6 ff    CALL 0xb6ff
 
 
- 0257 : cd 2e 19    CALL 0x2e19             
+ 0257 : cd 2e 19    CALL 0x2e19
 
 
- 025a : fa ce c0    LD A, (0xcec0)          
+ 025a : fa ce c0    LD A, (0xcec0)
 
 
- 025d : a7          AND A, A                
- 025e : 28 1a       JR Z, 0x1a              
+ 025d : a7          AND A, A
+ 025e : 28 1a       JR Z, 0x1a
 
- 0260 : f0 98       LD A, (0xFF00 + 0x98)   
+ 0260 : f0 98       LD A, (0xFF00 + 0x98)
 
- 0262 : fe 03       CP A, 0x03              
+ 0262 : fe 03       CP A, 0x03
 
- 0264 : 20 14       JR NZ, 0x14             
+ 0264 : 20 14       JR NZ, 0x14
 
- 0266 : 21 6d 98    LD HL, 0x6d98           
+ 0266 : 21 6d 98    LD HL, 0x6d98
 
 
- 0269 : cd 9b 24    CALL 0x9b24             
+ 0269 : cd 9b 24    CALL 0x9b24
 
 
- 026c : 3e 01       LD A, 0x01              
+ 026c : 3e 01       LD A, 0x01
 
- 026e : e0 e0       LD (0xFF00 + 0xe0), A   
+ 026e : e0 e0       LD (0xFF00 + 0xe0), A
 
- 0270 : 21 6d 9c    LD HL, 0x6d9c           
+ 0270 : 21 6d 9c    LD HL, 0x6d9c
 
 
- 0273 : cd 9b 24    CALL 0x9b24             
+ 0273 : cd 9b 24    CALL 0x9b24
 
 
- 0276 : af          XOR A, A                
- 0277 : ea ce c0    LD (0xcec0), A          
+ 0276 : af          XOR A, A
+ 0277 : ea ce c0    LD (0xcec0), A
 
 
- 027a : 21 e2 ff    LD HL, 0xe2ff           
+ 027a : 21 e2 ff    LD HL, 0xe2ff
 
 
- 027d : 34          INC (HL)                
- 027e : af          XOR A, A                
- 027f : e0 43       LD (0xFF00 + 0x43), A   
+ 027d : 34          INC (HL)
+ 027e : af          XOR A, A
+ 027f : e0 43       LD (0xFF00 + 0x43), A
 
- 0281 : e0 42       LD (0xFF00 + 0x42), A   
+ 0281 : e0 42       LD (0xFF00 + 0x42), A
 
- 0283 : 3c          INC A                   
- 0284 : e0 85       LD (0xFF00 + 0x85), A   
+ 0283 : 3c          INC A
+ 0284 : e0 85       LD (0xFF00 + 0x85), A
 
- 0286 : e1          POP HL                  
- 0287 : d1          POP DE                  
- 0288 : c1          POP BC                  
- 0289 : f1          POP AF                  
- 028a : d9          RETI                    
- 028b : af          XOR A, A                
- 028c : 21 ff df    LD HL, 0xffdf           
+ 0286 : e1          POP HL
+ 0287 : d1          POP DE
+ 0288 : c1          POP BC
+ 0289 : f1          POP AF
+ 028a : d9          RETI
+ 028b : af          XOR A, A
+ 028c : 21 ff df    LD HL, 0xffdf
 
 
- 028f : 0e 10       LD C, 0x10              
+ 028f : 0e 10       LD C, 0x10
 
- 0291 : 06 00       LD B, 0x00              
+ 0291 : 06 00       LD B, 0x00
 
- 0293 : 32          LDD (HL), A             
- 0294 : 05          DEC B                   
- 0295 : 20 fc       JR NZ, 0xfc             
+ 0293 : 32          LDD (HL), A
+ 0294 : 05          DEC B
+ 0295 : 20 fc       JR NZ, 0xfc
 
- 0297 : 0d          DEC C                   
- 0298 : 20 f9       JR NZ, 0xf9             
+ 0297 : 0d          DEC C
+ 0298 : 20 f9       JR NZ, 0xf9
 
- 029a : 3e 01       LD A, 0x01              
+ 029a : 3e 01       LD A, 0x01
 
- 029c : f3          DI                      
- 029d : e0 0f       LD (0xFF00 + 0x0f), A   
+ 029c : f3          DI
+ 029d : e0 0f       LD (0xFF00 + 0x0f), A
 
- 029f : e0 ff       LD (0xFF00 + 0xff), A   
+ 029f : e0 ff       LD (0xFF00 + 0xff), A
 
- 02a1 : af          XOR A, A                
- 02a2 : e0 42       LD (0xFF00 + 0x42), A   
+ 02a1 : af          XOR A, A
+ 02a2 : e0 42       LD (0xFF00 + 0x42), A
 
- 02a4 : e0 43       LD (0xFF00 + 0x43), A   
+ 02a4 : e0 43       LD (0xFF00 + 0x43), A
 
- 02a6 : e0 a4       LD (0xFF00 + 0xa4), A   
+ 02a6 : e0 a4       LD (0xFF00 + 0xa4), A
 
- 02a8 : e0 41       LD (0xFF00 + 0x41), A   
+ 02a8 : e0 41       LD (0xFF00 + 0x41), A
 
- 02aa : e0 01       LD (0xFF00 + 0x01), A   
+ 02aa : e0 01       LD (0xFF00 + 0x01), A
 
- 02ac : e0 02       LD (0xFF00 + 0x02), A   
+ 02ac : e0 02       LD (0xFF00 + 0x02), A
 
- 02ae : 3e 80       LD A, 0x80              
+ 02ae : 3e 80       LD A, 0x80
 
- 02b0 : e0 40       LD (0xFF00 + 0x40), A   
+ 02b0 : e0 40       LD (0xFF00 + 0x40), A
 
- 02b2 : f0 44       LD A, (0xFF00 + 0x44)   
+ 02b2 : f0 44       LD A, (0xFF00 + 0x44)
 
- 02b4 : fe 94       CP A, 0x94              
+ 02b4 : fe 94       CP A, 0x94
 
- 02b6 : 20 fa       JR NZ, 0xfa             
+ 02b6 : 20 fa       JR NZ, 0xfa
 
- 02b8 : 3e 03       LD A, 0x03              
+ 02b8 : 3e 03       LD A, 0x03
 
- 02ba : e0 40       LD (0xFF00 + 0x40), A   
+ 02ba : e0 40       LD (0xFF00 + 0x40), A
 
- 02bc : 3e e4       LD A, 0xe4              
+ 02bc : 3e e4       LD A, 0xe4
 
- 02be : e0 47       LD (0xFF00 + 0x47), A   
+ 02be : e0 47       LD (0xFF00 + 0x47), A
 
- 02c0 : e0 48       LD (0xFF00 + 0x48), A   
+ 02c0 : e0 48       LD (0xFF00 + 0x48), A
 
- 02c2 : 3e c4       LD A, 0xc4              
+ 02c2 : 3e c4       LD A, 0xc4
 
- 02c4 : e0 49       LD (0xFF00 + 0x49), A   
+ 02c4 : e0 49       LD (0xFF00 + 0x49), A
 
- 02c6 : 21 26 ff    LD HL, 0x26ff           
+ 02c6 : 21 26 ff    LD HL, 0x26ff
 
 
- 02c9 : 3e 80       LD A, 0x80              
+ 02c9 : 3e 80       LD A, 0x80
 
- 02cb : 32          LDD (HL), A             
- 02cc : 3e ff       LD A, 0xff              
+ 02cb : 32          LDD (HL), A
+ 02cc : 3e ff       LD A, 0xff
 
- 02ce : 32          LDD (HL), A             
- 02cf : 36 77       LD (HL), 0x77           
+ 02ce : 32          LDD (HL), A
+ 02cf : 36 77       LD (HL), 0x77
 
- 02d1 : 3e 01       LD A, 0x01              
+ 02d1 : 3e 01       LD A, 0x01
 
- 02d3 : ea 00 20    LD (0x0020), A          
+ 02d3 : ea 00 20    LD (0x0020), A
 
 
- 02d6 : 31 ff cf    LD SP, (0xffcf)         
+ 02d6 : 31 ff cf    LD SP, (0xffcf)
 
 
- 02d9 : af          XOR A, A                
- 02da : 21 ff df    LD HL, 0xffdf           
+ 02d9 : af          XOR A, A
+ 02da : 21 ff df    LD HL, 0xffdf
 
 
- 02dd : 06 00       LD B, 0x00              
+ 02dd : 06 00       LD B, 0x00
 
- 02df : 32          LDD (HL), A             
- 02e0 : 05          DEC B                   
- 02e1 : 20 fc       JR NZ, 0xfc             
+ 02df : 32          LDD (HL), A
+ 02e0 : 05          DEC B
+ 02e1 : 20 fc       JR NZ, 0xfc
 
- 02e3 : 21 ff cf    LD HL, 0xffcf           
+ 02e3 : 21 ff cf    LD HL, 0xffcf
 
 
- 02e6 : 0e 10       LD C, 0x10              
+ 02e6 : 0e 10       LD C, 0x10
 
- 02e8 : 06 00       LD B, 0x00              
+ 02e8 : 06 00       LD B, 0x00
 
- 02ea : 32          LDD (HL), A             
- 02eb : 05          DEC B                   
- 02ec : 20 fc       JR NZ, 0xfc             
+ 02ea : 32          LDD (HL), A
+ 02eb : 05          DEC B
+ 02ec : 20 fc       JR NZ, 0xfc
 
- 02ee : 0d          DEC C                   
- 02ef : 20 f9       JR NZ, 0xf9             
+ 02ee : 0d          DEC C
+ 02ef : 20 f9       JR NZ, 0xf9
 
- 02f1 : 21 ff 9f    LD HL, 0xff9f           
+ 02f1 : 21 ff 9f    LD HL, 0xff9f
 
 
- 02f4 : 0e 20       LD C, 0x20              
+ 02f4 : 0e 20       LD C, 0x20
 
- 02f6 : af          XOR A, A                
- 02f7 : 06 00       LD B, 0x00              
+ 02f6 : af          XOR A, A
+ 02f7 : 06 00       LD B, 0x00
 
- 02f9 : 32          LDD (HL), A             
- 02fa : 05          DEC B                   
- 02fb : 20 fc       JR NZ, 0xfc             
+ 02f9 : 32          LDD (HL), A
+ 02fa : 05          DEC B
+ 02fb : 20 fc       JR NZ, 0xfc
 
- 02fd : 0d          DEC C                   
- 02fe : 20 f9       JR NZ, 0xf9             
+ 02fd : 0d          DEC C
+ 02fe : 20 f9       JR NZ, 0xf9
 
- 0300 : 21 ff fe    LD HL, 0xfffe           
+ 0300 : 21 ff fe    LD HL, 0xfffe
 
 
- 0303 : 06 00       LD B, 0x00              
+ 0303 : 06 00       LD B, 0x00
 
- 0305 : 32          LDD (HL), A             
- 0306 : 05          DEC B                   
- 0307 : 20 fc       JR NZ, 0xfc             
+ 0305 : 32          LDD (HL), A
+ 0306 : 05          DEC B
+ 0307 : 20 fc       JR NZ, 0xfc
 
- 0309 : 21 fe ff    LD HL, 0xfeff           
+ 0309 : 21 fe ff    LD HL, 0xfeff
 
 
- 030c : 06 80       LD B, 0x80              
+ 030c : 06 80       LD B, 0x80
 
- 030e : 32          LDD (HL), A             
- 030f : 05          DEC B                   
- 0310 : 20 fc       JR NZ, 0xfc             
+ 030e : 32          LDD (HL), A
+ 030f : 05          DEC B
+ 0310 : 20 fc       JR NZ, 0xfc
 
- 0312 : 0e b6       LD C, 0xb6              
+ 0312 : 0e b6       LD C, 0xb6
 
- 0314 : 06 0c       LD B, 0x0c              
+ 0314 : 06 0c       LD B, 0x0c
 
- 0316 : 21 c7 2a    LD HL, 0xc72a           
+ 0316 : 21 c7 2a    LD HL, 0xc72a
 
 
- 0319 : 2a          LDI A, (HL)             
- 031a : e2          LD (C), A               
- 031b : 0c          INC C                   
- 031c : 05          DEC B                   
- 031d : 20 fa       JR NZ, 0xfa             
+ 0319 : 2a          LDI A, (HL)
+ 031a : e2          LD (C), A
+ 031b : 0c          INC C
+ 031c : 05          DEC B
+ 031d : 20 fa       JR NZ, 0xfa
 
- 031f : cd e9 27    CALL 0xe927             
+ 031f : cd e9 27    CALL 0xe927
 
 
- 0322 : cd f3 7f    CALL 0xf37f             
+ 0322 : cd f3 7f    CALL 0xf37f
 
 
- 0325 : 3e 09       LD A, 0x09              
+ 0325 : 3e 09       LD A, 0x09
 
- 0327 : e0 ff       LD (0xFF00 + 0xff), A   
+ 0327 : e0 ff       LD (0xFF00 + 0xff), A
 
- 0329 : 3e 37       LD A, 0x37              
+ 0329 : 3e 37       LD A, 0x37
 
- 032b : e0 c0       LD (0xFF00 + 0xc0), A   
+ 032b : e0 c0       LD (0xFF00 + 0xc0), A
 
- 032d : 3e 1c       LD A, 0x1c              
+ 032d : 3e 1c       LD A, 0x1c
 
- 032f : e0 c1       LD (0xFF00 + 0xc1), A   
+ 032f : e0 c1       LD (0xFF00 + 0xc1), A
 
- 0331 : 3e 24       LD A, 0x24              
+ 0331 : 3e 24       LD A, 0x24
 
- 0333 : e0 e1       LD (0xFF00 + 0xe1), A   
+ 0333 : e0 e1       LD (0xFF00 + 0xe1), A
 
- 0335 : 3e 80       LD A, 0x80              
+ 0335 : 3e 80       LD A, 0x80
 
- 0337 : e0 40       LD (0xFF00 + 0x40), A   
+ 0337 : e0 40       LD (0xFF00 + 0x40), A
 
- 0339 : fb          EI                      
- 033a : af          XOR A, A                
- 033b : e0 0f       LD (0xFF00 + 0x0f), A   
+ 0339 : fb          EI
+ 033a : af          XOR A, A
+ 033b : e0 0f       LD (0xFF00 + 0x0f), A
 
- 033d : e0 4a       LD (0xFF00 + 0x4a), A   
+ 033d : e0 4a       LD (0xFF00 + 0x4a), A
 
- 033f : e0 4b       LD (0xFF00 + 0x4b), A   
+ 033f : e0 4b       LD (0xFF00 + 0x4b), A
 
- 0341 : e0 06       LD (0xFF00 + 0x06), A   
+ 0341 : e0 06       LD (0xFF00 + 0x06), A
 
- 0343 : cd fa 29    CALL 0xfa29             
+ 0343 : cd fa 29    CALL 0xfa29
 
 
- 0346 : cd 77 03    CALL 0x7703             
+ 0346 : cd 77 03    CALL 0x7703
 
 
- 0349 : cd f0 7f    CALL 0xf07f             
+ 0349 : cd f0 7f    CALL 0xf07f
 
 
- 034c : f0 80       LD A, (0xFF00 + 0x80)   
+ 034c : f0 80       LD A, (0xFF00 + 0x80)
 
- 034e : e6 0f       AND A, 0x0f             
+ 034e : e6 0f       AND A, 0x0f
 
- 0350 : fe 0f       CP A, 0x0f              
+ 0350 : fe 0f       CP A, 0x0f
 
- 0352 : ca 9a 02    JP Z, 0x9a02            
+ 0352 : ca 9a 02    JP Z, 0x9a02
 
 
- 0355 : 21 a6 ff    LD HL, 0xa6ff           
+ 0355 : 21 a6 ff    LD HL, 0xa6ff
 
 
- 0358 : 06 02       LD B, 0x02              
+ 0358 : 06 02       LD B, 0x02
 
- 035a : 7e          LD A, (HL)              
- 035b : a7          AND A, A                
- 035c : 28 01       JR Z, 0x01              
+ 035a : 7e          LD A, (HL)
+ 035b : a7          AND A, A
+ 035c : 28 01       JR Z, 0x01
 
- 035e : 35          DEC (HL)                
- 035f : 2c          INC L                   
- 0360 : 05          DEC B                   
- 0361 : 20 f7       JR NZ, 0xf7             
+ 035e : 35          DEC (HL)
+ 035f : 2c          INC L
+ 0360 : 05          DEC B
+ 0361 : 20 f7       JR NZ, 0xf7
 
- 0363 : f0 c5       LD A, (0xFF00 + 0xc5)   
+ 0363 : f0 c5       LD A, (0xFF00 + 0xc5)
 
- 0365 : a7          AND A, A                
- 0366 : 28 04       JR Z, 0x04              
+ 0365 : a7          AND A, A
+ 0366 : 28 04       JR Z, 0x04
 
 
 
 
 
- 036c : f0 85       LD A, (0xFF00 + 0x85)   
+ 036c : f0 85       LD A, (0xFF00 + 0x85)
 
- 036e : a7          AND A, A                
- 036f : 28 fb       JR Z, 0xfb              
+ 036e : a7          AND A, A
+ 036f : 28 fb       JR Z, 0xfb
 
- 0371 : af          XOR A, A                
- 0372 : e0 85       LD (0xFF00 + 0x85), A   
+ 0371 : af          XOR A, A
+ 0372 : e0 85       LD (0xFF00 + 0x85), A
 
- 0374 : c3 43 03    JP 0x4303               
+ 0374 : c3 43 03    JP 0x4303
 
 
- 0377 : f0 e1       LD A, (0xFF00 + 0xe1)   
+ 0377 : f0 e1       LD A, (0xFF00 + 0xe1)
 
- 0379 : ef          RST 0x28                
+ 0379 : ef          RST 0x28
 
 
 
@@ -996,172 +996,172 @@
 
 
 
- 03e6 : cd 74 28    CALL 0x7428             
+ 03e6 : cd 74 28    CALL 0x7428
 
 
- 03e9 : cd 2b 28    CALL 0x2b28             
+ 03e9 : cd 2b 28    CALL 0x2b28
 
 
- 03ec : 11 4f 4a    LD DE, 0x4f4a           
+ 03ec : 11 4f 4a    LD DE, 0x4f4a
 
 
- 03ef : cd 3f 28    CALL 0x3f28             
+ 03ef : cd 3f 28    CALL 0x3f28
 
 
- 03f2 : cd ee 17    CALL 0xee17             
+ 03f2 : cd ee 17    CALL 0xee17
 
 
- 03f5 : 21 00 c3    LD HL, 0x00c3           
+ 03f5 : 21 00 c3    LD HL, 0x00c3
 
 
- 03f8 : 11 d0 64    LD DE, 0xd064           
+ 03f8 : 11 d0 64    LD DE, 0xd064
 
 
- 03fb : 1a          LD A, (DE)              
- 03fc : 22          LDI (HL), A             
- 03fd : 13          INC DE                  
- 03fe : 7c          LD A, H                 
- 03ff : fe c4       CP A, 0xc4              
+ 03fb : 1a          LD A, (DE)
+ 03fc : 22          LDI (HL), A
+ 03fd : 13          INC DE
+ 03fe : 7c          LD A, H
+ 03ff : fe c4       CP A, 0xc4
 
- 0401 : 20 f8       JR NZ, 0xf8             
+ 0401 : 20 f8       JR NZ, 0xf8
 
- 0403 : 3e d3       LD A, 0xd3              
+ 0403 : 3e d3       LD A, 0xd3
 
- 0405 : e0 40       LD (0xFF00 + 0x40), A   
+ 0405 : e0 40       LD (0xFF00 + 0x40), A
 
- 0407 : 3e 7d       LD A, 0x7d              
+ 0407 : 3e 7d       LD A, 0x7d
 
- 0409 : e0 a6       LD (0xFF00 + 0xa6), A   
+ 0409 : e0 a6       LD (0xFF00 + 0xa6), A
 
- 040b : 3e 25       LD A, 0x25              
+ 040b : 3e 25       LD A, 0x25
 
- 040d : e0 e1       LD (0xFF00 + 0xe1), A   
+ 040d : e0 e1       LD (0xFF00 + 0xe1), A
 
- 040f : c9          RET                     
- 0410 : f0 a6       LD A, (0xFF00 + 0xa6)   
+ 040f : c9          RET
+ 0410 : f0 a6       LD A, (0xFF00 + 0xa6)
 
- 0412 : a7          AND A, A                
- 0413 : c0          RET NZ                  
- 0414 : 3e 06       LD A, 0x06              
+ 0412 : a7          AND A, A
+ 0413 : c0          RET NZ
+ 0414 : 3e 06       LD A, 0x06
 
- 0416 : e0 e1       LD (0xFF00 + 0xe1), A   
+ 0416 : e0 e1       LD (0xFF00 + 0xe1), A
 
- 0418 : c9          RET                     
- 0419 : cd 74 28    CALL 0x7428             
+ 0418 : c9          RET
+ 0419 : cd 74 28    CALL 0x7428
 
 
- 041c : af          XOR A, A                
- 041d : e0 e9       LD (0xFF00 + 0xe9), A   
+ 041c : af          XOR A, A
+ 041d : e0 e9       LD (0xFF00 + 0xe9), A
 
- 041f : e0 98       LD (0xFF00 + 0x98), A   
+ 041f : e0 98       LD (0xFF00 + 0x98), A
 
- 0421 : e0 9c       LD (0xFF00 + 0x9c), A   
+ 0421 : e0 9c       LD (0xFF00 + 0x9c), A
 
- 0423 : e0 9b       LD (0xFF00 + 0x9b), A   
+ 0423 : e0 9b       LD (0xFF00 + 0x9b), A
 
- 0425 : e0 fb       LD (0xFF00 + 0xfb), A   
+ 0425 : e0 fb       LD (0xFF00 + 0xfb), A
 
- 0427 : e0 9f       LD (0xFF00 + 0x9f), A   
+ 0427 : e0 9f       LD (0xFF00 + 0x9f), A
 
- 0429 : e0 e3       LD (0xFF00 + 0xe3), A   
+ 0429 : e0 e3       LD (0xFF00 + 0xe3), A
 
- 042b : e0 e7       LD (0xFF00 + 0xe7), A   
+ 042b : e0 e7       LD (0xFF00 + 0xe7), A
 
- 042d : e0 c7       LD (0xFF00 + 0xc7), A   
+ 042d : e0 c7       LD (0xFF00 + 0xc7), A
 
- 042f : cd f3 22    CALL 0xf322             
+ 042f : cd f3 22    CALL 0xf322
 
 
- 0432 : cd a5 26    CALL 0xa526             
+ 0432 : cd a5 26    CALL 0xa526
 
 
- 0435 : cd 2b 28    CALL 0x2b28             
+ 0435 : cd 2b 28    CALL 0x2b28
 
 
- 0438 : 21 00 c8    LD HL, 0x00c8           
+ 0438 : 21 00 c8    LD HL, 0x00c8
 
 
- 043b : 3e 2f       LD A, 0x2f              
+ 043b : 3e 2f       LD A, 0x2f
 
- 043d : 22          LDI (HL), A             
- 043e : 7c          LD A, H                 
- 043f : fe cc       CP A, 0xcc              
+ 043d : 22          LDI (HL), A
+ 043e : 7c          LD A, H
+ 043f : fe cc       CP A, 0xcc
 
- 0441 : 20 f8       JR NZ, 0xf8             
+ 0441 : 20 f8       JR NZ, 0xf8
 
- 0443 : 21 01 c8    LD HL, 0x01c8           
+ 0443 : 21 01 c8    LD HL, 0x01c8
 
 
- 0446 : cd fd 26    CALL 0xfd26             
+ 0446 : cd fd 26    CALL 0xfd26
 
 
- 0449 : 21 0c c8    LD HL, 0x0cc8           
+ 0449 : 21 0c c8    LD HL, 0x0cc8
 
 
- 044c : cd fd 26    CALL 0xfd26             
+ 044c : cd fd 26    CALL 0xfd26
 
 
- 044f : 21 41 ca    LD HL, 0x41ca           
+ 044f : 21 41 ca    LD HL, 0x41ca
 
 
- 0452 : 06 0c       LD B, 0x0c              
+ 0452 : 06 0c       LD B, 0x0c
 
- 0454 : 3e 8e       LD A, 0x8e              
+ 0454 : 3e 8e       LD A, 0x8e
 
- 0456 : 22          LDI (HL), A             
- 0457 : 05          DEC B                   
- 0458 : 20 fc       JR NZ, 0xfc             
+ 0456 : 22          LDI (HL), A
+ 0457 : 05          DEC B
+ 0458 : 20 fc       JR NZ, 0xfc
 
- 045a : 11 b7 4b    LD DE, 0xb74b           
+ 045a : 11 b7 4b    LD DE, 0xb74b
 
 
- 045d : cd 3f 28    CALL 0x3f28             
+ 045d : cd 3f 28    CALL 0x3f28
 
 
- 0460 : cd ee 17    CALL 0xee17             
+ 0460 : cd ee 17    CALL 0xee17
 
 
- 0463 : 21 00 c0    LD HL, 0x00c0           
+ 0463 : 21 00 c0    LD HL, 0x00c0
 
 
- 0466 : 36 80       LD (HL), 0x80           
+ 0466 : 36 80       LD (HL), 0x80
 
- 0468 : 2c          INC L                   
- 0469 : 36 10       LD (HL), 0x10           
+ 0468 : 2c          INC L
+ 0469 : 36 10       LD (HL), 0x10
 
- 046b : 2c          INC L                   
- 046c : 36 58       LD (HL), 0x58           
+ 046b : 2c          INC L
+ 046c : 36 58       LD (HL), 0x58
 
- 046e : 3e 03       LD A, 0x03              
+ 046e : 3e 03       LD A, 0x03
 
- 0470 : ea e8 df    LD (0xe8df), A          
+ 0470 : ea e8 df    LD (0xe8df), A
 
 
- 0473 : 3e d3       LD A, 0xd3              
+ 0473 : 3e d3       LD A, 0xd3
 
- 0475 : e0 40       LD (0xFF00 + 0x40), A   
+ 0475 : e0 40       LD (0xFF00 + 0x40), A
 
- 0477 : 3e 07       LD A, 0x07              
+ 0477 : 3e 07       LD A, 0x07
 
- 0479 : e0 e1       LD (0xFF00 + 0xe1), A   
+ 0479 : e0 e1       LD (0xFF00 + 0xe1), A
 
- 047b : 3e 7d       LD A, 0x7d              
+ 047b : 3e 7d       LD A, 0x7d
 
- 047d : e0 a6       LD (0xFF00 + 0xa6), A   
+ 047d : e0 a6       LD (0xFF00 + 0xa6), A
 
- 047f : 3e 04       LD A, 0x04              
+ 047f : 3e 04       LD A, 0x04
 
- 0481 : e0 c6       LD (0xFF00 + 0xc6), A   
+ 0481 : e0 c6       LD (0xFF00 + 0xc6), A
 
- 0483 : f0 e4       LD A, (0xFF00 + 0xe4)   
+ 0483 : f0 e4       LD A, (0xFF00 + 0xe4)
 
- 0485 : a7          AND A, A                
- 0486 : c0          RET NZ                  
- 0487 : 3e 13       LD A, 0x13              
+ 0485 : a7          AND A, A
+ 0486 : c0          RET NZ
+ 0487 : 3e 13       LD A, 0x13
 
- 0489 : e0 c6       LD (0xFF00 + 0xc6), A   
+ 0489 : e0 c6       LD (0xFF00 + 0xc6), A
 
- 048b : c9          RET                     
+ 048b : c9          RET
 
 
 
@@ -1252,10 +1252,10 @@
 
 
 
- 04e6 : f0 a6       LD A, (0xFF00 + 0xa6)   
+ 04e6 : f0 a6       LD A, (0xFF00 + 0xa6)
 
- 04e8 : a7          AND A, A                
- 04e9 : 20 0a       JR NZ, 0x0a             
+ 04e8 : a7          AND A, A
+ 04e9 : 20 0a       JR NZ, 0x0a
 
 
 
@@ -1267,21 +1267,21 @@
 
 
 
- 04f5 : cd 07 0b    CALL 0x070b             
+ 04f5 : cd 07 0b    CALL 0x070b
 
 
- 04f8 : 3e 55       LD A, 0x55              
+ 04f8 : 3e 55       LD A, 0x55
 
- 04fa : e0 01       LD (0xFF00 + 0x01), A   
+ 04fa : e0 01       LD (0xFF00 + 0x01), A
 
- 04fc : 3e 80       LD A, 0x80              
+ 04fc : 3e 80       LD A, 0x80
 
- 04fe : e0 02       LD (0xFF00 + 0x02), A   
+ 04fe : e0 02       LD (0xFF00 + 0x02), A
 
- 0500 : f0 cc       LD A, (0xFF00 + 0xcc)   
+ 0500 : f0 cc       LD A, (0xFF00 + 0xcc)
 
- 0502 : a7          AND A, A                
- 0503 : 28 0a       JR Z, 0x0a              
+ 0502 : a7          AND A, A
+ 0503 : 28 0a       JR Z, 0x0a
 
 
 
@@ -1293,30 +1293,30 @@
 
 
 
- 050f : f0 81       LD A, (0xFF00 + 0x81)   
+ 050f : f0 81       LD A, (0xFF00 + 0x81)
 
- 0511 : 47          LD B, A                 
- 0512 : f0 c5       LD A, (0xFF00 + 0xc5)   
+ 0511 : 47          LD B, A
+ 0512 : f0 c5       LD A, (0xFF00 + 0xc5)
 
- 0514 : cb 50       BIT 2, B                
+ 0514 : cb 50       BIT 2, B
 
- 0516 : 20 48       JR NZ, 0x48             
+ 0516 : 20 48       JR NZ, 0x48
 
- 0518 : cb 60       BIT 4, B                
+ 0518 : cb 60       BIT 4, B
 
- 051a : 20 53       JR NZ, 0x53             
+ 051a : 20 53       JR NZ, 0x53
 
- 051c : cb 68       BIT 5, B                
+ 051c : cb 68       BIT 5, B
 
- 051e : 20 54       JR NZ, 0x54             
+ 051e : 20 54       JR NZ, 0x54
 
- 0520 : cb 58       BIT 3, B                
+ 0520 : cb 58       BIT 3, B
 
- 0522 : c8          RET Z                   
- 0523 : a7          AND A, A                
- 0524 : 3e 08       LD A, 0x08              
+ 0522 : c8          RET Z
+ 0523 : a7          AND A, A
+ 0524 : 3e 08       LD A, 0x08
 
- 0526 : 28 2c       JR Z, 0x2c              
+ 0526 : 28 2c       JR Z, 0x2c
 
 
 
@@ -1348,31 +1348,31 @@
 
 
 
- 0546 : e0 e1       LD (0xFF00 + 0xe1), A   
+ 0546 : e0 e1       LD (0xFF00 + 0xe1), A
 
- 0548 : af          XOR A, A                
- 0549 : e0 a6       LD (0xFF00 + 0xa6), A   
+ 0548 : af          XOR A, A
+ 0549 : e0 a6       LD (0xFF00 + 0xa6), A
 
- 054b : e0 c2       LD (0xFF00 + 0xc2), A   
+ 054b : e0 c2       LD (0xFF00 + 0xc2), A
 
- 054d : e0 c3       LD (0xFF00 + 0xc3), A   
+ 054d : e0 c3       LD (0xFF00 + 0xc3), A
 
- 054f : e0 c4       LD (0xFF00 + 0xc4), A   
+ 054f : e0 c4       LD (0xFF00 + 0xc4), A
 
- 0551 : e0 e4       LD (0xFF00 + 0xe4), A   
+ 0551 : e0 e4       LD (0xFF00 + 0xe4), A
 
- 0553 : c9          RET                     
- 0554 : f5          PUSH AF                 
- 0555 : f0 80       LD A, (0xFF00 + 0x80)   
+ 0553 : c9          RET
+ 0554 : f5          PUSH AF
+ 0555 : f0 80       LD A, (0xFF00 + 0x80)
 
- 0557 : cb 7f       BIT 7, A                
+ 0557 : cb 7f       BIT 7, A
 
- 0559 : 28 02       JR Z, 0x02              
+ 0559 : 28 02       JR Z, 0x02
 
 
 
- 055d : f1          POP AF                  
- 055e : 18 e6       JR 0xe6                 
+ 055d : f1          POP AF
+ 055e : 18 e6       JR 0xe6
 
 
 
@@ -1399,10 +1399,10 @@
 
 
 
- 0579 : f0 e4       LD A, (0xFF00 + 0xe4)   
+ 0579 : f0 e4       LD A, (0xFF00 + 0xe4)
 
- 057b : a7          AND A, A                
- 057c : c8          RET Z                   
+ 057b : a7          AND A, A
+ 057c : c8          RET Z
 
 
 
@@ -1453,10 +1453,10 @@
 
 
 
- 05af : f0 e4       LD A, (0xFF00 + 0xe4)   
+ 05af : f0 e4       LD A, (0xFF00 + 0xe4)
 
- 05b1 : a7          AND A, A                
- 05b2 : c8          RET Z                   
+ 05b1 : a7          AND A, A
+ 05b2 : c8          RET Z
 
 
 
@@ -1518,10 +1518,10 @@
 
 
 
- 05f0 : f0 e4       LD A, (0xFF00 + 0xe4)   
+ 05f0 : f0 e4       LD A, (0xFF00 + 0xe4)
 
- 05f2 : a7          AND A, A                
- 05f3 : c8          RET Z                   
+ 05f2 : a7          AND A, A
+ 05f3 : c8          RET Z
 
 
 
@@ -1566,10 +1566,10 @@
 
 
 
- 0620 : f0 e4       LD A, (0xFF00 + 0xe4)   
+ 0620 : f0 e4       LD A, (0xFF00 + 0xe4)
 
- 0622 : a7          AND A, A                
- 0623 : c8          RET Z                   
+ 0622 : a7          AND A, A
+ 0623 : c8          RET Z
 
 
 
@@ -2821,15 +2821,15 @@
 
 
 
- 0b07 : c5          PUSH BC                 
- 0b08 : 06 fa       LD B, 0xfa              
+ 0b07 : c5          PUSH BC
+ 0b08 : 06 fa       LD B, 0xfa
 
- 0b0a : 40          LD B, B                 
- 0b0b : 05          DEC B                   
- 0b0c : 20 fc       JR NZ, 0xfc             
+ 0b0a : 40          LD B, B
+ 0b0b : 05          DEC B
+ 0b0c : 20 fc       JR NZ, 0xfc
 
- 0b0e : c1          POP BC                  
- 0b0f : c9          RET                     
+ 0b0e : c1          POP BC
+ 0b0f : c9          RET
 
 
 
@@ -5286,106 +5286,106 @@
 
 
 
- 14a8 : 3e 01       LD A, 0x01              
+ 14a8 : 3e 01       LD A, 0x01
 
- 14aa : e0 ff       LD (0xFF00 + 0xff), A   
+ 14aa : e0 ff       LD (0xFF00 + 0xff), A
 
- 14ac : af          XOR A, A                
- 14ad : e0 01       LD (0xFF00 + 0x01), A   
+ 14ac : af          XOR A, A
+ 14ad : e0 01       LD (0xFF00 + 0x01), A
 
- 14af : e0 02       LD (0xFF00 + 0x02), A   
+ 14af : e0 02       LD (0xFF00 + 0x02), A
 
- 14b1 : e0 0f       LD (0xFF00 + 0x0f), A   
+ 14b1 : e0 0f       LD (0xFF00 + 0x0f), A
 
- 14b3 : cd 74 28    CALL 0x7428             
+ 14b3 : cd 74 28    CALL 0x7428
 
 
- 14b6 : cd 01 28    CALL 0x0128             
+ 14b6 : cd 01 28    CALL 0x0128
 
 
- 14b9 : 11 1f 4d    LD DE, 0x1f4d           
+ 14b9 : 11 1f 4d    LD DE, 0x1f4d
 
 
- 14bc : cd 3f 28    CALL 0x3f28             
+ 14bc : cd 3f 28    CALL 0x3f28
 
 
- 14bf : cd ee 17    CALL 0xee17             
+ 14bf : cd ee 17    CALL 0xee17
 
 
- 14c2 : 21 00 c2    LD HL, 0x00c2           
+ 14c2 : 21 00 c2    LD HL, 0x00c2
 
 
- 14c5 : 11 23 27    LD DE, 0x2327           
+ 14c5 : 11 23 27    LD DE, 0x2327
 
 
- 14c8 : 0e 02       LD C, 0x02              
+ 14c8 : 0e 02       LD C, 0x02
 
- 14ca : cd da 17    CALL 0xda17             
+ 14ca : cd da 17    CALL 0xda17
 
 
- 14cd : 11 01 c2    LD DE, 0x01c2           
+ 14cd : 11 01 c2    LD DE, 0x01c2
 
 
- 14d0 : cd f1 14    CALL 0xf114             
+ 14d0 : cd f1 14    CALL 0xf114
 
 
- 14d3 : f0 c0       LD A, (0xFF00 + 0xc0)   
+ 14d3 : f0 c0       LD A, (0xFF00 + 0xc0)
 
- 14d5 : 1e 12       LD E, 0x12              
+ 14d5 : 1e 12       LD E, 0x12
 
- 14d7 : 12          LD (DE), A              
- 14d8 : 13          INC DE                  
- 14d9 : fe 37       CP A, 0x37              
+ 14d7 : 12          LD (DE), A
+ 14d8 : 13          INC DE
+ 14d9 : fe 37       CP A, 0x37
 
- 14db : 3e 1c       LD A, 0x1c              
+ 14db : 3e 1c       LD A, 0x1c
 
- 14dd : 28 02       JR Z, 0x02              
+ 14dd : 28 02       JR Z, 0x02
 
 
 
- 14e1 : 12          LD (DE), A              
- 14e2 : cd c5 26    CALL 0xc526             
+ 14e1 : 12          LD (DE), A
+ 14e2 : cd c5 26    CALL 0xc526
 
 
- 14e5 : cd 7b 15    CALL 0x7b15             
+ 14e5 : cd 7b 15    CALL 0x7b15
 
 
- 14e8 : 3e d3       LD A, 0xd3              
+ 14e8 : 3e d3       LD A, 0xd3
 
- 14ea : e0 40       LD (0xFF00 + 0x40), A   
+ 14ea : e0 40       LD (0xFF00 + 0x40), A
 
- 14ec : 3e 0e       LD A, 0x0e              
+ 14ec : 3e 0e       LD A, 0x0e
 
- 14ee : e0 e1       LD (0xFF00 + 0xe1), A   
+ 14ee : e0 e1       LD (0xFF00 + 0xe1), A
 
- 14f0 : c9          RET                     
- 14f1 : 3e 01       LD A, 0x01              
+ 14f0 : c9          RET
+ 14f1 : 3e 01       LD A, 0x01
 
- 14f3 : ea e0 df    LD (0xe0df), A          
+ 14f3 : ea e0 df    LD (0xe0df), A
 
 
- 14f6 : f0 c1       LD A, (0xFF00 + 0xc1)   
+ 14f6 : f0 c1       LD A, (0xFF00 + 0xc1)
 
- 14f8 : f5          PUSH AF                 
- 14f9 : d6 1c       SUB A, 0x1c             
+ 14f8 : f5          PUSH AF
+ 14f9 : d6 1c       SUB A, 0x1c
 
- 14fb : 87          ADD A, A                
- 14fc : 4f          LD C, A                 
- 14fd : 06 00       LD B, 0x00              
+ 14fb : 87          ADD A, A
+ 14fc : 4f          LD C, A
+ 14fd : 06 00       LD B, 0x00
 
- 14ff : 21 0c 15    LD HL, 0x0c15           
+ 14ff : 21 0c 15    LD HL, 0x0c15
 
 
- 1502 : 09          ADD HL, BC              
- 1503 : 2a          LDI A, (HL)             
- 1504 : 12          LD (DE), A              
- 1505 : 13          INC DE                  
- 1506 : 7e          LD A, (HL)              
- 1507 : 12          LD (DE), A              
- 1508 : 13          INC DE                  
- 1509 : f1          POP AF                  
- 150a : 12          LD (DE), A              
- 150b : c9          RET                     
+ 1502 : 09          ADD HL, BC
+ 1503 : 2a          LDI A, (HL)
+ 1504 : 12          LD (DE), A
+ 1505 : 13          INC DE
+ 1506 : 7e          LD A, (HL)
+ 1507 : 12          LD (DE), A
+ 1508 : 13          INC DE
+ 1509 : f1          POP AF
+ 150a : 12          LD (DE), A
+ 150b : c9          RET
 
 
 
@@ -5497,47 +5497,47 @@
 
 
 
- 157b : f0 c1       LD A, (0xFF00 + 0xc1)   
+ 157b : f0 c1       LD A, (0xFF00 + 0xc1)
 
- 157d : d6 17       SUB A, 0x17             
+ 157d : d6 17       SUB A, 0x17
 
- 157f : fe 08       CP A, 0x08              
+ 157f : fe 08       CP A, 0x08
 
- 1581 : 20 02       JR NZ, 0x02             
+ 1581 : 20 02       JR NZ, 0x02
 
 
 
- 1585 : ea e8 df    LD (0xe8df), A          
+ 1585 : ea e8 df    LD (0xe8df), A
 
 
- 1588 : c9          RET                     
- 1589 : 11 10 c2    LD DE, 0x10c2           
+ 1588 : c9          RET
+ 1589 : 11 10 c2    LD DE, 0x10c2
 
 
- 158c : cd ca 17    CALL 0xca17             
+ 158c : cd ca 17    CALL 0xca17
 
 
- 158f : 21 c0 ff    LD HL, 0xc0ff           
+ 158f : 21 c0 ff    LD HL, 0xc0ff
 
 
- 1592 : 7e          LD A, (HL)              
- 1593 : cb 58       BIT 3, B                
+ 1592 : 7e          LD A, (HL)
+ 1593 : cb 58       BIT 3, B
 
- 1595 : 20 30       JR NZ, 0x30             
+ 1595 : 20 30       JR NZ, 0x30
 
- 1597 : cb 40       BIT 0, B                
+ 1597 : cb 40       BIT 0, B
 
- 1599 : 20 40       JR NZ, 0x40             
+ 1599 : 20 40       JR NZ, 0x40
 
- 159b : 1c          INC E                   
- 159c : 1c          INC E                   
- 159d : cb 60       BIT 4, B                
+ 159b : 1c          INC E
+ 159c : 1c          INC E
+ 159d : cb 60       BIT 4, B
 
- 159f : 20 0e       JR NZ, 0x0e             
+ 159f : 20 0e       JR NZ, 0x0e
 
- 15a1 : cb 68       BIT 5, B                
+ 15a1 : cb 68       BIT 5, B
 
- 15a3 : 28 1e       JR Z, 0x1e              
+ 15a3 : 28 1e       JR Z, 0x1e
 
 
 
@@ -5568,144 +5568,144 @@
 
 
 
- 15c2 : 12          LD (DE), A              
- 15c3 : cd c5 26    CALL 0xc526             
+ 15c2 : 12          LD (DE), A
+ 15c3 : cd c5 26    CALL 0xc526
 
 
- 15c6 : c9          RET                     
- 15c7 : 3e 02       LD A, 0x02              
+ 15c6 : c9          RET
+ 15c7 : 3e 02       LD A, 0x02
 
- 15c9 : ea e0 df    LD (0xe0df), A          
+ 15c9 : ea e0 df    LD (0xe0df), A
 
 
- 15cc : f0 c0       LD A, (0xFF00 + 0xc0)   
+ 15cc : f0 c0       LD A, (0xFF00 + 0xc0)
 
- 15ce : fe 37       CP A, 0x37              
+ 15ce : fe 37       CP A, 0x37
 
- 15d0 : 3e 10       LD A, 0x10              
+ 15d0 : 3e 10       LD A, 0x10
 
- 15d2 : 28 02       JR Z, 0x02              
+ 15d2 : 28 02       JR Z, 0x02
 
 
 
- 15d6 : e0 e1       LD (0xFF00 + 0xe1), A   
+ 15d6 : e0 e1       LD (0xFF00 + 0xe1), A
 
- 15d8 : af          XOR A, A                
- 15d9 : 18 e7       JR 0xe7                 
+ 15d8 : af          XOR A, A
+ 15d9 : 18 e7       JR 0xe7
 
 
 
 
 
- 15df : cd 74 28    CALL 0x7428             
+ 15df : cd 74 28    CALL 0x7428
 
 
- 15e2 : 11 87 4e    LD DE, 0x874e           
+ 15e2 : 11 87 4e    LD DE, 0x874e
 
 
- 15e5 : cd 3f 28    CALL 0x3f28             
+ 15e5 : cd 3f 28    CALL 0x3f28
 
 
- 15e8 : cd 60 19    CALL 0x6019             
+ 15e8 : cd 60 19    CALL 0x6019
 
 
- 15eb : cd ee 17    CALL 0xee17             
+ 15eb : cd ee 17    CALL 0xee17
 
 
- 15ee : 21 00 c2    LD HL, 0x00c2           
+ 15ee : 21 00 c2    LD HL, 0x00c2
 
 
- 15f1 : 11 2f 27    LD DE, 0x2f27           
+ 15f1 : 11 2f 27    LD DE, 0x2f27
 
 
- 15f4 : 0e 01       LD C, 0x01              
+ 15f4 : 0e 01       LD C, 0x01
 
- 15f6 : cd da 17    CALL 0xda17             
+ 15f6 : cd da 17    CALL 0xda17
 
 
- 15f9 : 11 01 c2    LD DE, 0x01c2           
+ 15f9 : 11 01 c2    LD DE, 0x01c2
 
 
- 15fc : f0 c2       LD A, (0xFF00 + 0xc2)   
+ 15fc : f0 c2       LD A, (0xFF00 + 0xc2)
 
- 15fe : 21 79 16    LD HL, 0x7916           
+ 15fe : 21 79 16    LD HL, 0x7916
 
 
- 1601 : cd b2 17    CALL 0xb217             
+ 1601 : cd b2 17    CALL 0xb217
 
 
- 1604 : cd c5 26    CALL 0xc526             
+ 1604 : cd c5 26    CALL 0xc526
 
 
- 1607 : cd f9 17    CALL 0xf917             
+ 1607 : cd f9 17    CALL 0xf917
 
 
- 160a : cd 2e 19    CALL 0x2e19             
+ 160a : cd 2e 19    CALL 0x2e19
 
 
- 160d : 3e d3       LD A, 0xd3              
+ 160d : 3e d3       LD A, 0xd3
 
- 160f : e0 40       LD (0xFF00 + 0x40), A   
+ 160f : e0 40       LD (0xFF00 + 0x40), A
 
- 1611 : 3e 11       LD A, 0x11              
+ 1611 : 3e 11       LD A, 0x11
 
- 1613 : e0 e1       LD (0xFF00 + 0xe1), A   
+ 1613 : e0 e1       LD (0xFF00 + 0xe1), A
 
- 1615 : f0 c7       LD A, (0xFF00 + 0xc7)   
+ 1615 : f0 c7       LD A, (0xFF00 + 0xc7)
 
- 1617 : a7          AND A, A                
- 1618 : 20 04       JR NZ, 0x04             
+ 1617 : a7          AND A, A
+ 1618 : 20 04       JR NZ, 0x04
 
- 161a : cd 7b 15    CALL 0x7b15             
+ 161a : cd 7b 15    CALL 0x7b15
 
 
- 161d : c9          RET                     
+ 161d : c9          RET
 
 
- 1620 : e0 e1       LD (0xFF00 + 0xe1), A   
+ 1620 : e0 e1       LD (0xFF00 + 0xe1), A
 
- 1622 : c9          RET                     
- 1623 : 11 00 c2    LD DE, 0x00c2           
+ 1622 : c9          RET
+ 1623 : 11 00 c2    LD DE, 0x00c2
 
 
- 1626 : cd ca 17    CALL 0xca17             
+ 1626 : cd ca 17    CALL 0xca17
 
 
- 1629 : 21 c2 ff    LD HL, 0xc2ff           
+ 1629 : 21 c2 ff    LD HL, 0xc2ff
 
 
- 162c : 3e 0a       LD A, 0x0a              
+ 162c : 3e 0a       LD A, 0x0a
 
- 162e : cb 58       BIT 3, B                
+ 162e : cb 58       BIT 3, B
 
- 1630 : 20 ee       JR NZ, 0xee             
+ 1630 : 20 ee       JR NZ, 0xee
 
- 1632 : cb 40       BIT 0, B                
+ 1632 : cb 40       BIT 0, B
 
- 1634 : 20 ea       JR NZ, 0xea             
+ 1634 : 20 ea       JR NZ, 0xea
 
- 1636 : 3e 08       LD A, 0x08              
+ 1636 : 3e 08       LD A, 0x08
 
- 1638 : cb 48       BIT 1, B                
+ 1638 : cb 48       BIT 1, B
 
- 163a : 20 e4       JR NZ, 0xe4             
+ 163a : 20 e4       JR NZ, 0xe4
 
- 163c : 7e          LD A, (HL)              
- 163d : cb 60       BIT 4, B                
+ 163c : 7e          LD A, (HL)
+ 163d : cb 60       BIT 4, B
 
- 163f : 20 14       JR NZ, 0x14             
+ 163f : 20 14       JR NZ, 0x14
 
- 1641 : cb 68       BIT 5, B                
+ 1641 : cb 68       BIT 5, B
 
- 1643 : 20 26       JR NZ, 0x26             
+ 1643 : 20 26       JR NZ, 0x26
 
- 1645 : cb 70       BIT 6, B                
+ 1645 : cb 70       BIT 6, B
 
- 1647 : 20 28       JR NZ, 0x28             
+ 1647 : 20 28       JR NZ, 0x28
 
- 1649 : cb 78       BIT 7, B                
+ 1649 : cb 78       BIT 7, B
 
- 164b : 28 1a       JR Z, 0x1a              
+ 164b : 28 1a       JR Z, 0x1a
 
 
 
@@ -5733,10 +5733,10 @@
 
 
 
- 1667 : cd c5 26    CALL 0xc526             
+ 1667 : cd c5 26    CALL 0xc526
 
 
- 166a : c9          RET                     
+ 166a : c9          RET
 
 
 
@@ -6064,103 +6064,103 @@
 
 
 
- 17b2 : f5          PUSH AF                 
- 17b3 : 3e 01       LD A, 0x01              
+ 17b2 : f5          PUSH AF
+ 17b3 : 3e 01       LD A, 0x01
 
- 17b5 : ea e0 df    LD (0xe0df), A          
+ 17b5 : ea e0 df    LD (0xe0df), A
 
 
- 17b8 : f1          POP AF                  
- 17b9 : f5          PUSH AF                 
- 17ba : 87          ADD A, A                
- 17bb : 4f          LD C, A                 
- 17bc : 06 00       LD B, 0x00              
+ 17b8 : f1          POP AF
+ 17b9 : f5          PUSH AF
+ 17ba : 87          ADD A, A
+ 17bb : 4f          LD C, A
+ 17bc : 06 00       LD B, 0x00
 
- 17be : 09          ADD HL, BC              
- 17bf : 2a          LDI A, (HL)             
- 17c0 : 12          LD (DE), A              
- 17c1 : 13          INC DE                  
- 17c2 : 7e          LD A, (HL)              
- 17c3 : 12          LD (DE), A              
- 17c4 : 13          INC DE                  
- 17c5 : f1          POP AF                  
- 17c6 : c6 20       ADD A, 0x20             
+ 17be : 09          ADD HL, BC
+ 17bf : 2a          LDI A, (HL)
+ 17c0 : 12          LD (DE), A
+ 17c1 : 13          INC DE
+ 17c2 : 7e          LD A, (HL)
+ 17c3 : 12          LD (DE), A
+ 17c4 : 13          INC DE
+ 17c5 : f1          POP AF
+ 17c6 : c6 20       ADD A, 0x20
 
- 17c8 : 12          LD (DE), A              
- 17c9 : c9          RET                     
- 17ca : f0 81       LD A, (0xFF00 + 0x81)   
+ 17c8 : 12          LD (DE), A
+ 17c9 : c9          RET
+ 17ca : f0 81       LD A, (0xFF00 + 0x81)
 
- 17cc : 47          LD B, A                 
- 17cd : f0 a6       LD A, (0xFF00 + 0xa6)   
+ 17cc : 47          LD B, A
+ 17cd : f0 a6       LD A, (0xFF00 + 0xa6)
 
- 17cf : a7          AND A, A                
- 17d0 : c0          RET NZ                  
- 17d1 : 3e 10       LD A, 0x10              
+ 17cf : a7          AND A, A
+ 17d0 : c0          RET NZ
+ 17d1 : 3e 10       LD A, 0x10
 
- 17d3 : e0 a6       LD (0xFF00 + 0xa6), A   
+ 17d3 : e0 a6       LD (0xFF00 + 0xa6), A
 
- 17d5 : 1a          LD A, (DE)              
- 17d6 : ee 80       XOR A, 0x80             
+ 17d5 : 1a          LD A, (DE)
+ 17d6 : ee 80       XOR A, 0x80
 
- 17d8 : 12          LD (DE), A              
- 17d9 : c9          RET                     
- 17da : e5          PUSH HL                 
- 17db : 06 06       LD B, 0x06              
+ 17d8 : 12          LD (DE), A
+ 17d9 : c9          RET
+ 17da : e5          PUSH HL
+ 17db : 06 06       LD B, 0x06
 
- 17dd : 1a          LD A, (DE)              
- 17de : 22          LDI (HL), A             
- 17df : 13          INC DE                  
- 17e0 : 05          DEC B                   
- 17e1 : 20 fa       JR NZ, 0xfa             
+ 17dd : 1a          LD A, (DE)
+ 17de : 22          LDI (HL), A
+ 17df : 13          INC DE
+ 17e0 : 05          DEC B
+ 17e1 : 20 fa       JR NZ, 0xfa
 
- 17e3 : e1          POP HL                  
- 17e4 : 3e 10       LD A, 0x10              
+ 17e3 : e1          POP HL
+ 17e4 : 3e 10       LD A, 0x10
 
- 17e6 : 85          ADD A, L                
- 17e7 : 6f          LD L, A                 
- 17e8 : 0d          DEC C                   
- 17e9 : 20 ef       JR NZ, 0xef             
+ 17e6 : 85          ADD A, L
+ 17e7 : 6f          LD L, A
+ 17e8 : 0d          DEC C
+ 17e9 : 20 ef       JR NZ, 0xef
 
- 17eb : 36 80       LD (HL), 0x80           
+ 17eb : 36 80       LD (HL), 0x80
 
- 17ed : c9          RET                     
- 17ee : af          XOR A, A                
- 17ef : 21 00 c0    LD HL, 0x00c0           
+ 17ed : c9          RET
+ 17ee : af          XOR A, A
+ 17ef : 21 00 c0    LD HL, 0x00c0
 
 
- 17f2 : 06 a0       LD B, 0xa0              
+ 17f2 : 06 a0       LD B, 0xa0
 
- 17f4 : 22          LDI (HL), A             
- 17f5 : 05          DEC B                   
- 17f6 : 20 fc       JR NZ, 0xfc             
+ 17f4 : 22          LDI (HL), A
+ 17f5 : 05          DEC B
+ 17f6 : 20 fc       JR NZ, 0xfc
 
- 17f8 : c9          RET                     
- 17f9 : cd 60 19    CALL 0x6019             
+ 17f8 : c9          RET
+ 17f9 : cd 60 19    CALL 0x6019
 
 
- 17fc : f0 c2       LD A, (0xFF00 + 0xc2)   
+ 17fc : f0 c2       LD A, (0xFF00 + 0xc2)
 
- 17fe : 21 54 d6    LD HL, 0x54d6           
+ 17fe : 21 54 d6    LD HL, 0x54d6
 
 
- 1801 : 11 1b 00    LD DE, 0x1b00           
+ 1801 : 11 1b 00    LD DE, 0x1b00
 
 
- 1804 : a7          AND A, A                
- 1805 : 28 04       JR Z, 0x04              
+ 1804 : a7          AND A, A
+ 1805 : 28 04       JR Z, 0x04
 
 
 
 
 
- 180b : 23          INC HL                  
- 180c : 23          INC HL                  
- 180d : e5          PUSH HL                 
- 180e : d1          POP DE                  
- 180f : cd 64 18    CALL 0x6418             
+ 180b : 23          INC HL
+ 180c : 23          INC HL
+ 180d : e5          PUSH HL
+ 180e : d1          POP DE
+ 180f : cd 64 18    CALL 0x6418
 
 
- 1812 : c9          RET                     
+ 1812 : c9          RET
 
 
 
@@ -6199,24 +6199,24 @@
 
 
 
- 1839 : 06 03       LD B, 0x03              
+ 1839 : 06 03       LD B, 0x03
 
- 183b : 7e          LD A, (HL)              
- 183c : e6 f0       AND A, 0xf0             
+ 183b : 7e          LD A, (HL)
+ 183c : e6 f0       AND A, 0xf0
 
- 183e : 20 0b       JR NZ, 0x0b             
+ 183e : 20 0b       JR NZ, 0x0b
 
- 1840 : 1c          INC E                   
- 1841 : 3a          LDD A, (HL)             
- 1842 : e6 0f       AND A, 0x0f             
+ 1840 : 1c          INC E
+ 1841 : 3a          LDD A, (HL)
+ 1842 : e6 0f       AND A, 0x0f
 
- 1844 : 20 0f       JR NZ, 0x0f             
+ 1844 : 20 0f       JR NZ, 0x0f
 
- 1846 : 1c          INC E                   
- 1847 : 05          DEC B                   
- 1848 : 20 f1       JR NZ, 0xf1             
+ 1846 : 1c          INC E
+ 1847 : 05          DEC B
+ 1848 : 20 f1       JR NZ, 0xf1
 
- 184a : c9          RET                     
+ 184a : c9          RET
 
 
 
@@ -6242,39 +6242,39 @@
 
 
 
- 1864 : 7a          LD A, D                 
- 1865 : e0 fb       LD (0xFF00 + 0xfb), A   
+ 1864 : 7a          LD A, D
+ 1865 : e0 fb       LD (0xFF00 + 0xfb), A
 
- 1867 : 7b          LD A, E                 
- 1868 : e0 fc       LD (0xFF00 + 0xfc), A   
+ 1867 : 7b          LD A, E
+ 1868 : e0 fc       LD (0xFF00 + 0xfc), A
 
- 186a : 0e 03       LD C, 0x03              
+ 186a : 0e 03       LD C, 0x03
 
- 186c : 21 a2 c0    LD HL, 0xa2c0           
+ 186c : 21 a2 c0    LD HL, 0xa2c0
 
 
- 186f : d5          PUSH DE                 
- 1870 : 06 03       LD B, 0x03              
+ 186f : d5          PUSH DE
+ 1870 : 06 03       LD B, 0x03
 
- 1872 : 1a          LD A, (DE)              
- 1873 : 96          SUB A, (HL)             
- 1874 : 38 10       JR C, 0x10              
+ 1872 : 1a          LD A, (DE)
+ 1873 : 96          SUB A, (HL)
+ 1874 : 38 10       JR C, 0x10
 
- 1876 : 20 05       JR NZ, 0x05             
+ 1876 : 20 05       JR NZ, 0x05
 
- 1878 : 2d          DEC L                   
- 1879 : 1b          DEC DE                  
- 187a : 05          DEC B                   
- 187b : 20 f5       JR NZ, 0xf5             
+ 1878 : 2d          DEC L
+ 1879 : 1b          DEC DE
+ 187a : 05          DEC B
+ 187b : 20 f5       JR NZ, 0xf5
 
- 187d : d1          POP DE                  
- 187e : 13          INC DE                  
- 187f : 13          INC DE                  
- 1880 : 13          INC DE                  
- 1881 : 0d          DEC C                   
- 1882 : 20 e8       JR NZ, 0xe8             
+ 187d : d1          POP DE
+ 187e : 13          INC DE
+ 187f : 13          INC DE
+ 1880 : 13          INC DE
+ 1881 : 0d          DEC C
+ 1882 : 20 e8       JR NZ, 0xe8
 
- 1884 : 18 5e       JR 0x5e                 
+ 1884 : 18 5e       JR 0x5e
 
 
 
@@ -6370,153 +6370,153 @@
 
 
 
- 18e4 : 11 ac c9    LD DE, 0xacc9           
+ 18e4 : 11 ac c9    LD DE, 0xacc9
 
 
- 18e7 : f0 fb       LD A, (0xFF00 + 0xfb)   
+ 18e7 : f0 fb       LD A, (0xFF00 + 0xfb)
 
- 18e9 : 67          LD H, A                 
- 18ea : f0 fc       LD A, (0xFF00 + 0xfc)   
+ 18e9 : 67          LD H, A
+ 18ea : f0 fc       LD A, (0xFF00 + 0xfc)
 
- 18ec : 6f          LD L, A                 
- 18ed : 06 03       LD B, 0x03              
+ 18ec : 6f          LD L, A
+ 18ed : 06 03       LD B, 0x03
 
- 18ef : e5          PUSH HL                 
- 18f0 : d5          PUSH DE                 
- 18f1 : c5          PUSH BC                 
- 18f2 : cd 39 18    CALL 0x3918             
+ 18ef : e5          PUSH HL
+ 18f0 : d5          PUSH DE
+ 18f1 : c5          PUSH BC
+ 18f2 : cd 39 18    CALL 0x3918
 
 
- 18f5 : c1          POP BC                  
- 18f6 : d1          POP DE                  
- 18f7 : 21 20 00    LD HL, 0x2000           
+ 18f5 : c1          POP BC
+ 18f6 : d1          POP DE
+ 18f7 : 21 20 00    LD HL, 0x2000
 
 
- 18fa : 19          ADD HL, DE              
- 18fb : e5          PUSH HL                 
- 18fc : d1          POP DE                  
- 18fd : e1          POP HL                  
- 18fe : d5          PUSH DE                 
- 18ff : 11 03 00    LD DE, 0x0300           
+ 18fa : 19          ADD HL, DE
+ 18fb : e5          PUSH HL
+ 18fc : d1          POP DE
+ 18fd : e1          POP HL
+ 18fe : d5          PUSH DE
+ 18ff : 11 03 00    LD DE, 0x0300
 
 
- 1902 : 19          ADD HL, DE              
- 1903 : d1          POP DE                  
- 1904 : 05          DEC B                   
- 1905 : 20 e8       JR NZ, 0xe8             
+ 1902 : 19          ADD HL, DE
+ 1903 : d1          POP DE
+ 1904 : 05          DEC B
+ 1905 : 20 e8       JR NZ, 0xe8
 
- 1907 : 2b          DEC HL                  
- 1908 : 2b          DEC HL                  
- 1909 : 06 03       LD B, 0x03              
+ 1907 : 2b          DEC HL
+ 1908 : 2b          DEC HL
+ 1909 : 06 03       LD B, 0x03
 
- 190b : 11 a4 c9    LD DE, 0xa4c9           
+ 190b : 11 a4 c9    LD DE, 0xa4c9
 
 
- 190e : d5          PUSH DE                 
- 190f : 0e 06       LD C, 0x06              
+ 190e : d5          PUSH DE
+ 190f : 0e 06       LD C, 0x06
 
- 1911 : 2a          LDI A, (HL)             
- 1912 : a7          AND A, A                
- 1913 : 28 05       JR Z, 0x05              
+ 1911 : 2a          LDI A, (HL)
+ 1912 : a7          AND A, A
+ 1913 : 28 05       JR Z, 0x05
 
 
 
 
 
 
- 191a : d1          POP DE                  
- 191b : e5          PUSH HL                 
- 191c : 21 20 00    LD HL, 0x2000           
+ 191a : d1          POP DE
+ 191b : e5          PUSH HL
+ 191c : 21 20 00    LD HL, 0x2000
 
 
- 191f : 19          ADD HL, DE              
- 1920 : e5          PUSH HL                 
- 1921 : d1          POP DE                  
- 1922 : e1          POP HL                  
- 1923 : 05          DEC B                   
- 1924 : 20 e8       JR NZ, 0xe8             
+ 191f : 19          ADD HL, DE
+ 1920 : e5          PUSH HL
+ 1921 : d1          POP DE
+ 1922 : e1          POP HL
+ 1923 : 05          DEC B
+ 1924 : 20 e8       JR NZ, 0xe8
 
- 1926 : cd a5 26    CALL 0xa526             
+ 1926 : cd a5 26    CALL 0xa526
 
 
- 1929 : 3e 01       LD A, 0x01              
+ 1929 : 3e 01       LD A, 0x01
 
- 192b : e0 e8       LD (0xFF00 + 0xe8), A   
+ 192b : e0 e8       LD (0xFF00 + 0xe8), A
 
- 192d : c9          RET                     
- 192e : f0 e8       LD A, (0xFF00 + 0xe8)   
+ 192d : c9          RET
+ 192e : f0 e8       LD A, (0xFF00 + 0xe8)
 
- 1930 : a7          AND A, A                
- 1931 : c8          RET Z                   
- 1932 : 21 a4 99    LD HL, 0xa499           
+ 1930 : a7          AND A, A
+ 1931 : c8          RET Z
+ 1932 : 21 a4 99    LD HL, 0xa499
 
 
- 1935 : 11 a4 c9    LD DE, 0xa4c9           
+ 1935 : 11 a4 c9    LD DE, 0xa4c9
 
 
- 1938 : 0e 06       LD C, 0x06              
+ 1938 : 0e 06       LD C, 0x06
 
- 193a : e5          PUSH HL                 
- 193b : 06 06       LD B, 0x06              
+ 193a : e5          PUSH HL
+ 193b : 06 06       LD B, 0x06
 
- 193d : 1a          LD A, (DE)              
- 193e : 22          LDI (HL), A             
- 193f : 1c          INC E                   
- 1940 : 05          DEC B                   
- 1941 : 20 fa       JR NZ, 0xfa             
+ 193d : 1a          LD A, (DE)
+ 193e : 22          LDI (HL), A
+ 193f : 1c          INC E
+ 1940 : 05          DEC B
+ 1941 : 20 fa       JR NZ, 0xfa
 
- 1943 : 1c          INC E                   
- 1944 : 2c          INC L                   
- 1945 : 1c          INC E                   
- 1946 : 2c          INC L                   
- 1947 : 0d          DEC C                   
- 1948 : 28 11       JR Z, 0x11              
+ 1943 : 1c          INC E
+ 1944 : 2c          INC L
+ 1945 : 1c          INC E
+ 1946 : 2c          INC L
+ 1947 : 0d          DEC C
+ 1948 : 28 11       JR Z, 0x11
 
- 194a : cb 41       BIT 0, C                
+ 194a : cb 41       BIT 0, C
 
- 194c : 20 ed       JR NZ, 0xed             
+ 194c : 20 ed       JR NZ, 0xed
 
- 194e : e1          POP HL                  
- 194f : 11 20 00    LD DE, 0x2000           
+ 194e : e1          POP HL
+ 194f : 11 20 00    LD DE, 0x2000
 
 
- 1952 : 19          ADD HL, DE              
- 1953 : e5          PUSH HL                 
- 1954 : d1          POP DE                  
- 1955 : 3e 30       LD A, 0x30              
+ 1952 : 19          ADD HL, DE
+ 1953 : e5          PUSH HL
+ 1954 : d1          POP DE
+ 1955 : 3e 30       LD A, 0x30
 
- 1957 : 82          ADD A, D                
- 1958 : 57          LD D, A                 
- 1959 : 18 df       JR 0xdf                 
+ 1957 : 82          ADD A, D
+ 1958 : 57          LD D, A
+ 1959 : 18 df       JR 0xdf
 
- 195b : e1          POP HL                  
- 195c : af          XOR A, A                
- 195d : e0 e8       LD (0xFF00 + 0xe8), A   
+ 195b : e1          POP HL
+ 195c : af          XOR A, A
+ 195d : e0 e8       LD (0xFF00 + 0xe8), A
 
- 195f : c9          RET                     
- 1960 : 21 a4 c9    LD HL, 0xa4c9           
+ 195f : c9          RET
+ 1960 : 21 a4 c9    LD HL, 0xa4c9
 
 
- 1963 : 11 20 00    LD DE, 0x2000           
+ 1963 : 11 20 00    LD DE, 0x2000
 
 
- 1966 : 3e 60       LD A, 0x60              
+ 1966 : 3e 60       LD A, 0x60
 
- 1968 : 0e 03       LD C, 0x03              
+ 1968 : 0e 03       LD C, 0x03
 
- 196a : 06 0e       LD B, 0x0e              
+ 196a : 06 0e       LD B, 0x0e
 
- 196c : e5          PUSH HL                 
- 196d : 22          LDI (HL), A             
- 196e : 05          DEC B                   
- 196f : 20 fc       JR NZ, 0xfc             
+ 196c : e5          PUSH HL
+ 196d : 22          LDI (HL), A
+ 196e : 05          DEC B
+ 196f : 20 fc       JR NZ, 0xfc
 
- 1971 : e1          POP HL                  
- 1972 : 19          ADD HL, DE              
- 1973 : 0d          DEC C                   
- 1974 : 20 f4       JR NZ, 0xf4             
+ 1971 : e1          POP HL
+ 1972 : 19          ADD HL, DE
+ 1973 : 0d          DEC C
+ 1974 : 20 f4       JR NZ, 0xf4
 
- 1976 : c9          RET                     
+ 1976 : c9          RET
 
 
 
@@ -6761,106 +6761,106 @@
 
 
 
- 1a6b : cd 74 28    CALL 0x7428             
+ 1a6b : cd 74 28    CALL 0x7428
 
 
- 1a6e : af          XOR A, A                
- 1a6f : ea 10 c2    LD (0x10c2), A          
+ 1a6e : af          XOR A, A
+ 1a6f : ea 10 c2    LD (0x10c2), A
 
 
- 1a72 : e0 98       LD (0xFF00 + 0x98), A   
+ 1a72 : e0 98       LD (0xFF00 + 0x98), A
 
- 1a74 : e0 9c       LD (0xFF00 + 0x9c), A   
+ 1a74 : e0 9c       LD (0xFF00 + 0x9c), A
 
- 1a76 : e0 9b       LD (0xFF00 + 0x9b), A   
+ 1a76 : e0 9b       LD (0xFF00 + 0x9b), A
 
- 1a78 : e0 fb       LD (0xFF00 + 0xfb), A   
+ 1a78 : e0 fb       LD (0xFF00 + 0xfb), A
 
- 1a7a : e0 9f       LD (0xFF00 + 0x9f), A   
+ 1a7a : e0 9f       LD (0xFF00 + 0x9f), A
 
- 1a7c : 3e 2f       LD A, 0x2f              
+ 1a7c : 3e 2f       LD A, 0x2f
 
- 1a7e : cd 32 20    CALL 0x3220             
+ 1a7e : cd 32 20    CALL 0x3220
 
 
- 1a81 : cd 4d 20    CALL 0x4d20             
+ 1a81 : cd 4d 20    CALL 0x4d20
 
 
- 1a84 : cd a5 26    CALL 0xa526             
+ 1a84 : cd a5 26    CALL 0xa526
 
 
- 1a87 : af          XOR A, A                
- 1a88 : e0 e3       LD (0xFF00 + 0xe3), A   
+ 1a87 : af          XOR A, A
+ 1a88 : e0 e3       LD (0xFF00 + 0xe3), A
 
- 1a8a : e0 e7       LD (0xFF00 + 0xe7), A   
+ 1a8a : e0 e7       LD (0xFF00 + 0xe7), A
 
- 1a8c : cd ee 17    CALL 0xee17             
+ 1a8c : cd ee 17    CALL 0xee17
 
 
- 1a8f : f0 c0       LD A, (0xFF00 + 0xc0)   
+ 1a8f : f0 c0       LD A, (0xFF00 + 0xc0)
 
- 1a91 : 11 3f 40    LD DE, 0x3f40           
+ 1a91 : 11 3f 40    LD DE, 0x3f40
 
 
- 1a94 : 21 c3 ff    LD HL, 0xc3ff           
+ 1a94 : 21 c3 ff    LD HL, 0xc3ff
 
 
- 1a97 : fe 77       CP A, 0x77              
+ 1a97 : fe 77       CP A, 0x77
 
- 1a99 : 3e 50       LD A, 0x50              
+ 1a99 : 3e 50       LD A, 0x50
 
- 1a9b : 28 08       JR Z, 0x08              
+ 1a9b : 28 08       JR Z, 0x08
 
- 1a9d : 3e f1       LD A, 0xf1              
+ 1a9d : 3e f1       LD A, 0xf1
 
- 1a9f : 21 c2 ff    LD HL, 0xc2ff           
+ 1a9f : 21 c2 ff    LD HL, 0xc2ff
 
 
- 1aa2 : 11 d7 3e    LD DE, 0xd73e           
+ 1aa2 : 11 d7 3e    LD DE, 0xd73e
 
 
- 1aa5 : d5          PUSH DE                 
- 1aa6 : e0 e6       LD (0xFF00 + 0xe6), A   
+ 1aa5 : d5          PUSH DE
+ 1aa6 : e0 e6       LD (0xFF00 + 0xe6), A
 
- 1aa8 : 7e          LD A, (HL)              
- 1aa9 : e0 a9       LD (0xFF00 + 0xa9), A   
+ 1aa8 : 7e          LD A, (HL)
+ 1aa9 : e0 a9       LD (0xFF00 + 0xa9), A
 
- 1aab : cd 3f 28    CALL 0x3f28             
+ 1aab : cd 3f 28    CALL 0x3f28
 
 
- 1aae : d1          POP DE                  
- 1aaf : 21 00 9c    LD HL, 0x009c           
+ 1aae : d1          POP DE
+ 1aaf : 21 00 9c    LD HL, 0x009c
 
 
- 1ab2 : cd 42 28    CALL 0x4228             
+ 1ab2 : cd 42 28    CALL 0x4228
 
 
- 1ab5 : 11 8d 28    LD DE, 0x8d28           
+ 1ab5 : 11 8d 28    LD DE, 0x8d28
 
 
- 1ab8 : 21 63 9c    LD HL, 0x639c           
+ 1ab8 : 21 63 9c    LD HL, 0x639c
 
 
- 1abb : 0e 0a       LD C, 0x0a              
+ 1abb : 0e 0a       LD C, 0x0a
 
- 1abd : cd d8 1f    CALL 0xd81f             
+ 1abd : cd d8 1f    CALL 0xd81f
 
 
- 1ac0 : 26 98       LD H, 0x98              
+ 1ac0 : 26 98       LD H, 0x98
 
- 1ac2 : f0 e6       LD A, (0xFF00 + 0xe6)   
+ 1ac2 : f0 e6       LD A, (0xFF00 + 0xe6)
 
- 1ac4 : 6f          LD L, A                 
- 1ac5 : f0 a9       LD A, (0xFF00 + 0xa9)   
+ 1ac4 : 6f          LD L, A
+ 1ac5 : f0 a9       LD A, (0xFF00 + 0xa9)
 
- 1ac7 : 77          LD (HL), A              
- 1ac8 : 26 9c       LD H, 0x9c              
+ 1ac7 : 77          LD (HL), A
+ 1ac8 : 26 9c       LD H, 0x9c
 
- 1aca : 77          LD (HL), A              
- 1acb : f0 f4       LD A, (0xFF00 + 0xf4)   
+ 1aca : 77          LD (HL), A
+ 1acb : f0 f4       LD A, (0xFF00 + 0xf4)
 
- 1acd : a7          AND A, A                
- 1ace : 28 07       JR Z, 0x07              
+ 1acd : a7          AND A, A
+ 1ace : 28 07       JR Z, 0x07
 
 
 
@@ -6869,68 +6869,68 @@
 
 
 
- 1ad7 : 21 00 c2    LD HL, 0x00c2           
+ 1ad7 : 21 00 c2    LD HL, 0x00c2
 
 
- 1ada : 11 13 27    LD DE, 0x1327           
+ 1ada : 11 13 27    LD DE, 0x1327
 
 
- 1add : cd 0a 27    CALL 0x0a27             
+ 1add : cd 0a 27    CALL 0x0a27
 
 
- 1ae0 : 21 10 c2    LD HL, 0x10c2           
+ 1ae0 : 21 10 c2    LD HL, 0x10c2
 
 
- 1ae3 : 11 1b 27    LD DE, 0x1b27           
+ 1ae3 : 11 1b 27    LD DE, 0x1b27
 
 
- 1ae6 : cd 0a 27    CALL 0x0a27             
+ 1ae6 : cd 0a 27    CALL 0x0a27
 
 
- 1ae9 : 21 51 99    LD HL, 0x5199           
+ 1ae9 : 21 51 99    LD HL, 0x5199
 
 
- 1aec : f0 c0       LD A, (0xFF00 + 0xc0)   
+ 1aec : f0 c0       LD A, (0xFF00 + 0xc0)
 
- 1aee : fe 77       CP A, 0x77              
+ 1aee : fe 77       CP A, 0x77
 
- 1af0 : 3e 25       LD A, 0x25              
+ 1af0 : 3e 25       LD A, 0x25
 
- 1af2 : 28 01       JR Z, 0x01              
+ 1af2 : 28 01       JR Z, 0x01
 
- 1af4 : af          XOR A, A                
- 1af5 : e0 9e       LD (0xFF00 + 0x9e), A   
+ 1af4 : af          XOR A, A
+ 1af5 : e0 9e       LD (0xFF00 + 0x9e), A
 
- 1af7 : e6 0f       AND A, 0x0f             
+ 1af7 : e6 0f       AND A, 0x0f
 
- 1af9 : 32          LDD (HL), A             
- 1afa : 28 02       JR Z, 0x02              
+ 1af9 : 32          LDD (HL), A
+ 1afa : 28 02       JR Z, 0x02
 
 
 
- 1afe : cd 43 1b    CALL 0x431b             
+ 1afe : cd 43 1b    CALL 0x431b
 
 
- 1b01 : cd 62 20    CALL 0x6220             
+ 1b01 : cd 62 20    CALL 0x6220
 
 
- 1b04 : cd 62 20    CALL 0x6220             
+ 1b04 : cd 62 20    CALL 0x6220
 
 
- 1b07 : cd 62 20    CALL 0x6220             
+ 1b07 : cd 62 20    CALL 0x6220
 
 
- 1b0a : cd d7 26    CALL 0xd726             
+ 1b0a : cd d7 26    CALL 0xd726
 
 
- 1b0d : af          XOR A, A                
- 1b0e : e0 a0       LD (0xFF00 + 0xa0), A   
+ 1b0d : af          XOR A, A
+ 1b0e : e0 a0       LD (0xFF00 + 0xa0), A
 
- 1b10 : f0 c0       LD A, (0xFF00 + 0xc0)   
+ 1b10 : f0 c0       LD A, (0xFF00 + 0xc0)
 
- 1b12 : fe 77       CP A, 0x77              
+ 1b12 : fe 77       CP A, 0x77
 
- 1b14 : 20 25       JR NZ, 0x25             
+ 1b14 : 20 25       JR NZ, 0x25
 
 
 
@@ -6969,21 +6969,21 @@
 
 
 
- 1b3b : 3e d3       LD A, 0xd3              
+ 1b3b : 3e d3       LD A, 0xd3
 
- 1b3d : e0 40       LD (0xFF00 + 0x40), A   
+ 1b3d : e0 40       LD (0xFF00 + 0x40), A
 
- 1b3f : af          XOR A, A                
- 1b40 : e0 e1       LD (0xFF00 + 0xe1), A   
+ 1b3f : af          XOR A, A
+ 1b40 : e0 e1       LD (0xFF00 + 0xe1), A
 
- 1b42 : c9          RET                     
- 1b43 : f0 a9       LD A, (0xFF00 + 0xa9)   
+ 1b42 : c9          RET
+ 1b43 : f0 a9       LD A, (0xFF00 + 0xa9)
 
- 1b45 : 5f          LD E, A                 
- 1b46 : f0 f4       LD A, (0xFF00 + 0xf4)   
+ 1b45 : 5f          LD E, A
+ 1b46 : f0 f4       LD A, (0xFF00 + 0xf4)
 
- 1b48 : a7          AND A, A                
- 1b49 : 28 0a       JR Z, 0x0a              
+ 1b48 : a7          AND A, A
+ 1b49 : 28 0a       JR Z, 0x0a
 
 
 
@@ -6995,18 +6995,18 @@
 
 
 
- 1b55 : 21 61 1b    LD HL, 0x611b           
+ 1b55 : 21 61 1b    LD HL, 0x611b
 
 
- 1b58 : 16 00       LD D, 0x00              
+ 1b58 : 16 00       LD D, 0x00
 
- 1b5a : 19          ADD HL, DE              
- 1b5b : 7e          LD A, (HL)              
- 1b5c : e0 99       LD (0xFF00 + 0x99), A   
+ 1b5a : 19          ADD HL, DE
+ 1b5b : 7e          LD A, (HL)
+ 1b5c : e0 99       LD (0xFF00 + 0x99), A
 
- 1b5e : e0 9a       LD (0xFF00 + 0x9a), A   
+ 1b5e : e0 9a       LD (0xFF00 + 0x9a), A
 
- 1b60 : c9          RET                     
+ 1b60 : c9          RET
 
 
 
@@ -7207,87 +7207,87 @@
 
 
 
- 1c29 : cd 68 1c    CALL 0x681c             
+ 1c29 : cd 68 1c    CALL 0x681c
 
 
- 1c2c : f0 ab       LD A, (0xFF00 + 0xab)   
+ 1c2c : f0 ab       LD A, (0xFF00 + 0xab)
 
- 1c2e : a7          AND A, A                
- 1c2f : c0          RET NZ                  
- 1c30 : cd 79 05    CALL 0x7905             
+ 1c2e : a7          AND A, A
+ 1c2f : c0          RET NZ
+ 1c30 : cd 79 05    CALL 0x7905
 
 
- 1c33 : cd af 05    CALL 0xaf05             
+ 1c33 : cd af 05    CALL 0xaf05
 
 
- 1c36 : cd f0 05    CALL 0xf005             
+ 1c36 : cd f0 05    CALL 0xf005
 
 
- 1c39 : cd 15 25    CALL 0x1525             
+ 1c39 : cd 15 25    CALL 0x1525
 
 
- 1c3c : cd f7 20    CALL 0xf720             
+ 1c3c : cd f7 20    CALL 0xf720
 
 
- 1c3f : cd 99 21    CALL 0x9921             
+ 1c3f : cd 99 21    CALL 0x9921
 
 
- 1c42 : cd f5 25    CALL 0xf525             
+ 1c42 : cd f5 25    CALL 0xf525
 
 
- 1c45 : cd ad 22    CALL 0xad22             
+ 1c45 : cd ad 22    CALL 0xad22
 
 
- 1c48 : cd ec 1f    CALL 0xec1f             
+ 1c48 : cd ec 1f    CALL 0xec1f
 
 
- 1c4b : cd 20 06    CALL 0x2006             
+ 1c4b : cd 20 06    CALL 0x2006
 
 
- 1c4e : c9          RET                     
- 1c4f : cb 57       BIT 2, A                
+ 1c4e : c9          RET
+ 1c4f : cb 57       BIT 2, A
 
- 1c51 : c8          RET Z                   
- 1c52 : fa de c0    LD A, (0xdec0)          
+ 1c51 : c8          RET Z
+ 1c52 : fa de c0    LD A, (0xdec0)
 
 
- 1c55 : ee 01       XOR A, 0x01             
+ 1c55 : ee 01       XOR A, 0x01
 
- 1c57 : ea de c0    LD (0xdec0), A          
+ 1c57 : ea de c0    LD (0xdec0), A
 
 
- 1c5a : 28 09       JR Z, 0x09              
+ 1c5a : 28 09       JR Z, 0x09
 
- 1c5c : 3e 80       LD A, 0x80              
+ 1c5c : 3e 80       LD A, 0x80
 
- 1c5e : ea 10 c2    LD (0x10c2), A          
+ 1c5e : ea 10 c2    LD (0x10c2), A
 
 
- 1c61 : cd ea 26    CALL 0xea26             
+ 1c61 : cd ea 26    CALL 0xea26
 
 
- 1c64 : c9          RET                     
+ 1c64 : c9          RET
 
 
 
- 1c68 : f0 80       LD A, (0xFF00 + 0x80)   
+ 1c68 : f0 80       LD A, (0xFF00 + 0x80)
 
- 1c6a : e6 0f       AND A, 0x0f             
+ 1c6a : e6 0f       AND A, 0x0f
 
- 1c6c : fe 0f       CP A, 0x0f              
+ 1c6c : fe 0f       CP A, 0x0f
 
- 1c6e : ca 9a 02    JP Z, 0x9a02            
+ 1c6e : ca 9a 02    JP Z, 0x9a02
 
 
- 1c71 : f0 e4       LD A, (0xFF00 + 0xe4)   
+ 1c71 : f0 e4       LD A, (0xFF00 + 0xe4)
 
- 1c73 : a7          AND A, A                
- 1c74 : c0          RET NZ                  
- 1c75 : f0 81       LD A, (0xFF00 + 0x81)   
+ 1c73 : a7          AND A, A
+ 1c74 : c0          RET NZ
+ 1c75 : f0 81       LD A, (0xFF00 + 0x81)
 
- 1c77 : cb 5f       BIT 3, A                
+ 1c77 : cb 5f       BIT 3, A
 
- 1c79 : 28 d4       JR Z, 0xd4              
+ 1c79 : 28 d4       JR Z, 0xd4
 
 
 
@@ -7984,11 +7984,11 @@
 
 
 
- 1f32 : fa c6 c0    LD A, (0xc6c0)          
+ 1f32 : fa c6 c0    LD A, (0xc6c0)
 
 
- 1f35 : a7          AND A, A                
- 1f36 : c8          RET Z                   
+ 1f35 : a7          AND A, A
+ 1f36 : c8          RET Z
 
 
 
@@ -8150,40 +8150,40 @@
 
 
 
- 1fd8 : 06 08       LD B, 0x08              
+ 1fd8 : 06 08       LD B, 0x08
 
- 1fda : e5          PUSH HL                 
- 1fdb : 1a          LD A, (DE)              
- 1fdc : 22          LDI (HL), A             
- 1fdd : 13          INC DE                  
- 1fde : 05          DEC B                   
- 1fdf : 20 fa       JR NZ, 0xfa             
+ 1fda : e5          PUSH HL
+ 1fdb : 1a          LD A, (DE)
+ 1fdc : 22          LDI (HL), A
+ 1fdd : 13          INC DE
+ 1fde : 05          DEC B
+ 1fdf : 20 fa       JR NZ, 0xfa
 
- 1fe1 : e1          POP HL                  
- 1fe2 : d5          PUSH DE                 
- 1fe3 : 11 20 00    LD DE, 0x2000           
+ 1fe1 : e1          POP HL
+ 1fe2 : d5          PUSH DE
+ 1fe3 : 11 20 00    LD DE, 0x2000
 
 
- 1fe6 : 19          ADD HL, DE              
- 1fe7 : d1          POP DE                  
- 1fe8 : 0d          DEC C                   
- 1fe9 : 20 ed       JR NZ, 0xed             
+ 1fe6 : 19          ADD HL, DE
+ 1fe7 : d1          POP DE
+ 1fe8 : 0d          DEC C
+ 1fe9 : 20 ed       JR NZ, 0xed
 
- 1feb : c9          RET                     
- 1fec : f0 c0       LD A, (0xFF00 + 0xc0)   
+ 1feb : c9          RET
+ 1fec : f0 c0       LD A, (0xFF00 + 0xc0)
 
- 1fee : fe 37       CP A, 0x37              
+ 1fee : fe 37       CP A, 0x37
 
- 1ff0 : c0          RET NZ                  
- 1ff1 : f0 e1       LD A, (0xFF00 + 0xe1)   
+ 1ff0 : c0          RET NZ
+ 1ff1 : f0 e1       LD A, (0xFF00 + 0xe1)
 
- 1ff3 : a7          AND A, A                
- 1ff4 : c0          RET NZ                  
- 1ff5 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 1ff3 : a7          AND A, A
+ 1ff4 : c0          RET NZ
+ 1ff5 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 1ff7 : fe 05       CP A, 0x05              
+ 1ff7 : fe 05       CP A, 0x05
 
- 1ff9 : c0          RET NZ                  
+ 1ff9 : c0          RET NZ
 
 
 
@@ -8240,82 +8240,82 @@
 
 
 
- 2032 : f5          PUSH AF                 
- 2033 : 3e 02       LD A, 0x02              
+ 2032 : f5          PUSH AF
+ 2033 : 3e 02       LD A, 0x02
 
- 2035 : e0 e3       LD (0xFF00 + 0xe3), A   
+ 2035 : e0 e3       LD (0xFF00 + 0xe3), A
 
- 2037 : f1          POP AF                  
- 2038 : 21 02 c8    LD HL, 0x02c8           
+ 2037 : f1          POP AF
+ 2038 : 21 02 c8    LD HL, 0x02c8
 
 
- 203b : 0e 12       LD C, 0x12              
+ 203b : 0e 12       LD C, 0x12
 
- 203d : 11 20 00    LD DE, 0x2000           
+ 203d : 11 20 00    LD DE, 0x2000
 
 
- 2040 : e5          PUSH HL                 
- 2041 : 06 0a       LD B, 0x0a              
+ 2040 : e5          PUSH HL
+ 2041 : 06 0a       LD B, 0x0a
 
- 2043 : 22          LDI (HL), A             
- 2044 : 05          DEC B                   
- 2045 : 20 fc       JR NZ, 0xfc             
+ 2043 : 22          LDI (HL), A
+ 2044 : 05          DEC B
+ 2045 : 20 fc       JR NZ, 0xfc
 
- 2047 : e1          POP HL                  
- 2048 : 19          ADD HL, DE              
- 2049 : 0d          DEC C                   
- 204a : 20 f4       JR NZ, 0xf4             
+ 2047 : e1          POP HL
+ 2048 : 19          ADD HL, DE
+ 2049 : 0d          DEC C
+ 204a : 20 f4       JR NZ, 0xf4
 
- 204c : c9          RET                     
- 204d : 21 c2 cb    LD HL, 0xc2cb           
+ 204c : c9          RET
+ 204d : 21 c2 cb    LD HL, 0xc2cb
 
 
- 2050 : 11 16 00    LD DE, 0x1600           
+ 2050 : 11 16 00    LD DE, 0x1600
 
 
- 2053 : 0e 02       LD C, 0x02              
+ 2053 : 0e 02       LD C, 0x02
 
- 2055 : 3e 2f       LD A, 0x2f              
+ 2055 : 3e 2f       LD A, 0x2f
 
- 2057 : 06 0a       LD B, 0x0a              
+ 2057 : 06 0a       LD B, 0x0a
 
- 2059 : 22          LDI (HL), A             
- 205a : 05          DEC B                   
- 205b : 20 fc       JR NZ, 0xfc             
+ 2059 : 22          LDI (HL), A
+ 205a : 05          DEC B
+ 205b : 20 fc       JR NZ, 0xfc
 
- 205d : 19          ADD HL, DE              
- 205e : 0d          DEC C                   
- 205f : 20 f6       JR NZ, 0xf6             
+ 205d : 19          ADD HL, DE
+ 205e : 0d          DEC C
+ 205f : 20 f6       JR NZ, 0xf6
 
- 2061 : c9          RET                     
- 2062 : 21 00 c2    LD HL, 0x00c2           
+ 2061 : c9          RET
+ 2062 : 21 00 c2    LD HL, 0x00c2
 
 
- 2065 : 36 00       LD (HL), 0x00           
+ 2065 : 36 00       LD (HL), 0x00
 
- 2067 : 2c          INC L                   
- 2068 : 36 18       LD (HL), 0x18           
+ 2067 : 2c          INC L
+ 2068 : 36 18       LD (HL), 0x18
 
- 206a : 2c          INC L                   
- 206b : 36 3f       LD (HL), 0x3f           
+ 206a : 2c          INC L
+ 206b : 36 3f       LD (HL), 0x3f
 
- 206d : 2c          INC L                   
- 206e : fa 13 c2    LD A, (0x13c2)          
+ 206d : 2c          INC L
+ 206e : fa 13 c2    LD A, (0x13c2)
 
 
- 2071 : 77          LD (HL), A              
- 2072 : e6 fc       AND A, 0xfc             
+ 2071 : 77          LD (HL), A
+ 2072 : e6 fc       AND A, 0xfc
 
- 2074 : 4f          LD C, A                 
- 2075 : f0 e4       LD A, (0xFF00 + 0xe4)   
+ 2074 : 4f          LD C, A
+ 2075 : f0 e4       LD A, (0xFF00 + 0xe4)
 
- 2077 : a7          AND A, A                
- 2078 : 20 05       JR NZ, 0x05             
+ 2077 : a7          AND A, A
+ 2078 : 20 05       JR NZ, 0x05
 
- 207a : f0 c5       LD A, (0xFF00 + 0xc5)   
+ 207a : f0 c5       LD A, (0xFF00 + 0xc5)
 
- 207c : a7          AND A, A                
- 207d : 28 1d       JR Z, 0x1d              
+ 207c : a7          AND A, A
+ 207d : 28 1d       JR Z, 0x1d
 
 
 
@@ -8346,179 +8346,179 @@
 
 
 
- 209c : 26 03       LD H, 0x03              
+ 209c : 26 03       LD H, 0x03
 
- 209e : f0 04       LD A, (0xFF00 + 0x04)   
+ 209e : f0 04       LD A, (0xFF00 + 0x04)
 
- 20a0 : 47          LD B, A                 
- 20a1 : af          XOR A, A                
- 20a2 : 05          DEC B                   
- 20a3 : 28 0a       JR Z, 0x0a              
+ 20a0 : 47          LD B, A
+ 20a1 : af          XOR A, A
+ 20a2 : 05          DEC B
+ 20a3 : 28 0a       JR Z, 0x0a
 
- 20a5 : 3c          INC A                   
- 20a6 : 3c          INC A                   
- 20a7 : 3c          INC A                   
- 20a8 : 3c          INC A                   
- 20a9 : fe 1c       CP A, 0x1c              
+ 20a5 : 3c          INC A
+ 20a6 : 3c          INC A
+ 20a7 : 3c          INC A
+ 20a8 : 3c          INC A
+ 20a9 : fe 1c       CP A, 0x1c
 
- 20ab : 28 f4       JR Z, 0xf4              
+ 20ab : 28 f4       JR Z, 0xf4
 
- 20ad : 18 f3       JR 0xf3                 
+ 20ad : 18 f3       JR 0xf3
 
- 20af : 57          LD D, A                 
- 20b0 : f0 ae       LD A, (0xFF00 + 0xae)   
+ 20af : 57          LD D, A
+ 20b0 : f0 ae       LD A, (0xFF00 + 0xae)
 
- 20b2 : 5f          LD E, A                 
- 20b3 : 25          DEC H                   
- 20b4 : 28 07       JR Z, 0x07              
+ 20b2 : 5f          LD E, A
+ 20b3 : 25          DEC H
+ 20b4 : 28 07       JR Z, 0x07
 
- 20b6 : b2          OR A, D                 
- 20b7 : b1          OR A, C                 
- 20b8 : e6 fc       AND A, 0xfc             
+ 20b6 : b2          OR A, D
+ 20b7 : b1          OR A, C
+ 20b8 : e6 fc       AND A, 0xfc
 
- 20ba : b9          CP A, C                 
- 20bb : 28 e1       JR Z, 0xe1              
+ 20ba : b9          CP A, C
+ 20bb : 28 e1       JR Z, 0xe1
 
- 20bd : 7a          LD A, D                 
- 20be : e0 ae       LD (0xFF00 + 0xae), A   
+ 20bd : 7a          LD A, D
+ 20be : e0 ae       LD (0xFF00 + 0xae), A
 
- 20c0 : 7b          LD A, E                 
- 20c1 : ea 13 c2    LD (0x13c2), A          
+ 20c0 : 7b          LD A, E
+ 20c1 : ea 13 c2    LD (0x13c2), A
 
 
- 20c4 : cd ea 26    CALL 0xea26             
+ 20c4 : cd ea 26    CALL 0xea26
 
 
- 20c7 : f0 9a       LD A, (0xFF00 + 0x9a)   
+ 20c7 : f0 9a       LD A, (0xFF00 + 0x9a)
 
- 20c9 : e0 99       LD (0xFF00 + 0x99), A   
+ 20c9 : e0 99       LD (0xFF00 + 0x99), A
 
- 20cb : c9          RET                     
- 20cc : fa c7 c0    LD A, (0xc7c0)          
+ 20cb : c9          RET
+ 20cc : fa c7 c0    LD A, (0xc7c0)
 
 
- 20cf : a7          AND A, A                
- 20d0 : 28 0c       JR Z, 0x0c              
+ 20cf : a7          AND A, A
+ 20d0 : 28 0c       JR Z, 0x0c
 
- 20d2 : f0 81       LD A, (0xFF00 + 0x81)   
+ 20d2 : f0 81       LD A, (0xFF00 + 0x81)
 
- 20d4 : e6 b0       AND A, 0xb0             
+ 20d4 : e6 b0       AND A, 0xb0
 
- 20d6 : fe 80       CP A, 0x80              
+ 20d6 : fe 80       CP A, 0x80
 
- 20d8 : 20 25       JR NZ, 0x25             
+ 20d8 : 20 25       JR NZ, 0x25
 
- 20da : af          XOR A, A                
- 20db : ea c7 c0    LD (0xc7c0), A          
+ 20da : af          XOR A, A
+ 20db : ea c7 c0    LD (0xc7c0), A
 
 
- 20de : f0 a7       LD A, (0xFF00 + 0xa7)   
+ 20de : f0 a7       LD A, (0xFF00 + 0xa7)
 
- 20e0 : a7          AND A, A                
- 20e1 : 20 29       JR NZ, 0x29             
+ 20e0 : a7          AND A, A
+ 20e1 : 20 29       JR NZ, 0x29
 
- 20e3 : f0 98       LD A, (0xFF00 + 0x98)   
+ 20e3 : f0 98       LD A, (0xFF00 + 0x98)
 
- 20e5 : a7          AND A, A                
- 20e6 : 20 24       JR NZ, 0x24             
+ 20e5 : a7          AND A, A
+ 20e6 : 20 24       JR NZ, 0x24
 
- 20e8 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 20e8 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 20ea : a7          AND A, A                
- 20eb : 20 1f       JR NZ, 0x1f             
+ 20ea : a7          AND A, A
+ 20eb : 20 1f       JR NZ, 0x1f
 
- 20ed : 3e 03       LD A, 0x03              
+ 20ed : 3e 03       LD A, 0x03
 
- 20ef : e0 a7       LD (0xFF00 + 0xa7), A   
+ 20ef : e0 a7       LD (0xFF00 + 0xa7), A
 
- 20f1 : 21 e5 ff    LD HL, 0xe5ff           
+ 20f1 : 21 e5 ff    LD HL, 0xe5ff
 
 
- 20f4 : 34          INC (HL)                
- 20f5 : 18 26       JR 0x26                 
+ 20f4 : 34          INC (HL)
+ 20f5 : 18 26       JR 0x26
 
- 20f7 : f0 80       LD A, (0xFF00 + 0x80)   
+ 20f7 : f0 80       LD A, (0xFF00 + 0x80)
 
- 20f9 : e6 b0       AND A, 0xb0             
+ 20f9 : e6 b0       AND A, 0xb0
 
- 20fb : fe 80       CP A, 0x80              
+ 20fb : fe 80       CP A, 0x80
 
- 20fd : 28 cd       JR Z, 0xcd              
+ 20fd : 28 cd       JR Z, 0xcd
 
- 20ff : 21 e5 ff    LD HL, 0xe5ff           
+ 20ff : 21 e5 ff    LD HL, 0xe5ff
 
 
- 2102 : 36 00       LD (HL), 0x00           
+ 2102 : 36 00       LD (HL), 0x00
 
- 2104 : f0 99       LD A, (0xFF00 + 0x99)   
+ 2104 : f0 99       LD A, (0xFF00 + 0x99)
 
- 2106 : a7          AND A, A                
- 2107 : 28 07       JR Z, 0x07              
+ 2106 : a7          AND A, A
+ 2107 : 28 07       JR Z, 0x07
 
- 2109 : 3d          DEC A                   
- 210a : e0 99       LD (0xFF00 + 0x99), A   
+ 2109 : 3d          DEC A
+ 210a : e0 99       LD (0xFF00 + 0x99), A
 
- 210c : cd d7 26    CALL 0xd726             
+ 210c : cd d7 26    CALL 0xd726
 
 
- 210f : c9          RET                     
- 2110 : f0 98       LD A, (0xFF00 + 0x98)   
+ 210f : c9          RET
+ 2110 : f0 98       LD A, (0xFF00 + 0x98)
 
- 2112 : fe 03       CP A, 0x03              
+ 2112 : fe 03       CP A, 0x03
 
- 2114 : c8          RET Z                   
- 2115 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 2114 : c8          RET Z
+ 2115 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 2117 : a7          AND A, A                
- 2118 : c0          RET NZ                  
- 2119 : f0 9a       LD A, (0xFF00 + 0x9a)   
+ 2117 : a7          AND A, A
+ 2118 : c0          RET NZ
+ 2119 : f0 9a       LD A, (0xFF00 + 0x9a)
 
- 211b : e0 99       LD (0xFF00 + 0x99), A   
+ 211b : e0 99       LD (0xFF00 + 0x99), A
 
- 211d : 21 01 c2    LD HL, 0x01c2           
+ 211d : 21 01 c2    LD HL, 0x01c2
 
 
- 2120 : 7e          LD A, (HL)              
- 2121 : e0 a0       LD (0xFF00 + 0xa0), A   
+ 2120 : 7e          LD A, (HL)
+ 2121 : e0 a0       LD (0xFF00 + 0xa0), A
 
- 2123 : c6 08       ADD A, 0x08             
+ 2123 : c6 08       ADD A, 0x08
 
- 2125 : 77          LD (HL), A              
- 2126 : cd d7 26    CALL 0xd726             
+ 2125 : 77          LD (HL), A
+ 2126 : cd d7 26    CALL 0xd726
 
 
- 2129 : cd c7 25    CALL 0xc725             
+ 2129 : cd c7 25    CALL 0xc725
 
 
- 212c : a7          AND A, A                
- 212d : c8          RET Z                   
- 212e : f0 a0       LD A, (0xFF00 + 0xa0)   
+ 212c : a7          AND A, A
+ 212d : c8          RET Z
+ 212e : f0 a0       LD A, (0xFF00 + 0xa0)
 
- 2130 : 21 01 c2    LD HL, 0x01c2           
+ 2130 : 21 01 c2    LD HL, 0x01c2
 
 
- 2133 : 77          LD (HL), A              
- 2134 : cd d7 26    CALL 0xd726             
+ 2133 : 77          LD (HL), A
+ 2134 : cd d7 26    CALL 0xd726
 
 
- 2137 : 3e 01       LD A, 0x01              
+ 2137 : 3e 01       LD A, 0x01
 
- 2139 : e0 98       LD (0xFF00 + 0x98), A   
+ 2139 : e0 98       LD (0xFF00 + 0x98), A
 
- 213b : ea c7 c0    LD (0xc7c0), A          
+ 213b : ea c7 c0    LD (0xc7c0), A
 
 
- 213e : f0 e5       LD A, (0xFF00 + 0xe5)   
+ 213e : f0 e5       LD A, (0xFF00 + 0xe5)
 
- 2140 : a7          AND A, A                
- 2141 : 28 1b       JR Z, 0x1b              
+ 2140 : a7          AND A, A
+ 2141 : 28 1b       JR Z, 0x1b
 
- 2143 : 4f          LD C, A                 
- 2144 : f0 c0       LD A, (0xFF00 + 0xc0)   
+ 2143 : 4f          LD C, A
+ 2144 : f0 c0       LD A, (0xFF00 + 0xc0)
 
- 2146 : fe 37       CP A, 0x37              
+ 2146 : fe 37       CP A, 0x37
 
- 2148 : 28 37       JR Z, 0x37              
+ 2148 : 28 37       JR Z, 0x37
 
 
 
@@ -8537,15 +8537,15 @@
 
 
 
- 215b : af          XOR A, A                
- 215c : e0 e5       LD (0xFF00 + 0xe5), A   
+ 215b : af          XOR A, A
+ 215c : e0 e5       LD (0xFF00 + 0xe5), A
 
- 215e : fa 01 c2    LD A, (0x01c2)          
+ 215e : fa 01 c2    LD A, (0x01c2)
 
 
- 2161 : fe 18       CP A, 0x18              
+ 2161 : fe 18       CP A, 0x18
 
- 2163 : c0          RET NZ                  
+ 2163 : c0          RET NZ
 
 
 
@@ -8575,62 +8575,62 @@
 
 
 
- 2181 : af          XOR A, A                
- 2182 : 0d          DEC C                   
- 2183 : 28 04       JR Z, 0x04              
+ 2181 : af          XOR A, A
+ 2182 : 0d          DEC C
+ 2183 : 28 04       JR Z, 0x04
 
- 2185 : 3c          INC A                   
- 2186 : 27          DAA                     
- 2187 : 18 f9       JR 0xf9                 
+ 2185 : 3c          INC A
+ 2186 : 27          DAA
+ 2187 : 18 f9       JR 0xf9
 
- 2189 : 5f          LD E, A                 
- 218a : 16 00       LD D, 0x00              
+ 2189 : 5f          LD E, A
+ 218a : 16 00       LD D, 0x00
 
- 218c : 21 a0 c0    LD HL, 0xa0c0           
+ 218c : 21 a0 c0    LD HL, 0xa0c0
 
 
- 218f : cd 66 01    CALL 0x6601             
+ 218f : cd 66 01    CALL 0x6601
 
 
- 2192 : 3e 01       LD A, 0x01              
+ 2192 : 3e 01       LD A, 0x01
 
- 2194 : ea ce c0    LD (0xcec0), A          
+ 2194 : ea ce c0    LD (0xcec0), A
 
 
- 2197 : 18 c2       JR 0xc2                 
+ 2197 : 18 c2       JR 0xc2
 
- 2199 : f0 98       LD A, (0xFF00 + 0x98)   
+ 2199 : f0 98       LD A, (0xFF00 + 0x98)
 
- 219b : fe 02       CP A, 0x02              
+ 219b : fe 02       CP A, 0x02
 
- 219d : c0          RET NZ                  
- 219e : 3e 02       LD A, 0x02              
+ 219d : c0          RET NZ
+ 219e : 3e 02       LD A, 0x02
 
- 21a0 : ea f8 df    LD (0xf8df), A          
+ 21a0 : ea f8 df    LD (0xf8df), A
 
 
- 21a3 : af          XOR A, A                
- 21a4 : e0 a0       LD (0xFF00 + 0xa0), A   
+ 21a3 : af          XOR A, A
+ 21a4 : e0 a0       LD (0xFF00 + 0xa0), A
 
- 21a6 : 11 a3 c0    LD DE, 0xa3c0           
+ 21a6 : 11 a3 c0    LD DE, 0xa3c0
 
 
- 21a9 : 21 42 c8    LD HL, 0x42c8           
+ 21a9 : 21 42 c8    LD HL, 0x42c8
 
 
- 21ac : 06 10       LD B, 0x10              
+ 21ac : 06 10       LD B, 0x10
 
- 21ae : 0e 0a       LD C, 0x0a              
+ 21ae : 0e 0a       LD C, 0x0a
 
- 21b0 : e5          PUSH HL                 
- 21b1 : 2a          LDI A, (HL)             
- 21b2 : fe 2f       CP A, 0x2f              
+ 21b0 : e5          PUSH HL
+ 21b1 : 2a          LDI A, (HL)
+ 21b2 : fe 2f       CP A, 0x2f
 
- 21b4 : ca 38 22    JP Z, 0x3822            
+ 21b4 : ca 38 22    JP Z, 0x3822
 
 
- 21b7 : 0d          DEC C                   
- 21b8 : 20 f7       JR NZ, 0xf7             
+ 21b7 : 0d          DEC C
+ 21b8 : 20 f7       JR NZ, 0xf7
 
 
 
@@ -8644,26 +8644,26 @@
 
 
 
- 21c6 : d5          PUSH DE                 
- 21c7 : 11 20 00    LD DE, 0x2000           
+ 21c6 : d5          PUSH DE
+ 21c7 : 11 20 00    LD DE, 0x2000
 
 
- 21ca : 19          ADD HL, DE              
- 21cb : d1          POP DE                  
- 21cc : 05          DEC B                   
- 21cd : 20 df       JR NZ, 0xdf             
+ 21ca : 19          ADD HL, DE
+ 21cb : d1          POP DE
+ 21cc : 05          DEC B
+ 21cd : 20 df       JR NZ, 0xdf
 
- 21cf : 3e 03       LD A, 0x03              
+ 21cf : 3e 03       LD A, 0x03
 
- 21d1 : e0 98       LD (0xFF00 + 0x98), A   
+ 21d1 : e0 98       LD (0xFF00 + 0x98), A
 
- 21d3 : 3d          DEC A                   
- 21d4 : e0 a6       LD (0xFF00 + 0xa6), A   
+ 21d3 : 3d          DEC A
+ 21d4 : e0 a6       LD (0xFF00 + 0xa6), A
 
- 21d6 : f0 a0       LD A, (0xFF00 + 0xa0)   
+ 21d6 : f0 a0       LD A, (0xFF00 + 0xa0)
 
- 21d8 : a7          AND A, A                
- 21d9 : c8          RET Z                   
+ 21d8 : a7          AND A, A
+ 21d9 : c8          RET Z
 
 
 
@@ -8758,35 +8758,35 @@
 
 
 
- 2238 : e1          POP HL                  
- 2239 : 18 8b       JR 0x8b                 
+ 2238 : e1          POP HL
+ 2239 : 18 8b       JR 0x8b
 
 
 
 
 
 
- 2240 : f0 98       LD A, (0xFF00 + 0x98)   
+ 2240 : f0 98       LD A, (0xFF00 + 0x98)
 
- 2242 : fe 03       CP A, 0x03              
+ 2242 : fe 03       CP A, 0x03
 
- 2244 : c0          RET NZ                  
- 2245 : f0 a6       LD A, (0xFF00 + 0xa6)   
+ 2244 : c0          RET NZ
+ 2245 : f0 a6       LD A, (0xFF00 + 0xa6)
 
- 2247 : a7          AND A, A                
- 2248 : c0          RET NZ                  
- 2249 : 11 a3 c0    LD DE, 0xa3c0           
+ 2247 : a7          AND A, A
+ 2248 : c0          RET NZ
+ 2249 : 11 a3 c0    LD DE, 0xa3c0
 
 
- 224c : f0 9c       LD A, (0xFF00 + 0x9c)   
+ 224c : f0 9c       LD A, (0xFF00 + 0x9c)
 
- 224e : cb 47       BIT 0, A                
+ 224e : cb 47       BIT 0, A
 
- 2250 : 20 3c       JR NZ, 0x3c             
+ 2250 : 20 3c       JR NZ, 0x3c
 
- 2252 : 1a          LD A, (DE)              
- 2253 : a7          AND A, A                
- 2254 : 28 52       JR Z, 0x52              
+ 2252 : 1a          LD A, (DE)
+ 2253 : a7          AND A, A
+ 2254 : 28 52       JR Z, 0x52
 
 
 
@@ -8840,10 +8840,10 @@
 
 
 
- 228a : af          XOR A, A                
- 228b : e0 98       LD (0xFF00 + 0x98), A   
+ 228a : af          XOR A, A
+ 228b : e0 98       LD (0xFF00 + 0x98), A
 
- 228d : c9          RET                     
+ 228d : c9          RET
 
 
 
@@ -8870,20 +8870,20 @@
 
 
 
- 22a8 : cd 62 20    CALL 0x6220             
+ 22a8 : cd 62 20    CALL 0x6220
 
 
- 22ab : 18 dd       JR 0xdd                 
+ 22ab : 18 dd       JR 0xdd
 
- 22ad : f0 a6       LD A, (0xFF00 + 0xa6)   
+ 22ad : f0 a6       LD A, (0xFF00 + 0xa6)
 
- 22af : a7          AND A, A                
- 22b0 : c0          RET NZ                  
- 22b1 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 22af : a7          AND A, A
+ 22b0 : c0          RET NZ
+ 22b1 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 22b3 : fe 01       CP A, 0x01              
+ 22b3 : fe 01       CP A, 0x01
 
- 22b5 : c0          RET NZ                  
+ 22b5 : c0          RET NZ
 
 
 
@@ -8945,22 +8945,22 @@
 
 
 
- 22f3 : 21 a3 c0    LD HL, 0xa3c0           
+ 22f3 : 21 a3 c0    LD HL, 0xa3c0
 
 
- 22f6 : af          XOR A, A                
- 22f7 : 06 09       LD B, 0x09              
+ 22f6 : af          XOR A, A
+ 22f7 : 06 09       LD B, 0x09
 
- 22f9 : 22          LDI (HL), A             
- 22fa : 05          DEC B                   
- 22fb : 20 fc       JR NZ, 0xfc             
+ 22f9 : 22          LDI (HL), A
+ 22fa : 05          DEC B
+ 22fb : 20 fc       JR NZ, 0xfc
 
- 22fd : c9          RET                     
- 22fe : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 22fd : c9          RET
+ 22fe : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 2300 : fe 02       CP A, 0x02              
+ 2300 : fe 02       CP A, 0x02
 
- 2302 : c0          RET NZ                  
+ 2302 : c0          RET NZ
 
 
 
@@ -8971,11 +8971,11 @@
 
 
 
- 230d : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 230d : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 230f : fe 03       CP A, 0x03              
+ 230f : fe 03       CP A, 0x03
 
- 2311 : c0          RET NZ                  
+ 2311 : c0          RET NZ
 
 
 
@@ -8986,11 +8986,11 @@
 
 
 
- 231c : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 231c : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 231e : fe 04       CP A, 0x04              
+ 231e : fe 04       CP A, 0x04
 
- 2320 : c0          RET NZ                  
+ 2320 : c0          RET NZ
 
 
 
@@ -9001,11 +9001,11 @@
 
 
 
- 232b : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 232b : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 232d : fe 05       CP A, 0x05              
+ 232d : fe 05       CP A, 0x05
 
- 232f : c0          RET NZ                  
+ 232f : c0          RET NZ
 
 
 
@@ -9016,11 +9016,11 @@
 
 
 
- 233a : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 233a : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 233c : fe 06       CP A, 0x06              
+ 233c : fe 06       CP A, 0x06
 
- 233e : c0          RET NZ                  
+ 233e : c0          RET NZ
 
 
 
@@ -9031,11 +9031,11 @@
 
 
 
- 2349 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 2349 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 234b : fe 07       CP A, 0x07              
+ 234b : fe 07       CP A, 0x07
 
- 234d : c0          RET NZ                  
+ 234d : c0          RET NZ
 
 
 
@@ -9046,11 +9046,11 @@
 
 
 
- 2358 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 2358 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 235a : fe 08       CP A, 0x08              
+ 235a : fe 08       CP A, 0x08
 
- 235c : c0          RET NZ                  
+ 235c : c0          RET NZ
 
 
 
@@ -9089,11 +9089,11 @@
 
 
 
- 2383 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 2383 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 2385 : fe 09       CP A, 0x09              
+ 2385 : fe 09       CP A, 0x09
 
- 2387 : c0          RET NZ                  
+ 2387 : c0          RET NZ
 
 
 
@@ -9104,11 +9104,11 @@
 
 
 
- 2392 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 2392 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 2394 : fe 0a       CP A, 0x0a              
+ 2394 : fe 0a       CP A, 0x0a
 
- 2396 : c0          RET NZ                  
+ 2396 : c0          RET NZ
 
 
 
@@ -9119,11 +9119,11 @@
 
 
 
- 23a1 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 23a1 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 23a3 : fe 0b       CP A, 0x0b              
+ 23a3 : fe 0b       CP A, 0x0b
 
- 23a5 : c0          RET NZ                  
+ 23a5 : c0          RET NZ
 
 
 
@@ -9134,11 +9134,11 @@
 
 
 
- 23b0 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 23b0 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 23b2 : fe 0c       CP A, 0x0c              
+ 23b2 : fe 0c       CP A, 0x0c
 
- 23b4 : c0          RET NZ                  
+ 23b4 : c0          RET NZ
 
 
 
@@ -9149,11 +9149,11 @@
 
 
 
- 23bf : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 23bf : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 23c1 : fe 0d       CP A, 0x0d              
+ 23c1 : fe 0d       CP A, 0x0d
 
- 23c3 : c0          RET NZ                  
+ 23c3 : c0          RET NZ
 
 
 
@@ -9164,11 +9164,11 @@
 
 
 
- 23ce : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 23ce : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 23d0 : fe 0e       CP A, 0x0e              
+ 23d0 : fe 0e       CP A, 0x0e
 
- 23d2 : c0          RET NZ                  
+ 23d2 : c0          RET NZ
 
 
 
@@ -9179,11 +9179,11 @@
 
 
 
- 23dd : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 23dd : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 23df : fe 0f       CP A, 0x0f              
+ 23df : fe 0f       CP A, 0x0f
 
- 23e1 : c0          RET NZ                  
+ 23e1 : c0          RET NZ
 
 
 
@@ -9194,11 +9194,11 @@
 
 
 
- 23ec : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 23ec : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 23ee : fe 10       CP A, 0x10              
+ 23ee : fe 10       CP A, 0x10
 
- 23f0 : c0          RET NZ                  
+ 23f0 : c0          RET NZ
 
 
 
@@ -9212,11 +9212,11 @@
 
 
 
- 23fe : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 23fe : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 2400 : fe 11       CP A, 0x11              
+ 2400 : fe 11       CP A, 0x11
 
- 2402 : c0          RET NZ                  
+ 2402 : c0          RET NZ
 
 
 
@@ -9237,11 +9237,11 @@
 
 
 
- 2417 : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 2417 : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 2419 : fe 12       CP A, 0x12              
+ 2419 : fe 12       CP A, 0x12
 
- 241b : c0          RET NZ                  
+ 241b : c0          RET NZ
 
 
 
@@ -9258,11 +9258,11 @@
 
 
 
- 242c : f0 e3       LD A, (0xFF00 + 0xe3)   
+ 242c : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 242e : fe 13       CP A, 0x13              
+ 242e : fe 13       CP A, 0x13
 
- 2430 : c0          RET NZ                  
+ 2430 : c0          RET NZ
 
 
 
@@ -9369,22 +9369,22 @@
 
 
 
- 249b : f0 e1       LD A, (0xFF00 + 0xe1)   
+ 249b : f0 e1       LD A, (0xFF00 + 0xe1)
 
- 249d : a7          AND A, A                
- 249e : c0          RET NZ                  
- 249f : f0 c0       LD A, (0xFF00 + 0xc0)   
+ 249d : a7          AND A, A
+ 249e : c0          RET NZ
+ 249f : f0 c0       LD A, (0xFF00 + 0xc0)
 
- 24a1 : fe 37       CP A, 0x37              
+ 24a1 : fe 37       CP A, 0x37
 
- 24a3 : c0          RET NZ                  
- 24a4 : 11 a2 c0    LD DE, 0xa2c0           
+ 24a3 : c0          RET NZ
+ 24a4 : 11 a2 c0    LD DE, 0xa2c0
 
 
- 24a7 : cd 7e 2a    CALL 0x7e2a             
+ 24a7 : cd 7e 2a    CALL 0x7e2a
 
 
- 24aa : c9          RET                     
+ 24aa : c9          RET
 
 
 
@@ -9491,64 +9491,64 @@
 
 
 
- 2515 : 21 03 c2    LD HL, 0x03c2           
+ 2515 : 21 03 c2    LD HL, 0x03c2
 
 
- 2518 : 7e          LD A, (HL)              
- 2519 : e0 a0       LD (0xFF00 + 0xa0), A   
+ 2518 : 7e          LD A, (HL)
+ 2519 : e0 a0       LD (0xFF00 + 0xa0), A
 
- 251b : f0 81       LD A, (0xFF00 + 0x81)   
+ 251b : f0 81       LD A, (0xFF00 + 0x81)
 
- 251d : 47          LD B, A                 
- 251e : cb 48       BIT 1, B                
+ 251d : 47          LD B, A
+ 251e : cb 48       BIT 1, B
 
- 2520 : 20 12       JR NZ, 0x12             
+ 2520 : 20 12       JR NZ, 0x12
 
- 2522 : cb 40       BIT 0, B                
+ 2522 : cb 40       BIT 0, B
 
- 2524 : 28 37       JR Z, 0x37              
+ 2524 : 28 37       JR Z, 0x37
 
- 2526 : 7e          LD A, (HL)              
- 2527 : e6 03       AND A, 0x03             
+ 2526 : 7e          LD A, (HL)
+ 2527 : e6 03       AND A, 0x03
 
- 2529 : 28 03       JR Z, 0x03              
+ 2529 : 28 03       JR Z, 0x03
 
- 252b : 35          DEC (HL)                
- 252c : 18 14       JR 0x14                 
+ 252b : 35          DEC (HL)
+ 252c : 18 14       JR 0x14
 
- 252e : 7e          LD A, (HL)              
- 252f : f6 03       OR A, 0x03              
+ 252e : 7e          LD A, (HL)
+ 252f : f6 03       OR A, 0x03
 
- 2531 : 77          LD (HL), A              
- 2532 : 18 0e       JR 0x0e                 
+ 2531 : 77          LD (HL), A
+ 2532 : 18 0e       JR 0x0e
 
- 2534 : 7e          LD A, (HL)              
- 2535 : e6 03       AND A, 0x03             
+ 2534 : 7e          LD A, (HL)
+ 2535 : e6 03       AND A, 0x03
 
- 2537 : fe 03       CP A, 0x03              
+ 2537 : fe 03       CP A, 0x03
 
- 2539 : 28 03       JR Z, 0x03              
+ 2539 : 28 03       JR Z, 0x03
 
- 253b : 34          INC (HL)                
- 253c : 18 04       JR 0x04                 
+ 253b : 34          INC (HL)
+ 253c : 18 04       JR 0x04
 
- 253e : 7e          LD A, (HL)              
- 253f : e6 fc       AND A, 0xfc             
+ 253e : 7e          LD A, (HL)
+ 253f : e6 fc       AND A, 0xfc
 
- 2541 : 77          LD (HL), A              
- 2542 : 3e 03       LD A, 0x03              
+ 2541 : 77          LD (HL), A
+ 2542 : 3e 03       LD A, 0x03
 
- 2544 : ea e0 df    LD (0xe0df), A          
+ 2544 : ea e0 df    LD (0xe0df), A
 
 
- 2547 : cd d7 26    CALL 0xd726             
+ 2547 : cd d7 26    CALL 0xd726
 
 
- 254a : cd c7 25    CALL 0xc725             
+ 254a : cd c7 25    CALL 0xc725
 
 
- 254d : a7          AND A, A                
- 254e : 28 0d       JR Z, 0x0d              
+ 254d : a7          AND A, A
+ 254e : 28 0d       JR Z, 0x0d
 
 
 
@@ -9563,214 +9563,214 @@
 
 
 
- 255d : 21 02 c2    LD HL, 0x02c2           
+ 255d : 21 02 c2    LD HL, 0x02c2
 
 
- 2560 : f0 81       LD A, (0xFF00 + 0x81)   
+ 2560 : f0 81       LD A, (0xFF00 + 0x81)
 
- 2562 : 47          LD B, A                 
- 2563 : f0 80       LD A, (0xFF00 + 0x80)   
+ 2562 : 47          LD B, A
+ 2563 : f0 80       LD A, (0xFF00 + 0x80)
 
- 2565 : 4f          LD C, A                 
- 2566 : 7e          LD A, (HL)              
- 2567 : e0 a0       LD (0xFF00 + 0xa0), A   
+ 2565 : 4f          LD C, A
+ 2566 : 7e          LD A, (HL)
+ 2567 : e0 a0       LD (0xFF00 + 0xa0), A
 
- 2569 : cb 60       BIT 4, B                
+ 2569 : cb 60       BIT 4, B
 
- 256b : 3e 17       LD A, 0x17              
+ 256b : 3e 17       LD A, 0x17
 
- 256d : 20 0c       JR NZ, 0x0c             
+ 256d : 20 0c       JR NZ, 0x0c
 
- 256f : cb 61       BIT 4, C                
+ 256f : cb 61       BIT 4, C
 
- 2571 : 28 2d       JR Z, 0x2d              
+ 2571 : 28 2d       JR Z, 0x2d
 
- 2573 : f0 aa       LD A, (0xFF00 + 0xaa)   
+ 2573 : f0 aa       LD A, (0xFF00 + 0xaa)
 
- 2575 : 3d          DEC A                   
- 2576 : e0 aa       LD (0xFF00 + 0xaa), A   
+ 2575 : 3d          DEC A
+ 2576 : e0 aa       LD (0xFF00 + 0xaa), A
 
- 2578 : c0          RET NZ                  
- 2579 : 3e 09       LD A, 0x09              
+ 2578 : c0          RET NZ
+ 2579 : 3e 09       LD A, 0x09
 
- 257b : e0 aa       LD (0xFF00 + 0xaa), A   
+ 257b : e0 aa       LD (0xFF00 + 0xaa), A
 
- 257d : 7e          LD A, (HL)              
- 257e : c6 08       ADD A, 0x08             
+ 257d : 7e          LD A, (HL)
+ 257e : c6 08       ADD A, 0x08
 
- 2580 : 77          LD (HL), A              
- 2581 : cd d7 26    CALL 0xd726             
+ 2580 : 77          LD (HL), A
+ 2581 : cd d7 26    CALL 0xd726
 
 
- 2584 : 3e 04       LD A, 0x04              
+ 2584 : 3e 04       LD A, 0x04
 
- 2586 : ea e0 df    LD (0xe0df), A          
+ 2586 : ea e0 df    LD (0xe0df), A
 
 
- 2589 : cd c7 25    CALL 0xc725             
+ 2589 : cd c7 25    CALL 0xc725
 
 
- 258c : a7          AND A, A                
- 258d : c8          RET Z                   
- 258e : 21 02 c2    LD HL, 0x02c2           
+ 258c : a7          AND A, A
+ 258d : c8          RET Z
+ 258e : 21 02 c2    LD HL, 0x02c2
 
 
- 2591 : af          XOR A, A                
- 2592 : ea e0 df    LD (0xe0df), A          
+ 2591 : af          XOR A, A
+ 2592 : ea e0 df    LD (0xe0df), A
 
 
- 2595 : f0 a0       LD A, (0xFF00 + 0xa0)   
+ 2595 : f0 a0       LD A, (0xFF00 + 0xa0)
 
- 2597 : 77          LD (HL), A              
- 2598 : cd d7 26    CALL 0xd726             
+ 2597 : 77          LD (HL), A
+ 2598 : cd d7 26    CALL 0xd726
 
 
- 259b : 3e 01       LD A, 0x01              
+ 259b : 3e 01       LD A, 0x01
 
- 259d : e0 aa       LD (0xFF00 + 0xaa), A   
+ 259d : e0 aa       LD (0xFF00 + 0xaa), A
 
- 259f : c9          RET                     
- 25a0 : cb 68       BIT 5, B                
+ 259f : c9          RET
+ 25a0 : cb 68       BIT 5, B
 
- 25a2 : 3e 17       LD A, 0x17              
+ 25a2 : 3e 17       LD A, 0x17
 
- 25a4 : 20 0c       JR NZ, 0x0c             
+ 25a4 : 20 0c       JR NZ, 0x0c
 
- 25a6 : cb 69       BIT 5, C                
+ 25a6 : cb 69       BIT 5, C
 
- 25a8 : 28 f3       JR Z, 0xf3              
+ 25a8 : 28 f3       JR Z, 0xf3
 
- 25aa : f0 aa       LD A, (0xFF00 + 0xaa)   
+ 25aa : f0 aa       LD A, (0xFF00 + 0xaa)
 
- 25ac : 3d          DEC A                   
- 25ad : e0 aa       LD (0xFF00 + 0xaa), A   
+ 25ac : 3d          DEC A
+ 25ad : e0 aa       LD (0xFF00 + 0xaa), A
 
- 25af : c0          RET NZ                  
- 25b0 : 3e 09       LD A, 0x09              
+ 25af : c0          RET NZ
+ 25b0 : 3e 09       LD A, 0x09
 
- 25b2 : e0 aa       LD (0xFF00 + 0xaa), A   
+ 25b2 : e0 aa       LD (0xFF00 + 0xaa), A
 
- 25b4 : 7e          LD A, (HL)              
- 25b5 : d6 08       SUB A, 0x08             
+ 25b4 : 7e          LD A, (HL)
+ 25b5 : d6 08       SUB A, 0x08
 
- 25b7 : 77          LD (HL), A              
- 25b8 : 3e 04       LD A, 0x04              
+ 25b7 : 77          LD (HL), A
+ 25b8 : 3e 04       LD A, 0x04
 
- 25ba : ea e0 df    LD (0xe0df), A          
+ 25ba : ea e0 df    LD (0xe0df), A
 
 
- 25bd : cd d7 26    CALL 0xd726             
+ 25bd : cd d7 26    CALL 0xd726
 
 
- 25c0 : cd c7 25    CALL 0xc725             
+ 25c0 : cd c7 25    CALL 0xc725
 
 
- 25c3 : a7          AND A, A                
- 25c4 : c8          RET Z                   
- 25c5 : 18 c7       JR 0xc7                 
+ 25c3 : a7          AND A, A
+ 25c4 : c8          RET Z
+ 25c5 : 18 c7       JR 0xc7
 
- 25c7 : 21 10 c0    LD HL, 0x10c0           
+ 25c7 : 21 10 c0    LD HL, 0x10c0
 
 
- 25ca : 06 04       LD B, 0x04              
+ 25ca : 06 04       LD B, 0x04
 
- 25cc : 2a          LDI A, (HL)             
- 25cd : e0 b2       LD (0xFF00 + 0xb2), A   
+ 25cc : 2a          LDI A, (HL)
+ 25cd : e0 b2       LD (0xFF00 + 0xb2), A
 
- 25cf : 2a          LDI A, (HL)             
- 25d0 : a7          AND A, A                
- 25d1 : 28 17       JR Z, 0x17              
+ 25cf : 2a          LDI A, (HL)
+ 25d0 : a7          AND A, A
+ 25d1 : 28 17       JR Z, 0x17
 
- 25d3 : e0 b3       LD (0xFF00 + 0xb3), A   
+ 25d3 : e0 b3       LD (0xFF00 + 0xb3), A
 
- 25d5 : e5          PUSH HL                 
- 25d6 : c5          PUSH BC                 
- 25d7 : cd 2b 2a    CALL 0x2b2a             
+ 25d5 : e5          PUSH HL
+ 25d6 : c5          PUSH BC
+ 25d7 : cd 2b 2a    CALL 0x2b2a
 
 
- 25da : 7c          LD A, H                 
- 25db : c6 30       ADD A, 0x30             
+ 25da : 7c          LD A, H
+ 25db : c6 30       ADD A, 0x30
 
- 25dd : 67          LD H, A                 
- 25de : 7e          LD A, (HL)              
- 25df : fe 2f       CP A, 0x2f              
+ 25dd : 67          LD H, A
+ 25de : 7e          LD A, (HL)
+ 25df : fe 2f       CP A, 0x2f
 
- 25e1 : 20 0b       JR NZ, 0x0b             
+ 25e1 : 20 0b       JR NZ, 0x0b
 
- 25e3 : c1          POP BC                  
- 25e4 : e1          POP HL                  
- 25e5 : 2c          INC L                   
- 25e6 : 2c          INC L                   
- 25e7 : 05          DEC B                   
- 25e8 : 20 e2       JR NZ, 0xe2             
+ 25e3 : c1          POP BC
+ 25e4 : e1          POP HL
+ 25e5 : 2c          INC L
+ 25e6 : 2c          INC L
+ 25e7 : 05          DEC B
+ 25e8 : 20 e2       JR NZ, 0xe2
 
- 25ea : af          XOR A, A                
- 25eb : e0 9b       LD (0xFF00 + 0x9b), A   
+ 25ea : af          XOR A, A
+ 25eb : e0 9b       LD (0xFF00 + 0x9b), A
 
- 25ed : c9          RET                     
- 25ee : c1          POP BC                  
- 25ef : e1          POP HL                  
- 25f0 : 3e 01       LD A, 0x01              
+ 25ed : c9          RET
+ 25ee : c1          POP BC
+ 25ef : e1          POP HL
+ 25f0 : 3e 01       LD A, 0x01
 
- 25f2 : e0 9b       LD (0xFF00 + 0x9b), A   
+ 25f2 : e0 9b       LD (0xFF00 + 0x9b), A
 
- 25f4 : c9          RET                     
- 25f5 : f0 98       LD A, (0xFF00 + 0x98)   
+ 25f4 : c9          RET
+ 25f5 : f0 98       LD A, (0xFF00 + 0x98)
 
- 25f7 : fe 01       CP A, 0x01              
+ 25f7 : fe 01       CP A, 0x01
 
- 25f9 : c0          RET NZ                  
- 25fa : 21 10 c0    LD HL, 0x10c0           
+ 25f9 : c0          RET NZ
+ 25fa : 21 10 c0    LD HL, 0x10c0
 
 
- 25fd : 06 04       LD B, 0x04              
+ 25fd : 06 04       LD B, 0x04
 
- 25ff : 2a          LDI A, (HL)             
- 2600 : e0 b2       LD (0xFF00 + 0xb2), A   
+ 25ff : 2a          LDI A, (HL)
+ 2600 : e0 b2       LD (0xFF00 + 0xb2), A
 
- 2602 : 2a          LDI A, (HL)             
- 2603 : a7          AND A, A                
- 2604 : 28 1d       JR Z, 0x1d              
+ 2602 : 2a          LDI A, (HL)
+ 2603 : a7          AND A, A
+ 2604 : 28 1d       JR Z, 0x1d
 
- 2606 : e0 b3       LD (0xFF00 + 0xb3), A   
+ 2606 : e0 b3       LD (0xFF00 + 0xb3), A
 
- 2608 : e5          PUSH HL                 
- 2609 : c5          PUSH BC                 
- 260a : cd 2b 2a    CALL 0x2b2a             
+ 2608 : e5          PUSH HL
+ 2609 : c5          PUSH BC
+ 260a : cd 2b 2a    CALL 0x2b2a
 
 
- 260d : e5          PUSH HL                 
- 260e : d1          POP DE                  
- 260f : c1          POP BC                  
- 2610 : e1          POP HL                  
- 2611 : f0 41       LD A, (0xFF00 + 0x41)   
+ 260d : e5          PUSH HL
+ 260e : d1          POP DE
+ 260f : c1          POP BC
+ 2610 : e1          POP HL
+ 2611 : f0 41       LD A, (0xFF00 + 0x41)
 
- 2613 : e6 03       AND A, 0x03             
+ 2613 : e6 03       AND A, 0x03
 
- 2615 : 20 fa       JR NZ, 0xfa             
+ 2615 : 20 fa       JR NZ, 0xfa
 
- 2617 : 7e          LD A, (HL)              
- 2618 : 12          LD (DE), A              
- 2619 : 7a          LD A, D                 
- 261a : c6 30       ADD A, 0x30             
+ 2617 : 7e          LD A, (HL)
+ 2618 : 12          LD (DE), A
+ 2619 : 7a          LD A, D
+ 261a : c6 30       ADD A, 0x30
 
- 261c : 57          LD D, A                 
- 261d : 2a          LDI A, (HL)             
- 261e : 12          LD (DE), A              
- 261f : 2c          INC L                   
- 2620 : 05          DEC B                   
- 2621 : 20 dc       JR NZ, 0xdc             
+ 261c : 57          LD D, A
+ 261d : 2a          LDI A, (HL)
+ 261e : 12          LD (DE), A
+ 261f : 2c          INC L
+ 2620 : 05          DEC B
+ 2621 : 20 dc       JR NZ, 0xdc
 
- 2623 : 3e 02       LD A, 0x02              
+ 2623 : 3e 02       LD A, 0x02
 
- 2625 : e0 98       LD (0xFF00 + 0x98), A   
+ 2625 : e0 98       LD (0xFF00 + 0x98), A
 
- 2627 : 21 00 c2    LD HL, 0x00c2           
+ 2627 : 21 00 c2    LD HL, 0x00c2
 
 
- 262a : 36 80       LD (HL), 0x80           
+ 262a : 36 80       LD (HL), 0x80
 
- 262c : c9          RET                     
+ 262c : c9          RET
 
 
 
@@ -9891,26 +9891,26 @@
 
 
 
- 26a5 : 21 ac c0    LD HL, 0xacc0           
+ 26a5 : 21 ac c0    LD HL, 0xacc0
 
 
- 26a8 : 06 1b       LD B, 0x1b              
+ 26a8 : 06 1b       LD B, 0x1b
 
- 26aa : af          XOR A, A                
- 26ab : 22          LDI (HL), A             
- 26ac : 05          DEC B                   
- 26ad : 20 fc       JR NZ, 0xfc             
+ 26aa : af          XOR A, A
+ 26ab : 22          LDI (HL), A
+ 26ac : 05          DEC B
+ 26ad : 20 fc       JR NZ, 0xfc
 
- 26af : 21 a0 c0    LD HL, 0xa0c0           
+ 26af : 21 a0 c0    LD HL, 0xa0c0
 
 
- 26b2 : 06 03       LD B, 0x03              
+ 26b2 : 06 03       LD B, 0x03
 
- 26b4 : 22          LDI (HL), A             
- 26b5 : 05          DEC B                   
- 26b6 : 20 fc       JR NZ, 0xfc             
+ 26b4 : 22          LDI (HL), A
+ 26b5 : 05          DEC B
+ 26b6 : 20 fc       JR NZ, 0xfc
 
- 26b8 : c9          RET                     
+ 26b8 : c9          RET
 
 
 
@@ -9923,82 +9923,82 @@
 
 
 
- 26c5 : 3e 02       LD A, 0x02              
+ 26c5 : 3e 02       LD A, 0x02
 
- 26c7 : e0 8f       LD (0xFF00 + 0x8f), A   
+ 26c7 : e0 8f       LD (0xFF00 + 0x8f), A
 
- 26c9 : af          XOR A, A                
- 26ca : e0 8e       LD (0xFF00 + 0x8e), A   
+ 26c9 : af          XOR A, A
+ 26ca : e0 8e       LD (0xFF00 + 0x8e), A
 
- 26cc : 3e c0       LD A, 0xc0              
+ 26cc : 3e c0       LD A, 0xc0
 
- 26ce : e0 8d       LD (0xFF00 + 0x8d), A   
+ 26ce : e0 8d       LD (0xFF00 + 0x8d), A
 
- 26d0 : 21 00 c2    LD HL, 0x00c2           
+ 26d0 : 21 00 c2    LD HL, 0x00c2
 
 
- 26d3 : cd d1 2a    CALL 0xd12a             
+ 26d3 : cd d1 2a    CALL 0xd12a
 
 
- 26d6 : c9          RET                     
- 26d7 : 3e 01       LD A, 0x01              
+ 26d6 : c9          RET
+ 26d7 : 3e 01       LD A, 0x01
 
- 26d9 : e0 8f       LD (0xFF00 + 0x8f), A   
+ 26d9 : e0 8f       LD (0xFF00 + 0x8f), A
 
- 26db : 3e 10       LD A, 0x10              
+ 26db : 3e 10       LD A, 0x10
 
- 26dd : e0 8e       LD (0xFF00 + 0x8e), A   
+ 26dd : e0 8e       LD (0xFF00 + 0x8e), A
 
- 26df : 3e c0       LD A, 0xc0              
+ 26df : 3e c0       LD A, 0xc0
 
- 26e1 : e0 8d       LD (0xFF00 + 0x8d), A   
+ 26e1 : e0 8d       LD (0xFF00 + 0x8d), A
 
- 26e3 : 21 00 c2    LD HL, 0x00c2           
+ 26e3 : 21 00 c2    LD HL, 0x00c2
 
 
- 26e6 : cd d1 2a    CALL 0xd12a             
+ 26e6 : cd d1 2a    CALL 0xd12a
 
 
- 26e9 : c9          RET                     
- 26ea : 3e 01       LD A, 0x01              
+ 26e9 : c9          RET
+ 26ea : 3e 01       LD A, 0x01
 
- 26ec : e0 8f       LD (0xFF00 + 0x8f), A   
+ 26ec : e0 8f       LD (0xFF00 + 0x8f), A
 
- 26ee : 3e 20       LD A, 0x20              
+ 26ee : 3e 20       LD A, 0x20
 
- 26f0 : e0 8e       LD (0xFF00 + 0x8e), A   
+ 26f0 : e0 8e       LD (0xFF00 + 0x8e), A
 
- 26f2 : 3e c0       LD A, 0xc0              
+ 26f2 : 3e c0       LD A, 0xc0
 
- 26f4 : e0 8d       LD (0xFF00 + 0x8d), A   
+ 26f4 : e0 8d       LD (0xFF00 + 0x8d), A
 
- 26f6 : 21 10 c2    LD HL, 0x10c2           
+ 26f6 : 21 10 c2    LD HL, 0x10c2
 
 
- 26f9 : cd d1 2a    CALL 0xd12a             
+ 26f9 : cd d1 2a    CALL 0xd12a
 
 
- 26fc : c9          RET                     
- 26fd : 06 20       LD B, 0x20              
+ 26fc : c9          RET
+ 26fd : 06 20       LD B, 0x20
 
- 26ff : 3e 8e       LD A, 0x8e              
+ 26ff : 3e 8e       LD A, 0x8e
 
- 2701 : 11 20 00    LD DE, 0x2000           
+ 2701 : 11 20 00    LD DE, 0x2000
 
 
- 2704 : 77          LD (HL), A              
- 2705 : 19          ADD HL, DE              
- 2706 : 05          DEC B                   
- 2707 : 20 fb       JR NZ, 0xfb             
+ 2704 : 77          LD (HL), A
+ 2705 : 19          ADD HL, DE
+ 2706 : 05          DEC B
+ 2707 : 20 fb       JR NZ, 0xfb
 
- 2709 : c9          RET                     
- 270a : 1a          LD A, (DE)              
- 270b : fe ff       CP A, 0xff              
+ 2709 : c9          RET
+ 270a : 1a          LD A, (DE)
+ 270b : fe ff       CP A, 0xff
 
- 270d : c8          RET Z                   
- 270e : 22          LDI (HL), A             
- 270f : 13          INC DE                  
- 2710 : 18 f8       JR 0xf8                 
+ 270d : c8          RET Z
+ 270e : 22          LDI (HL), A
+ 270f : 13          INC DE
+ 2710 : 18 f8       JR 0xf8
 
 
 
@@ -10215,82 +10215,82 @@
 
 
 
- 27e9 : 21 ff 9b    LD HL, 0xff9b           
+ 27e9 : 21 ff 9b    LD HL, 0xff9b
 
 
- 27ec : 01 00 04    LD BC, 0x0004           
+ 27ec : 01 00 04    LD BC, 0x0004
 
 
- 27ef : 3e 2f       LD A, 0x2f              
+ 27ef : 3e 2f       LD A, 0x2f
 
- 27f1 : 32          LDD (HL), A             
- 27f2 : 0b          DEC BC                  
- 27f3 : 78          LD A, B                 
- 27f4 : b1          OR A, C                 
- 27f5 : 20 f8       JR NZ, 0xf8             
+ 27f1 : 32          LDD (HL), A
+ 27f2 : 0b          DEC BC
+ 27f3 : 78          LD A, B
+ 27f4 : b1          OR A, C
+ 27f5 : 20 f8       JR NZ, 0xf8
 
- 27f7 : c9          RET                     
- 27f8 : 2a          LDI A, (HL)             
- 27f9 : 12          LD (DE), A              
- 27fa : 13          INC DE                  
- 27fb : 0b          DEC BC                  
- 27fc : 78          LD A, B                 
- 27fd : b1          OR A, C                 
- 27fe : 20 f8       JR NZ, 0xf8             
+ 27f7 : c9          RET
+ 27f8 : 2a          LDI A, (HL)
+ 27f9 : 12          LD (DE), A
+ 27fa : 13          INC DE
+ 27fb : 0b          DEC BC
+ 27fc : 78          LD A, B
+ 27fd : b1          OR A, C
+ 27fe : 20 f8       JR NZ, 0xf8
 
- 2800 : c9          RET                     
- 2801 : cd 17 28    CALL 0x1728             
+ 2800 : c9          RET
+ 2801 : cd 17 28    CALL 0x1728
 
 
- 2804 : 01 a0 00    LD BC, 0xa000           
+ 2804 : 01 a0 00    LD BC, 0xa000
 
 
- 2807 : cd f8 27    CALL 0xf827             
+ 2807 : cd f8 27    CALL 0xf827
 
 
- 280a : 21 87 32    LD HL, 0x8732           
+ 280a : 21 87 32    LD HL, 0x8732
 
 
- 280d : 11 00 83    LD DE, 0x0083           
+ 280d : 11 00 83    LD DE, 0x0083
 
 
- 2810 : 01 00 0d    LD BC, 0x000d           
+ 2810 : 01 00 0d    LD BC, 0x000d
 
 
- 2813 : cd f8 27    CALL 0xf827             
+ 2813 : cd f8 27    CALL 0xf827
 
 
- 2816 : c9          RET                     
- 2817 : 21 a7 41    LD HL, 0xa741           
+ 2816 : c9          RET
+ 2817 : 21 a7 41    LD HL, 0xa741
 
 
- 281a : 01 38 01    LD BC, 0x3801           
+ 281a : 01 38 01    LD BC, 0x3801
 
 
- 281d : 11 00 80    LD DE, 0x0080           
+ 281d : 11 00 80    LD DE, 0x0080
 
 
- 2820 : 2a          LDI A, (HL)             
- 2821 : 12          LD (DE), A              
- 2822 : 13          INC DE                  
- 2823 : 12          LD (DE), A              
- 2824 : 13          INC DE                  
- 2825 : 0b          DEC BC                  
- 2826 : 78          LD A, B                 
- 2827 : b1          OR A, C                 
- 2828 : 20 f6       JR NZ, 0xf6             
+ 2820 : 2a          LDI A, (HL)
+ 2821 : 12          LD (DE), A
+ 2822 : 13          INC DE
+ 2823 : 12          LD (DE), A
+ 2824 : 13          INC DE
+ 2825 : 0b          DEC BC
+ 2826 : 78          LD A, B
+ 2827 : b1          OR A, C
+ 2828 : 20 f6       JR NZ, 0xf6
 
- 282a : c9          RET                     
- 282b : cd 17 28    CALL 0x1728             
+ 282a : c9          RET
+ 282b : cd 17 28    CALL 0x1728
 
 
- 282e : 01 a0 0d    LD BC, 0xa00d           
+ 282e : 01 a0 0d    LD BC, 0xa00d
 
 
- 2831 : cd f8 27    CALL 0xf827             
+ 2831 : cd f8 27    CALL 0xf827
 
 
- 2834 : c9          RET                     
+ 2834 : c9          RET
 
 
 
@@ -10301,31 +10301,31 @@
 
 
 
- 283f : 21 00 98    LD HL, 0x0098           
+ 283f : 21 00 98    LD HL, 0x0098
 
 
- 2842 : 06 12       LD B, 0x12              
+ 2842 : 06 12       LD B, 0x12
 
- 2844 : e5          PUSH HL                 
- 2845 : 0e 14       LD C, 0x14              
+ 2844 : e5          PUSH HL
+ 2845 : 0e 14       LD C, 0x14
 
- 2847 : 1a          LD A, (DE)              
- 2848 : 22          LDI (HL), A             
- 2849 : 13          INC DE                  
- 284a : 0d          DEC C                   
- 284b : 20 fa       JR NZ, 0xfa             
+ 2847 : 1a          LD A, (DE)
+ 2848 : 22          LDI (HL), A
+ 2849 : 13          INC DE
+ 284a : 0d          DEC C
+ 284b : 20 fa       JR NZ, 0xfa
 
- 284d : e1          POP HL                  
- 284e : d5          PUSH DE                 
- 284f : 11 20 00    LD DE, 0x2000           
+ 284d : e1          POP HL
+ 284e : d5          PUSH DE
+ 284f : 11 20 00    LD DE, 0x2000
 
 
- 2852 : 19          ADD HL, DE              
- 2853 : d1          POP DE                  
- 2854 : 05          DEC B                   
- 2855 : 20 ed       JR NZ, 0xed             
+ 2852 : 19          ADD HL, DE
+ 2853 : d1          POP DE
+ 2854 : 05          DEC B
+ 2855 : 20 ed       JR NZ, 0xed
 
- 2857 : c9          RET                     
+ 2857 : c9          RET
 
 
 
@@ -10354,31 +10354,31 @@
 
 
 
- 2874 : f0 ff       LD A, (0xFF00 + 0xff)   
+ 2874 : f0 ff       LD A, (0xFF00 + 0xff)
 
- 2876 : e0 a1       LD (0xFF00 + 0xa1), A   
+ 2876 : e0 a1       LD (0xFF00 + 0xa1), A
 
- 2878 : cb 87       RES 0, A                
+ 2878 : cb 87       RES 0, A
 
- 287a : e0 ff       LD (0xFF00 + 0xff), A   
+ 287a : e0 ff       LD (0xFF00 + 0xff), A
 
- 287c : f0 44       LD A, (0xFF00 + 0x44)   
+ 287c : f0 44       LD A, (0xFF00 + 0x44)
 
- 287e : fe 91       CP A, 0x91              
+ 287e : fe 91       CP A, 0x91
 
- 2880 : 20 fa       JR NZ, 0xfa             
+ 2880 : 20 fa       JR NZ, 0xfa
 
- 2882 : f0 40       LD A, (0xFF00 + 0x40)   
+ 2882 : f0 40       LD A, (0xFF00 + 0x40)
 
- 2884 : e6 7f       AND A, 0x7f             
+ 2884 : e6 7f       AND A, 0x7f
 
- 2886 : e0 40       LD (0xFF00 + 0x40), A   
+ 2886 : e0 40       LD (0xFF00 + 0x40), A
 
- 2888 : f0 a1       LD A, (0xFF00 + 0xa1)   
+ 2888 : f0 a1       LD A, (0xFF00 + 0xa1)
 
- 288a : e0 ff       LD (0xFF00 + 0xff), A   
+ 288a : e0 ff       LD (0xFF00 + 0xff), A
 
- 288c : c9          RET                     
+ 288c : c9          RET
 
 
 
@@ -10744,100 +10744,100 @@
 
 
 
- 29fa : 3e 20       LD A, 0x20              
+ 29fa : 3e 20       LD A, 0x20
 
- 29fc : e0 00       LD (0xFF00 + 0x00), A   
+ 29fc : e0 00       LD (0xFF00 + 0x00), A
 
- 29fe : f0 00       LD A, (0xFF00 + 0x00)   
+ 29fe : f0 00       LD A, (0xFF00 + 0x00)
 
- 2a00 : f0 00       LD A, (0xFF00 + 0x00)   
+ 2a00 : f0 00       LD A, (0xFF00 + 0x00)
 
- 2a02 : 2f          CPL                     
- 2a03 : e6 0f       AND A, 0x0f             
+ 2a02 : 2f          CPL
+ 2a03 : e6 0f       AND A, 0x0f
 
- 2a05 : cb 37       SWAP A                  
+ 2a05 : cb 37       SWAP A
 
- 2a07 : 47          LD B, A                 
- 2a08 : 3e 10       LD A, 0x10              
+ 2a07 : 47          LD B, A
+ 2a08 : 3e 10       LD A, 0x10
 
- 2a0a : e0 00       LD (0xFF00 + 0x00), A   
+ 2a0a : e0 00       LD (0xFF00 + 0x00), A
 
- 2a0c : f0 00       LD A, (0xFF00 + 0x00)   
+ 2a0c : f0 00       LD A, (0xFF00 + 0x00)
 
- 2a0e : f0 00       LD A, (0xFF00 + 0x00)   
+ 2a0e : f0 00       LD A, (0xFF00 + 0x00)
 
- 2a10 : f0 00       LD A, (0xFF00 + 0x00)   
+ 2a10 : f0 00       LD A, (0xFF00 + 0x00)
 
- 2a12 : f0 00       LD A, (0xFF00 + 0x00)   
+ 2a12 : f0 00       LD A, (0xFF00 + 0x00)
 
- 2a14 : f0 00       LD A, (0xFF00 + 0x00)   
+ 2a14 : f0 00       LD A, (0xFF00 + 0x00)
 
- 2a16 : f0 00       LD A, (0xFF00 + 0x00)   
+ 2a16 : f0 00       LD A, (0xFF00 + 0x00)
 
- 2a18 : 2f          CPL                     
- 2a19 : e6 0f       AND A, 0x0f             
+ 2a18 : 2f          CPL
+ 2a19 : e6 0f       AND A, 0x0f
 
- 2a1b : b0          OR A, B                 
- 2a1c : 4f          LD C, A                 
- 2a1d : f0 80       LD A, (0xFF00 + 0x80)   
+ 2a1b : b0          OR A, B
+ 2a1c : 4f          LD C, A
+ 2a1d : f0 80       LD A, (0xFF00 + 0x80)
 
- 2a1f : a9          XOR A, C                
- 2a20 : a1          AND A, C                
- 2a21 : e0 81       LD (0xFF00 + 0x81), A   
+ 2a1f : a9          XOR A, C
+ 2a20 : a1          AND A, C
+ 2a21 : e0 81       LD (0xFF00 + 0x81), A
 
- 2a23 : 79          LD A, C                 
- 2a24 : e0 80       LD (0xFF00 + 0x80), A   
+ 2a23 : 79          LD A, C
+ 2a24 : e0 80       LD (0xFF00 + 0x80), A
 
- 2a26 : 3e 30       LD A, 0x30              
+ 2a26 : 3e 30       LD A, 0x30
 
- 2a28 : e0 00       LD (0xFF00 + 0x00), A   
+ 2a28 : e0 00       LD (0xFF00 + 0x00), A
 
- 2a2a : c9          RET                     
- 2a2b : f0 b2       LD A, (0xFF00 + 0xb2)   
+ 2a2a : c9          RET
+ 2a2b : f0 b2       LD A, (0xFF00 + 0xb2)
 
- 2a2d : d6 10       SUB A, 0x10             
+ 2a2d : d6 10       SUB A, 0x10
 
- 2a2f : cb 3f       SRL A                   
+ 2a2f : cb 3f       SRL A
 
- 2a31 : cb 3f       SRL A                   
+ 2a31 : cb 3f       SRL A
 
- 2a33 : cb 3f       SRL A                   
+ 2a33 : cb 3f       SRL A
 
- 2a35 : 11 00 00    LD DE, 0x0000           
+ 2a35 : 11 00 00    LD DE, 0x0000
 
 
- 2a38 : 5f          LD E, A                 
- 2a39 : 21 00 98    LD HL, 0x0098           
+ 2a38 : 5f          LD E, A
+ 2a39 : 21 00 98    LD HL, 0x0098
 
 
- 2a3c : 06 20       LD B, 0x20              
+ 2a3c : 06 20       LD B, 0x20
 
- 2a3e : 19          ADD HL, DE              
- 2a3f : 05          DEC B                   
- 2a40 : 20 fc       JR NZ, 0xfc             
+ 2a3e : 19          ADD HL, DE
+ 2a3f : 05          DEC B
+ 2a40 : 20 fc       JR NZ, 0xfc
 
- 2a42 : f0 b3       LD A, (0xFF00 + 0xb3)   
+ 2a42 : f0 b3       LD A, (0xFF00 + 0xb3)
 
- 2a44 : d6 08       SUB A, 0x08             
+ 2a44 : d6 08       SUB A, 0x08
 
- 2a46 : cb 3f       SRL A                   
+ 2a46 : cb 3f       SRL A
 
- 2a48 : cb 3f       SRL A                   
+ 2a48 : cb 3f       SRL A
 
- 2a4a : cb 3f       SRL A                   
+ 2a4a : cb 3f       SRL A
 
- 2a4c : 11 00 00    LD DE, 0x0000           
+ 2a4c : 11 00 00    LD DE, 0x0000
 
 
- 2a4f : 5f          LD E, A                 
- 2a50 : 19          ADD HL, DE              
- 2a51 : 7c          LD A, H                 
- 2a52 : e0 b5       LD (0xFF00 + 0xb5), A   
+ 2a4f : 5f          LD E, A
+ 2a50 : 19          ADD HL, DE
+ 2a51 : 7c          LD A, H
+ 2a52 : e0 b5       LD (0xFF00 + 0xb5), A
 
- 2a54 : 7d          LD A, L                 
- 2a55 : e0 b4       LD (0xFF00 + 0xb4), A   
+ 2a54 : 7d          LD A, L
+ 2a55 : e0 b4       LD (0xFF00 + 0xb4), A
 
- 2a57 : c9          RET                     
+ 2a57 : c9          RET
 
 
 
@@ -10876,78 +10876,78 @@
 
 
 
- 2a7e : f0 e0       LD A, (0xFF00 + 0xe0)   
+ 2a7e : f0 e0       LD A, (0xFF00 + 0xe0)
 
- 2a80 : a7          AND A, A                
- 2a81 : c8          RET Z                   
- 2a82 : 0e 03       LD C, 0x03              
+ 2a80 : a7          AND A, A
+ 2a81 : c8          RET Z
+ 2a82 : 0e 03       LD C, 0x03
 
- 2a84 : af          XOR A, A                
- 2a85 : e0 e0       LD (0xFF00 + 0xe0), A   
+ 2a84 : af          XOR A, A
+ 2a85 : e0 e0       LD (0xFF00 + 0xe0), A
 
- 2a87 : 1a          LD A, (DE)              
- 2a88 : 47          LD B, A                 
- 2a89 : cb 37       SWAP A                  
+ 2a87 : 1a          LD A, (DE)
+ 2a88 : 47          LD B, A
+ 2a89 : cb 37       SWAP A
 
- 2a8b : e6 0f       AND A, 0x0f             
+ 2a8b : e6 0f       AND A, 0x0f
 
- 2a8d : 20 28       JR NZ, 0x28             
+ 2a8d : 20 28       JR NZ, 0x28
 
- 2a8f : f0 e0       LD A, (0xFF00 + 0xe0)   
+ 2a8f : f0 e0       LD A, (0xFF00 + 0xe0)
 
- 2a91 : a7          AND A, A                
- 2a92 : 3e 00       LD A, 0x00              
+ 2a91 : a7          AND A, A
+ 2a92 : 3e 00       LD A, 0x00
 
- 2a94 : 20 02       JR NZ, 0x02             
+ 2a94 : 20 02       JR NZ, 0x02
 
- 2a96 : 3e 2f       LD A, 0x2f              
+ 2a96 : 3e 2f       LD A, 0x2f
 
- 2a98 : 22          LDI (HL), A             
- 2a99 : 78          LD A, B                 
- 2a9a : e6 0f       AND A, 0x0f             
+ 2a98 : 22          LDI (HL), A
+ 2a99 : 78          LD A, B
+ 2a9a : e6 0f       AND A, 0x0f
 
- 2a9c : 20 21       JR NZ, 0x21             
+ 2a9c : 20 21       JR NZ, 0x21
 
- 2a9e : f0 e0       LD A, (0xFF00 + 0xe0)   
+ 2a9e : f0 e0       LD A, (0xFF00 + 0xe0)
 
- 2aa0 : a7          AND A, A                
- 2aa1 : 3e 00       LD A, 0x00              
+ 2aa0 : a7          AND A, A
+ 2aa1 : 3e 00       LD A, 0x00
 
- 2aa3 : 20 09       JR NZ, 0x09             
+ 2aa3 : 20 09       JR NZ, 0x09
 
- 2aa5 : 3e 01       LD A, 0x01              
+ 2aa5 : 3e 01       LD A, 0x01
 
- 2aa7 : b9          CP A, C                 
- 2aa8 : 3e 00       LD A, 0x00              
+ 2aa7 : b9          CP A, C
+ 2aa8 : 3e 00       LD A, 0x00
 
- 2aaa : 28 02       JR Z, 0x02              
+ 2aaa : 28 02       JR Z, 0x02
 
- 2aac : 3e 2f       LD A, 0x2f              
+ 2aac : 3e 2f       LD A, 0x2f
 
- 2aae : 22          LDI (HL), A             
- 2aaf : 1d          DEC E                   
- 2ab0 : 0d          DEC C                   
- 2ab1 : 20 d4       JR NZ, 0xd4             
+ 2aae : 22          LDI (HL), A
+ 2aaf : 1d          DEC E
+ 2ab0 : 0d          DEC C
+ 2ab1 : 20 d4       JR NZ, 0xd4
 
- 2ab3 : af          XOR A, A                
- 2ab4 : e0 e0       LD (0xFF00 + 0xe0), A   
+ 2ab3 : af          XOR A, A
+ 2ab4 : e0 e0       LD (0xFF00 + 0xe0), A
 
- 2ab6 : c9          RET                     
- 2ab7 : f5          PUSH AF                 
- 2ab8 : 3e 01       LD A, 0x01              
+ 2ab6 : c9          RET
+ 2ab7 : f5          PUSH AF
+ 2ab8 : 3e 01       LD A, 0x01
 
- 2aba : e0 e0       LD (0xFF00 + 0xe0), A   
+ 2aba : e0 e0       LD (0xFF00 + 0xe0), A
 
- 2abc : f1          POP AF                  
- 2abd : 18 d9       JR 0xd9                 
+ 2abc : f1          POP AF
+ 2abd : 18 d9       JR 0xd9
 
- 2abf : f5          PUSH AF                 
- 2ac0 : 3e 01       LD A, 0x01              
+ 2abf : f5          PUSH AF
+ 2ac0 : 3e 01       LD A, 0x01
 
- 2ac2 : e0 e0       LD (0xFF00 + 0xe0), A   
+ 2ac2 : e0 e0       LD (0xFF00 + 0xe0), A
 
- 2ac4 : f1          POP AF                  
- 2ac5 : 18 e7       JR 0xe7                 
+ 2ac4 : f1          POP AF
+ 2ac5 : 18 e7       JR 0xe7
 
 
 
@@ -10959,98 +10959,98 @@
 
 
 
- 2ad1 : 7c          LD A, H                 
- 2ad2 : e0 96       LD (0xFF00 + 0x96), A   
+ 2ad1 : 7c          LD A, H
+ 2ad2 : e0 96       LD (0xFF00 + 0x96), A
 
- 2ad4 : 7d          LD A, L                 
- 2ad5 : e0 97       LD (0xFF00 + 0x97), A   
+ 2ad4 : 7d          LD A, L
+ 2ad5 : e0 97       LD (0xFF00 + 0x97), A
 
- 2ad7 : 7e          LD A, (HL)              
- 2ad8 : a7          AND A, A                
- 2ad9 : 28 1d       JR Z, 0x1d              
+ 2ad7 : 7e          LD A, (HL)
+ 2ad8 : a7          AND A, A
+ 2ad9 : 28 1d       JR Z, 0x1d
 
- 2adb : fe 80       CP A, 0x80              
+ 2adb : fe 80       CP A, 0x80
 
- 2add : 28 17       JR Z, 0x17              
+ 2add : 28 17       JR Z, 0x17
 
- 2adf : f0 96       LD A, (0xFF00 + 0x96)   
+ 2adf : f0 96       LD A, (0xFF00 + 0x96)
 
- 2ae1 : 67          LD H, A                 
- 2ae2 : f0 97       LD A, (0xFF00 + 0x97)   
+ 2ae1 : 67          LD H, A
+ 2ae2 : f0 97       LD A, (0xFF00 + 0x97)
 
- 2ae4 : 6f          LD L, A                 
- 2ae5 : 11 10 00    LD DE, 0x1000           
+ 2ae4 : 6f          LD L, A
+ 2ae5 : 11 10 00    LD DE, 0x1000
 
 
- 2ae8 : 19          ADD HL, DE              
- 2ae9 : f0 8f       LD A, (0xFF00 + 0x8f)   
+ 2ae8 : 19          ADD HL, DE
+ 2ae9 : f0 8f       LD A, (0xFF00 + 0x8f)
 
- 2aeb : 3d          DEC A                   
- 2aec : e0 8f       LD (0xFF00 + 0x8f), A   
+ 2aeb : 3d          DEC A
+ 2aec : e0 8f       LD (0xFF00 + 0x8f), A
 
- 2aee : c8          RET Z                   
- 2aef : 18 e0       JR 0xe0                 
+ 2aee : c8          RET Z
+ 2aef : 18 e0       JR 0xe0
 
- 2af1 : af          XOR A, A                
- 2af2 : e0 95       LD (0xFF00 + 0x95), A   
+ 2af1 : af          XOR A, A
+ 2af2 : e0 95       LD (0xFF00 + 0x95), A
 
- 2af4 : 18 e9       JR 0xe9                 
+ 2af4 : 18 e9       JR 0xe9
 
- 2af6 : e0 95       LD (0xFF00 + 0x95), A   
+ 2af6 : e0 95       LD (0xFF00 + 0x95), A
 
- 2af8 : 06 07       LD B, 0x07              
+ 2af8 : 06 07       LD B, 0x07
 
- 2afa : 11 86 ff    LD DE, 0x86ff           
+ 2afa : 11 86 ff    LD DE, 0x86ff
 
 
- 2afd : 2a          LDI A, (HL)             
- 2afe : 12          LD (DE), A              
- 2aff : 13          INC DE                  
- 2b00 : 05          DEC B                   
- 2b01 : 20 fa       JR NZ, 0xfa             
+ 2afd : 2a          LDI A, (HL)
+ 2afe : 12          LD (DE), A
+ 2aff : 13          INC DE
+ 2b00 : 05          DEC B
+ 2b01 : 20 fa       JR NZ, 0xfa
 
- 2b03 : f0 89       LD A, (0xFF00 + 0x89)   
+ 2b03 : f0 89       LD A, (0xFF00 + 0x89)
 
- 2b05 : 21 ac 2b    LD HL, 0xac2b           
+ 2b05 : 21 ac 2b    LD HL, 0xac2b
 
 
- 2b08 : 07          RLCA                    
- 2b09 : 5f          LD E, A                 
- 2b0a : 16 00       LD D, 0x00              
+ 2b08 : 07          RLCA
+ 2b09 : 5f          LD E, A
+ 2b0a : 16 00       LD D, 0x00
 
- 2b0c : 19          ADD HL, DE              
- 2b0d : 5e          LD E, (HL)              
- 2b0e : 23          INC HL                  
- 2b0f : 56          LD D, (HL)              
- 2b10 : 1a          LD A, (DE)              
- 2b11 : 6f          LD L, A                 
- 2b12 : 13          INC DE                  
- 2b13 : 1a          LD A, (DE)              
- 2b14 : 67          LD H, A                 
- 2b15 : 13          INC DE                  
- 2b16 : 1a          LD A, (DE)              
- 2b17 : e0 90       LD (0xFF00 + 0x90), A   
+ 2b0c : 19          ADD HL, DE
+ 2b0d : 5e          LD E, (HL)
+ 2b0e : 23          INC HL
+ 2b0f : 56          LD D, (HL)
+ 2b10 : 1a          LD A, (DE)
+ 2b11 : 6f          LD L, A
+ 2b12 : 13          INC DE
+ 2b13 : 1a          LD A, (DE)
+ 2b14 : 67          LD H, A
+ 2b15 : 13          INC DE
+ 2b16 : 1a          LD A, (DE)
+ 2b17 : e0 90       LD (0xFF00 + 0x90), A
 
- 2b19 : 13          INC DE                  
- 2b1a : 1a          LD A, (DE)              
- 2b1b : e0 91       LD (0xFF00 + 0x91), A   
+ 2b19 : 13          INC DE
+ 2b1a : 1a          LD A, (DE)
+ 2b1b : e0 91       LD (0xFF00 + 0x91), A
 
- 2b1d : 5e          LD E, (HL)              
- 2b1e : 23          INC HL                  
- 2b1f : 56          LD D, (HL)              
- 2b20 : 23          INC HL                  
- 2b21 : f0 8c       LD A, (0xFF00 + 0x8c)   
+ 2b1d : 5e          LD E, (HL)
+ 2b1e : 23          INC HL
+ 2b1f : 56          LD D, (HL)
+ 2b20 : 23          INC HL
+ 2b21 : f0 8c       LD A, (0xFF00 + 0x8c)
 
- 2b23 : e0 94       LD (0xFF00 + 0x94), A   
+ 2b23 : e0 94       LD (0xFF00 + 0x94), A
 
- 2b25 : 7e          LD A, (HL)              
- 2b26 : fe ff       CP A, 0xff              
+ 2b25 : 7e          LD A, (HL)
+ 2b26 : fe ff       CP A, 0xff
 
- 2b28 : 28 c7       JR Z, 0xc7              
+ 2b28 : 28 c7       JR Z, 0xc7
 
- 2b2a : fe fd       CP A, 0xfd              
+ 2b2a : fe fd       CP A, 0xfd
 
- 2b2c : 20 0e       JR NZ, 0x0e             
+ 2b2c : 20 0e       JR NZ, 0x0e
 
 
 
@@ -11062,32 +11062,32 @@
 
 
 
- 2b38 : 13          INC DE                  
- 2b39 : 13          INC DE                  
- 2b3a : 18 e4       JR 0xe4                 
+ 2b38 : 13          INC DE
+ 2b39 : 13          INC DE
+ 2b3a : 18 e4       JR 0xe4
 
- 2b3c : fe fe       CP A, 0xfe              
+ 2b3c : fe fe       CP A, 0xfe
 
- 2b3e : 28 f8       JR Z, 0xf8              
+ 2b3e : 28 f8       JR Z, 0xf8
 
- 2b40 : e0 89       LD (0xFF00 + 0x89), A   
+ 2b40 : e0 89       LD (0xFF00 + 0x89), A
 
- 2b42 : f0 87       LD A, (0xFF00 + 0x87)   
+ 2b42 : f0 87       LD A, (0xFF00 + 0x87)
 
- 2b44 : 47          LD B, A                 
- 2b45 : 1a          LD A, (DE)              
- 2b46 : 4f          LD C, A                 
- 2b47 : f0 8b       LD A, (0xFF00 + 0x8b)   
+ 2b44 : 47          LD B, A
+ 2b45 : 1a          LD A, (DE)
+ 2b46 : 4f          LD C, A
+ 2b47 : f0 8b       LD A, (0xFF00 + 0x8b)
 
- 2b49 : cb 77       BIT 6, A                
+ 2b49 : cb 77       BIT 6, A
 
- 2b4b : 20 06       JR NZ, 0x06             
+ 2b4b : 20 06       JR NZ, 0x06
 
- 2b4d : f0 90       LD A, (0xFF00 + 0x90)   
+ 2b4d : f0 90       LD A, (0xFF00 + 0x90)
 
- 2b4f : 80          ADD A, B                
- 2b50 : 89          ADC A, C                
- 2b51 : 18 0a       JR 0x0a                 
+ 2b4f : 80          ADD A, B
+ 2b50 : 89          ADC A, C
+ 2b51 : 18 0a       JR 0x0a
 
 
 
@@ -11099,26 +11099,26 @@
 
 
 
- 2b5d : e0 93       LD (0xFF00 + 0x93), A   
+ 2b5d : e0 93       LD (0xFF00 + 0x93), A
 
- 2b5f : f0 88       LD A, (0xFF00 + 0x88)   
+ 2b5f : f0 88       LD A, (0xFF00 + 0x88)
 
- 2b61 : 47          LD B, A                 
- 2b62 : 13          INC DE                  
- 2b63 : 1a          LD A, (DE)              
- 2b64 : 13          INC DE                  
- 2b65 : 4f          LD C, A                 
- 2b66 : f0 8b       LD A, (0xFF00 + 0x8b)   
+ 2b61 : 47          LD B, A
+ 2b62 : 13          INC DE
+ 2b63 : 1a          LD A, (DE)
+ 2b64 : 13          INC DE
+ 2b65 : 4f          LD C, A
+ 2b66 : f0 8b       LD A, (0xFF00 + 0x8b)
 
- 2b68 : cb 6f       BIT 5, A                
+ 2b68 : cb 6f       BIT 5, A
 
- 2b6a : 20 06       JR NZ, 0x06             
+ 2b6a : 20 06       JR NZ, 0x06
 
- 2b6c : f0 91       LD A, (0xFF00 + 0x91)   
+ 2b6c : f0 91       LD A, (0xFF00 + 0x91)
 
- 2b6e : 80          ADD A, B                
- 2b6f : 89          ADC A, C                
- 2b70 : 18 0a       JR 0x0a                 
+ 2b6e : 80          ADD A, B
+ 2b6f : 89          ADC A, C
+ 2b70 : 18 0a       JR 0x0a
 
 
 
@@ -11130,52 +11130,52 @@
 
 
 
- 2b7c : e0 92       LD (0xFF00 + 0x92), A   
+ 2b7c : e0 92       LD (0xFF00 + 0x92), A
 
- 2b7e : e5          PUSH HL                 
- 2b7f : f0 8d       LD A, (0xFF00 + 0x8d)   
+ 2b7e : e5          PUSH HL
+ 2b7f : f0 8d       LD A, (0xFF00 + 0x8d)
 
- 2b81 : 67          LD H, A                 
- 2b82 : f0 8e       LD A, (0xFF00 + 0x8e)   
+ 2b81 : 67          LD H, A
+ 2b82 : f0 8e       LD A, (0xFF00 + 0x8e)
 
- 2b84 : 6f          LD L, A                 
- 2b85 : f0 95       LD A, (0xFF00 + 0x95)   
+ 2b84 : 6f          LD L, A
+ 2b85 : f0 95       LD A, (0xFF00 + 0x95)
 
- 2b87 : a7          AND A, A                
- 2b88 : 28 04       JR Z, 0x04              
+ 2b87 : a7          AND A, A
+ 2b88 : 28 04       JR Z, 0x04
 
- 2b8a : 3e ff       LD A, 0xff              
+ 2b8a : 3e ff       LD A, 0xff
 
- 2b8c : 18 02       JR 0x02                 
+ 2b8c : 18 02       JR 0x02
 
- 2b8e : f0 93       LD A, (0xFF00 + 0x93)   
+ 2b8e : f0 93       LD A, (0xFF00 + 0x93)
 
- 2b90 : 22          LDI (HL), A             
- 2b91 : f0 92       LD A, (0xFF00 + 0x92)   
+ 2b90 : 22          LDI (HL), A
+ 2b91 : f0 92       LD A, (0xFF00 + 0x92)
 
- 2b93 : 22          LDI (HL), A             
- 2b94 : f0 89       LD A, (0xFF00 + 0x89)   
+ 2b93 : 22          LDI (HL), A
+ 2b94 : f0 89       LD A, (0xFF00 + 0x89)
 
- 2b96 : 22          LDI (HL), A             
- 2b97 : f0 94       LD A, (0xFF00 + 0x94)   
+ 2b96 : 22          LDI (HL), A
+ 2b97 : f0 94       LD A, (0xFF00 + 0x94)
 
- 2b99 : 47          LD B, A                 
- 2b9a : f0 8b       LD A, (0xFF00 + 0x8b)   
+ 2b99 : 47          LD B, A
+ 2b9a : f0 8b       LD A, (0xFF00 + 0x8b)
 
- 2b9c : b0          OR A, B                 
- 2b9d : 47          LD B, A                 
- 2b9e : f0 8a       LD A, (0xFF00 + 0x8a)   
+ 2b9c : b0          OR A, B
+ 2b9d : 47          LD B, A
+ 2b9e : f0 8a       LD A, (0xFF00 + 0x8a)
 
- 2ba0 : b0          OR A, B                 
- 2ba1 : 22          LDI (HL), A             
- 2ba2 : 7c          LD A, H                 
- 2ba3 : e0 8d       LD (0xFF00 + 0x8d), A   
+ 2ba0 : b0          OR A, B
+ 2ba1 : 22          LDI (HL), A
+ 2ba2 : 7c          LD A, H
+ 2ba3 : e0 8d       LD (0xFF00 + 0x8d), A
 
- 2ba5 : 7d          LD A, L                 
- 2ba6 : e0 8e       LD (0xFF00 + 0x8e), A   
+ 2ba5 : 7d          LD A, L
+ 2ba6 : e0 8e       LD (0xFF00 + 0x8e), A
 
- 2ba8 : e1          POP HL                  
- 2ba9 : c3 20 2b    JP 0x202b               
+ 2ba8 : e1          POP HL
+ 2ba9 : c3 20 2b    JP 0x202b
 
 
 
@@ -25936,32 +25936,32 @@
 
 
 
- 6552 : c9          RET                     
- 6553 : f5          PUSH AF                 
- 6554 : c5          PUSH BC                 
- 6555 : d5          PUSH DE                 
- 6556 : e5          PUSH HL                 
- 6557 : fa 7f df    LD A, (0x7fdf)          
+ 6552 : c9          RET
+ 6553 : f5          PUSH AF
+ 6554 : c5          PUSH BC
+ 6555 : d5          PUSH DE
+ 6556 : e5          PUSH HL
+ 6557 : fa 7f df    LD A, (0x7fdf)
 
 
- 655a : fe 01       CP A, 0x01              
+ 655a : fe 01       CP A, 0x01
 
- 655c : 28 46       JR Z, 0x46              
+ 655c : 28 46       JR Z, 0x46
 
- 655e : fe 02       CP A, 0x02              
+ 655e : fe 02       CP A, 0x02
 
- 6560 : 28 7b       JR Z, 0x7b              
+ 6560 : 28 7b       JR Z, 0x7b
 
- 6562 : fa 7e df    LD A, (0x7edf)          
+ 6562 : fa 7e df    LD A, (0x7edf)
 
 
- 6565 : a7          AND A, A                
- 6566 : 20 7b       JR NZ, 0x7b             
+ 6565 : a7          AND A, A
+ 6566 : 20 7b       JR NZ, 0x7b
 
- 6568 : f0 e4       LD A, (0xFF00 + 0xe4)   
+ 6568 : f0 e4       LD A, (0xFF00 + 0xe4)
 
- 656a : a7          AND A, A                
- 656b : 28 0d       JR Z, 0x0d              
+ 656a : a7          AND A, A
+ 656b : 28 0d       JR Z, 0x0d
 
 
 
@@ -25976,48 +25976,48 @@
 
 
 
- 657a : cd 52 65    CALL 0x5265             
+ 657a : cd 52 65    CALL 0x5265
 
 
- 657d : cd 0e 6a    CALL 0x0e6a             
+ 657d : cd 0e 6a    CALL 0x0e6a
 
 
- 6580 : cd 2e 6a    CALL 0x2e6a             
+ 6580 : cd 2e 6a    CALL 0x2e6a
 
 
- 6583 : cd 79 68    CALL 0x7968             
+ 6583 : cd 79 68    CALL 0x7968
 
 
- 6586 : cd 52 6a    CALL 0x526a             
+ 6586 : cd 52 6a    CALL 0x526a
 
 
- 6589 : cd 75 6c    CALL 0x756c             
+ 6589 : cd 75 6c    CALL 0x756c
 
 
- 658c : cd 96 6a    CALL 0x966a             
+ 658c : cd 96 6a    CALL 0x966a
 
 
- 658f : af          XOR A, A                
- 6590 : ea e0 df    LD (0xe0df), A          
+ 658f : af          XOR A, A
+ 6590 : ea e0 df    LD (0xe0df), A
 
 
- 6593 : ea e8 df    LD (0xe8df), A          
+ 6593 : ea e8 df    LD (0xe8df), A
 
 
- 6596 : ea f0 df    LD (0xf0df), A          
+ 6596 : ea f0 df    LD (0xf0df), A
 
 
- 6599 : ea f8 df    LD (0xf8df), A          
+ 6599 : ea f8 df    LD (0xf8df), A
 
 
- 659c : ea 7f df    LD (0x7fdf), A          
+ 659c : ea 7f df    LD (0x7fdf), A
 
 
- 659f : e1          POP HL                  
- 65a0 : d1          POP DE                  
- 65a1 : c1          POP BC                  
- 65a2 : f1          POP AF                  
- 65a3 : c9          RET                     
+ 659f : e1          POP HL
+ 65a0 : d1          POP DE
+ 65a1 : c1          POP BC
+ 65a2 : f1          POP AF
+ 65a3 : c9          RET
 
 
 
@@ -26113,24 +26113,24 @@
 
 
 
- 6603 : fa f1 df    LD A, (0xf1df)          
+ 6603 : fa f1 df    LD A, (0xf1df)
 
 
- 6606 : fe 01       CP A, 0x01              
+ 6606 : fe 01       CP A, 0x01
 
- 6608 : c9          RET                     
- 6609 : fa e1 df    LD A, (0xe1df)          
+ 6608 : c9          RET
+ 6609 : fa e1 df    LD A, (0xe1df)
 
 
- 660c : fe 05       CP A, 0x05              
+ 660c : fe 05       CP A, 0x05
 
- 660e : c9          RET                     
- 660f : fa e1 df    LD A, (0xe1df)          
+ 660e : c9          RET
+ 660f : fa e1 df    LD A, (0xe1df)
 
 
- 6612 : fe 07       CP A, 0x07              
+ 6612 : fe 07       CP A, 0x07
 
- 6614 : c9          RET                     
+ 6614 : c9          RET
 
 
 
@@ -26146,68 +26146,68 @@
 
 
 
- 6624 : 3e 05       LD A, 0x05              
+ 6624 : 3e 05       LD A, 0x05
 
- 6626 : 21 15 66    LD HL, 0x1566           
+ 6626 : 21 15 66    LD HL, 0x1566
 
 
- 6629 : c3 67 69    JP 0x6769               
+ 6629 : c3 67 69    JP 0x6769
 
 
- 662c : cd bc 69    CALL 0xbc69             
+ 662c : cd bc 69    CALL 0xbc69
 
 
- 662f : a7          AND A, A                
- 6630 : c0          RET NZ                  
- 6631 : 21 e4 df    LD HL, 0xe4df           
+ 662f : a7          AND A, A
+ 6630 : c0          RET NZ
+ 6631 : 21 e4 df    LD HL, 0xe4df
 
 
- 6634 : 34          INC (HL)                
- 6635 : 7e          LD A, (HL)              
- 6636 : fe 02       CP A, 0x02              
+ 6634 : 34          INC (HL)
+ 6635 : 7e          LD A, (HL)
+ 6636 : fe 02       CP A, 0x02
 
- 6638 : ca 4e 66    JP Z, 0x4e66            
+ 6638 : ca 4e 66    JP Z, 0x4e66
 
 
- 663b : 21 1a 66    LD HL, 0x1a66           
+ 663b : 21 1a 66    LD HL, 0x1a66
 
 
- 663e : c3 87 69    JP 0x8769               
+ 663e : c3 87 69    JP 0x8769
 
 
- 6641 : 3e 03       LD A, 0x03              
+ 6641 : 3e 03       LD A, 0x03
 
- 6643 : 21 1f 66    LD HL, 0x1f66           
+ 6643 : 21 1f 66    LD HL, 0x1f66
 
 
- 6646 : c3 67 69    JP 0x6769               
+ 6646 : c3 67 69    JP 0x6769
 
 
- 6649 : cd bc 69    CALL 0xbc69             
+ 6649 : cd bc 69    CALL 0xbc69
 
 
- 664c : a7          AND A, A                
- 664d : c0          RET NZ                  
- 664e : af          XOR A, A                
- 664f : ea e1 df    LD (0xe1df), A          
+ 664c : a7          AND A, A
+ 664d : c0          RET NZ
+ 664e : af          XOR A, A
+ 664f : ea e1 df    LD (0xe1df), A
 
 
- 6652 : e0 10       LD (0xFF00 + 0x10), A   
+ 6652 : e0 10       LD (0xFF00 + 0x10), A
 
- 6654 : 3e 08       LD A, 0x08              
+ 6654 : 3e 08       LD A, 0x08
 
- 6656 : e0 12       LD (0xFF00 + 0x12), A   
+ 6656 : e0 12       LD (0xFF00 + 0x12), A
 
- 6658 : 3e 80       LD A, 0x80              
+ 6658 : 3e 80       LD A, 0x80
 
- 665a : e0 14       LD (0xFF00 + 0x14), A   
+ 665a : e0 14       LD (0xFF00 + 0x14), A
 
- 665c : 21 9f df    LD HL, 0x9fdf           
+ 665c : 21 9f df    LD HL, 0x9fdf
 
 
- 665f : cb be       RES 7, (HL)             
+ 665f : cb be       RES 7, (HL)
 
- 6661 : c9          RET                     
+ 6661 : c9          RET
 
 
 
@@ -26273,24 +26273,24 @@
 
 
 
- 66a3 : cd 03 66    CALL 0x0366             
+ 66a3 : cd 03 66    CALL 0x0366
 
 
- 66a6 : c8          RET Z                   
- 66a7 : cd 0f 66    CALL 0x0f66             
+ 66a6 : c8          RET Z
+ 66a7 : cd 0f 66    CALL 0x0f66
 
 
- 66aa : c8          RET Z                   
- 66ab : cd 09 66    CALL 0x0966             
+ 66aa : c8          RET Z
+ 66ab : cd 09 66    CALL 0x0966
 
 
- 66ae : c8          RET Z                   
- 66af : 3e 02       LD A, 0x02              
+ 66ae : c8          RET Z
+ 66af : 3e 02       LD A, 0x02
 
- 66b1 : 21 9e 66    LD HL, 0x9e66           
+ 66b1 : 21 9e 66    LD HL, 0x9e66
 
 
- 66b4 : c3 67 69    JP 0x6769               
+ 66b4 : c3 67 69    JP 0x6769
 
 
 
@@ -26400,17 +26400,17 @@
 
 
 
- 6722 : 0e 12       LD C, 0x12              
+ 6722 : 0e 12       LD C, 0x12
 
- 6724 : 7b          LD A, E                 
- 6725 : e2          LD (C), A               
- 6726 : 0c          INC C                   
- 6727 : 7a          LD A, D                 
- 6728 : e2          LD (C), A               
- 6729 : 0c          INC C                   
- 672a : 78          LD A, B                 
- 672b : e2          LD (C), A               
- 672c : c9          RET                     
+ 6724 : 7b          LD A, E
+ 6725 : e2          LD (C), A
+ 6726 : 0c          INC C
+ 6727 : 7a          LD A, D
+ 6728 : e2          LD (C), A
+ 6729 : 0c          INC C
+ 672a : 78          LD A, B
+ 672b : e2          LD (C), A
+ 672c : c9          RET
 
 
 
@@ -26427,57 +26427,57 @@
 
 
 
- 673d : cd 03 66    CALL 0x0366             
+ 673d : cd 03 66    CALL 0x0366
 
 
- 6740 : c8          RET Z                   
- 6741 : cd 0f 66    CALL 0x0f66             
+ 6740 : c8          RET Z
+ 6741 : cd 0f 66    CALL 0x0f66
 
 
- 6744 : c8          RET Z                   
- 6745 : cd 09 66    CALL 0x0966             
+ 6744 : c8          RET Z
+ 6745 : cd 09 66    CALL 0x0966
 
 
- 6748 : c8          RET Z                   
- 6749 : 3e 03       LD A, 0x03              
+ 6748 : c8          RET Z
+ 6749 : 3e 03       LD A, 0x03
 
- 674b : 21 2d 67    LD HL, 0x2d67           
+ 674b : 21 2d 67    LD HL, 0x2d67
 
 
- 674e : c3 67 69    JP 0x6769               
+ 674e : c3 67 69    JP 0x6769
 
 
- 6751 : cd bc 69    CALL 0xbc69             
+ 6751 : cd bc 69    CALL 0xbc69
 
 
- 6754 : a7          AND A, A                
- 6755 : c0          RET NZ                  
- 6756 : 21 e4 df    LD HL, 0xe4df           
+ 6754 : a7          AND A, A
+ 6755 : c0          RET NZ
+ 6756 : 21 e4 df    LD HL, 0xe4df
 
 
- 6759 : 4e          LD C, (HL)              
- 675a : 34          INC (HL)                
- 675b : 06 00       LD B, 0x00              
+ 6759 : 4e          LD C, (HL)
+ 675a : 34          INC (HL)
+ 675b : 06 00       LD B, 0x00
 
- 675d : 21 32 67    LD HL, 0x3267           
+ 675d : 21 32 67    LD HL, 0x3267
 
 
- 6760 : 09          ADD HL, BC              
- 6761 : 7e          LD A, (HL)              
- 6762 : a7          AND A, A                
- 6763 : ca 4e 66    JP Z, 0x4e66            
+ 6760 : 09          ADD HL, BC
+ 6761 : 7e          LD A, (HL)
+ 6762 : a7          AND A, A
+ 6763 : ca 4e 66    JP Z, 0x4e66
 
 
- 6766 : 5f          LD E, A                 
- 6767 : 21 38 67    LD HL, 0x3867           
+ 6766 : 5f          LD E, A
+ 6767 : 21 38 67    LD HL, 0x3867
 
 
- 676a : 09          ADD HL, BC              
- 676b : 7e          LD A, (HL)              
- 676c : 57          LD D, A                 
- 676d : 06 87       LD B, 0x87              
+ 676a : 09          ADD HL, BC
+ 676b : 7e          LD A, (HL)
+ 676c : 57          LD D, A
+ 676d : 06 87       LD B, 0x87
 
- 676f : 18 b1       JR 0xb1                 
+ 676f : 18 b1       JR 0xb1
 
 
 
@@ -26647,37 +26647,37 @@
 
 
 
- 6819 : 3e 12       LD A, 0x12              
+ 6819 : 3e 12       LD A, 0x12
 
- 681b : 21 82 67    LD HL, 0x8267           
+ 681b : 21 82 67    LD HL, 0x8267
 
 
- 681e : c3 67 69    JP 0x6769               
+ 681e : c3 67 69    JP 0x6769
 
 
- 6821 : cd bc 69    CALL 0xbc69             
+ 6821 : cd bc 69    CALL 0xbc69
 
 
- 6824 : a7          AND A, A                
- 6825 : c0          RET NZ                  
- 6826 : af          XOR A, A                
- 6827 : ea f9 df    LD (0xf9df), A          
+ 6824 : a7          AND A, A
+ 6825 : c0          RET NZ
+ 6826 : af          XOR A, A
+ 6827 : ea f9 df    LD (0xf9df), A
 
 
- 682a : 3e 08       LD A, 0x08              
+ 682a : 3e 08       LD A, 0x08
 
- 682c : e0 21       LD (0xFF00 + 0x21), A   
+ 682c : e0 21       LD (0xFF00 + 0x21), A
 
- 682e : 3e 80       LD A, 0x80              
+ 682e : 3e 80       LD A, 0x80
 
- 6830 : e0 23       LD (0xFF00 + 0x23), A   
+ 6830 : e0 23       LD (0xFF00 + 0x23), A
 
- 6832 : 21 cf df    LD HL, 0xcfdf           
+ 6832 : 21 cf df    LD HL, 0xcfdf
 
 
- 6835 : cb be       RES 7, (HL)             
+ 6835 : cb be       RES 7, (HL)
 
- 6837 : c9          RET                     
+ 6837 : c9          RET
 
 
 
@@ -26743,33 +26743,33 @@
 
 
 
- 6879 : fa f0 df    LD A, (0xf0df)          
+ 6879 : fa f0 df    LD A, (0xf0df)
 
 
- 687c : fe 01       CP A, 0x01              
+ 687c : fe 01       CP A, 0x01
 
- 687e : ca a8 68    JP Z, 0xa868            
+ 687e : ca a8 68    JP Z, 0xa868
 
 
- 6881 : fe 02       CP A, 0x02              
+ 6881 : fe 02       CP A, 0x02
 
- 6883 : ca 3d 68    JP Z, 0x3d68            
+ 6883 : ca 3d 68    JP Z, 0x3d68
 
 
- 6886 : fa f1 df    LD A, (0xf1df)          
+ 6886 : fa f1 df    LD A, (0xf1df)
 
 
- 6889 : fe 01       CP A, 0x01              
+ 6889 : fe 01       CP A, 0x01
 
- 688b : ca f3 68    JP Z, 0xf368            
+ 688b : ca f3 68    JP Z, 0xf368
 
 
- 688e : fe 02       CP A, 0x02              
+ 688e : fe 02       CP A, 0x02
 
- 6890 : ca 54 68    JP Z, 0x5468            
+ 6890 : ca 54 68    JP Z, 0x5468
 
 
- 6893 : c9          RET                     
+ 6893 : c9          RET
 
 
 
@@ -26981,44 +26981,44 @@
 
 
 
- 6967 : f5          PUSH AF                 
- 6968 : 1d          DEC E                   
- 6969 : fa 71 df    LD A, (0x71df)          
+ 6967 : f5          PUSH AF
+ 6968 : 1d          DEC E
+ 6969 : fa 71 df    LD A, (0x71df)
 
 
- 696c : 12          LD (DE), A              
- 696d : 1c          INC E                   
- 696e : f1          POP AF                  
- 696f : 1c          INC E                   
- 6970 : 12          LD (DE), A              
- 6971 : 1d          DEC E                   
- 6972 : af          XOR A, A                
- 6973 : 12          LD (DE), A              
- 6974 : 1c          INC E                   
- 6975 : 1c          INC E                   
- 6976 : 12          LD (DE), A              
- 6977 : 1c          INC E                   
- 6978 : 12          LD (DE), A              
- 6979 : 7b          LD A, E                 
- 697a : fe e5       CP A, 0xe5              
+ 696c : 12          LD (DE), A
+ 696d : 1c          INC E
+ 696e : f1          POP AF
+ 696f : 1c          INC E
+ 6970 : 12          LD (DE), A
+ 6971 : 1d          DEC E
+ 6972 : af          XOR A, A
+ 6973 : 12          LD (DE), A
+ 6974 : 1c          INC E
+ 6975 : 1c          INC E
+ 6976 : 12          LD (DE), A
+ 6977 : 1c          INC E
+ 6978 : 12          LD (DE), A
+ 6979 : 7b          LD A, E
+ 697a : fe e5       CP A, 0xe5
 
- 697c : 28 09       JR Z, 0x09              
+ 697c : 28 09       JR Z, 0x09
 
- 697e : fe f5       CP A, 0xf5              
+ 697e : fe f5       CP A, 0xf5
 
- 6980 : 28 13       JR Z, 0x13              
+ 6980 : 28 13       JR Z, 0x13
 
- 6982 : fe fd       CP A, 0xfd              
+ 6982 : fe fd       CP A, 0xfd
 
- 6984 : 28 16       JR Z, 0x16              
+ 6984 : 28 16       JR Z, 0x16
 
 
- 6987 : c5          PUSH BC                 
- 6988 : 0e 10       LD C, 0x10              
+ 6987 : c5          PUSH BC
+ 6988 : 0e 10       LD C, 0x10
 
- 698a : 06 05       LD B, 0x05              
+ 698a : 06 05       LD B, 0x05
 
- 698c : 18 13       JR 0x13                 
+ 698c : 18 13       JR 0x13
 
 
 
@@ -27034,345 +27034,345 @@
 
 
 
- 699c : c5          PUSH BC                 
- 699d : 0e 20       LD C, 0x20              
+ 699c : c5          PUSH BC
+ 699d : 0e 20       LD C, 0x20
 
- 699f : 06 04       LD B, 0x04              
+ 699f : 06 04       LD B, 0x04
 
- 69a1 : 2a          LDI A, (HL)             
- 69a2 : e2          LD (C), A               
- 69a3 : 0c          INC C                   
- 69a4 : 05          DEC B                   
- 69a5 : 20 fa       JR NZ, 0xfa             
+ 69a1 : 2a          LDI A, (HL)
+ 69a2 : e2          LD (C), A
+ 69a3 : 0c          INC C
+ 69a4 : 05          DEC B
+ 69a5 : 20 fa       JR NZ, 0xfa
 
- 69a7 : c1          POP BC                  
- 69a8 : c9          RET                     
- 69a9 : 1c          INC E                   
- 69aa : ea 71 df    LD (0x71df), A          
+ 69a7 : c1          POP BC
+ 69a8 : c9          RET
+ 69a9 : 1c          INC E
+ 69aa : ea 71 df    LD (0x71df), A
 
 
- 69ad : 1c          INC E                   
- 69ae : 3d          DEC A                   
- 69af : cb 27       SLA A                   
+ 69ad : 1c          INC E
+ 69ae : 3d          DEC A
+ 69af : cb 27       SLA A
 
- 69b1 : 4f          LD C, A                 
- 69b2 : 06 00       LD B, 0x00              
+ 69b1 : 4f          LD C, A
+ 69b2 : 06 00       LD B, 0x00
 
- 69b4 : 09          ADD HL, BC              
- 69b5 : 4e          LD C, (HL)              
- 69b6 : 23          INC HL                  
- 69b7 : 46          LD B, (HL)              
- 69b8 : 69          LD L, C                 
- 69b9 : 60          LD H, B                 
- 69ba : 7c          LD A, H                 
- 69bb : c9          RET                     
- 69bc : d5          PUSH DE                 
- 69bd : 6b          LD L, E                 
- 69be : 62          LD H, D                 
- 69bf : 34          INC (HL)                
- 69c0 : 2a          LDI A, (HL)             
- 69c1 : be          CP A, (HL)              
- 69c2 : 20 03       JR NZ, 0x03             
+ 69b4 : 09          ADD HL, BC
+ 69b5 : 4e          LD C, (HL)
+ 69b6 : 23          INC HL
+ 69b7 : 46          LD B, (HL)
+ 69b8 : 69          LD L, C
+ 69b9 : 60          LD H, B
+ 69ba : 7c          LD A, H
+ 69bb : c9          RET
+ 69bc : d5          PUSH DE
+ 69bd : 6b          LD L, E
+ 69be : 62          LD H, D
+ 69bf : 34          INC (HL)
+ 69c0 : 2a          LDI A, (HL)
+ 69c1 : be          CP A, (HL)
+ 69c2 : 20 03       JR NZ, 0x03
 
- 69c4 : 2d          DEC L                   
- 69c5 : af          XOR A, A                
- 69c6 : 77          LD (HL), A              
- 69c7 : d1          POP DE                  
- 69c8 : c9          RET                     
- 69c9 : c5          PUSH BC                 
- 69ca : 0e 30       LD C, 0x30              
+ 69c4 : 2d          DEC L
+ 69c5 : af          XOR A, A
+ 69c6 : 77          LD (HL), A
+ 69c7 : d1          POP DE
+ 69c8 : c9          RET
+ 69c9 : c5          PUSH BC
+ 69ca : 0e 30       LD C, 0x30
 
- 69cc : 2a          LDI A, (HL)             
- 69cd : e2          LD (C), A               
- 69ce : 0c          INC C                   
- 69cf : 79          LD A, C                 
- 69d0 : fe 40       CP A, 0x40              
+ 69cc : 2a          LDI A, (HL)
+ 69cd : e2          LD (C), A
+ 69ce : 0c          INC C
+ 69cf : 79          LD A, C
+ 69d0 : fe 40       CP A, 0x40
 
- 69d2 : 20 f8       JR NZ, 0xf8             
+ 69d2 : 20 f8       JR NZ, 0xf8
 
- 69d4 : c1          POP BC                  
- 69d5 : c9          RET                     
- 69d6 : af          XOR A, A                
- 69d7 : ea e1 df    LD (0xe1df), A          
+ 69d4 : c1          POP BC
+ 69d5 : c9          RET
+ 69d6 : af          XOR A, A
+ 69d7 : ea e1 df    LD (0xe1df), A
 
 
- 69da : ea e9 df    LD (0xe9df), A          
+ 69da : ea e9 df    LD (0xe9df), A
 
 
- 69dd : ea f1 df    LD (0xf1df), A          
+ 69dd : ea f1 df    LD (0xf1df), A
 
 
- 69e0 : ea f9 df    LD (0xf9df), A          
+ 69e0 : ea f9 df    LD (0xf9df), A
 
 
- 69e3 : ea 9f df    LD (0x9fdf), A          
+ 69e3 : ea 9f df    LD (0x9fdf), A
 
 
- 69e6 : ea af df    LD (0xafdf), A          
+ 69e6 : ea af df    LD (0xafdf), A
 
 
- 69e9 : ea bf df    LD (0xbfdf), A          
+ 69e9 : ea bf df    LD (0xbfdf), A
 
 
- 69ec : ea cf df    LD (0xcfdf), A          
+ 69ec : ea cf df    LD (0xcfdf), A
 
 
- 69ef : 3e ff       LD A, 0xff              
+ 69ef : 3e ff       LD A, 0xff
 
- 69f1 : e0 25       LD (0xFF00 + 0x25), A   
+ 69f1 : e0 25       LD (0xFF00 + 0x25), A
 
- 69f3 : 3e 03       LD A, 0x03              
+ 69f3 : 3e 03       LD A, 0x03
 
- 69f5 : ea 78 df    LD (0x78df), A          
+ 69f5 : ea 78 df    LD (0x78df), A
 
 
- 69f8 : 3e 08       LD A, 0x08              
+ 69f8 : 3e 08       LD A, 0x08
 
- 69fa : e0 12       LD (0xFF00 + 0x12), A   
+ 69fa : e0 12       LD (0xFF00 + 0x12), A
 
- 69fc : e0 17       LD (0xFF00 + 0x17), A   
+ 69fc : e0 17       LD (0xFF00 + 0x17), A
 
- 69fe : e0 21       LD (0xFF00 + 0x21), A   
+ 69fe : e0 21       LD (0xFF00 + 0x21), A
 
- 6a00 : 3e 80       LD A, 0x80              
+ 6a00 : 3e 80       LD A, 0x80
 
- 6a02 : e0 14       LD (0xFF00 + 0x14), A   
+ 6a02 : e0 14       LD (0xFF00 + 0x14), A
 
- 6a04 : e0 19       LD (0xFF00 + 0x19), A   
+ 6a04 : e0 19       LD (0xFF00 + 0x19), A
 
- 6a06 : e0 23       LD (0xFF00 + 0x23), A   
+ 6a06 : e0 23       LD (0xFF00 + 0x23), A
 
- 6a08 : af          XOR A, A                
- 6a09 : e0 10       LD (0xFF00 + 0x10), A   
+ 6a08 : af          XOR A, A
+ 6a09 : e0 10       LD (0xFF00 + 0x10), A
 
- 6a0b : e0 1a       LD (0xFF00 + 0x1a), A   
+ 6a0b : e0 1a       LD (0xFF00 + 0x1a), A
 
- 6a0d : c9          RET                     
- 6a0e : 11 e0 df    LD DE, 0xe0df           
+ 6a0d : c9          RET
+ 6a0e : 11 e0 df    LD DE, 0xe0df
 
 
- 6a11 : 1a          LD A, (DE)              
- 6a12 : a7          AND A, A                
- 6a13 : 28 0c       JR Z, 0x0c              
+ 6a11 : 1a          LD A, (DE)
+ 6a12 : a7          AND A, A
+ 6a13 : 28 0c       JR Z, 0x0c
 
- 6a15 : 21 9f df    LD HL, 0x9fdf           
+ 6a15 : 21 9f df    LD HL, 0x9fdf
 
 
- 6a18 : cb fe       SET 7, (HL)             
+ 6a18 : cb fe       SET 7, (HL)
 
- 6a1a : 21 00 65    LD HL, 0x0065           
+ 6a1a : 21 00 65    LD HL, 0x0065
 
 
- 6a1d : cd a9 69    CALL 0xa969             
+ 6a1d : cd a9 69    CALL 0xa969
 
 
- 6a20 : e9          JP HL                   
- 6a21 : 1c          INC E                   
- 6a22 : 1a          LD A, (DE)              
- 6a23 : a7          AND A, A                
- 6a24 : 28 07       JR Z, 0x07              
+ 6a20 : e9          JP HL
+ 6a21 : 1c          INC E
+ 6a22 : 1a          LD A, (DE)
+ 6a23 : a7          AND A, A
+ 6a24 : 28 07       JR Z, 0x07
 
- 6a26 : 21 10 65    LD HL, 0x1065           
+ 6a26 : 21 10 65    LD HL, 0x1065
 
 
- 6a29 : cd ad 69    CALL 0xad69             
+ 6a29 : cd ad 69    CALL 0xad69
 
 
- 6a2c : e9          JP HL                   
- 6a2d : c9          RET                     
- 6a2e : 11 f8 df    LD DE, 0xf8df           
+ 6a2c : e9          JP HL
+ 6a2d : c9          RET
+ 6a2e : 11 f8 df    LD DE, 0xf8df
 
 
- 6a31 : 1a          LD A, (DE)              
- 6a32 : a7          AND A, A                
- 6a33 : 28 0c       JR Z, 0x0c              
+ 6a31 : 1a          LD A, (DE)
+ 6a32 : a7          AND A, A
+ 6a33 : 28 0c       JR Z, 0x0c
 
- 6a35 : 21 cf df    LD HL, 0xcfdf           
+ 6a35 : 21 cf df    LD HL, 0xcfdf
 
 
- 6a38 : cb fe       SET 7, (HL)             
+ 6a38 : cb fe       SET 7, (HL)
 
- 6a3a : 21 20 65    LD HL, 0x2065           
+ 6a3a : 21 20 65    LD HL, 0x2065
 
 
- 6a3d : cd a9 69    CALL 0xa969             
+ 6a3d : cd a9 69    CALL 0xa969
 
 
- 6a40 : e9          JP HL                   
- 6a41 : 1c          INC E                   
- 6a42 : 1a          LD A, (DE)              
- 6a43 : a7          AND A, A                
- 6a44 : 28 07       JR Z, 0x07              
+ 6a40 : e9          JP HL
+ 6a41 : 1c          INC E
+ 6a42 : 1a          LD A, (DE)
+ 6a43 : a7          AND A, A
+ 6a44 : 28 07       JR Z, 0x07
 
- 6a46 : 21 28 65    LD HL, 0x2865           
+ 6a46 : 21 28 65    LD HL, 0x2865
 
 
- 6a49 : cd ad 69    CALL 0xad69             
+ 6a49 : cd ad 69    CALL 0xad69
 
 
- 6a4c : e9          JP HL                   
- 6a4d : c9          RET                     
+ 6a4c : e9          JP HL
+ 6a4d : c9          RET
 
 
 
 
- 6a52 : 21 e8 df    LD HL, 0xe8df           
+ 6a52 : 21 e8 df    LD HL, 0xe8df
 
 
- 6a55 : 2a          LDI A, (HL)             
- 6a56 : a7          AND A, A                
- 6a57 : c8          RET Z                   
- 6a58 : fe ff       CP A, 0xff              
+ 6a55 : 2a          LDI A, (HL)
+ 6a56 : a7          AND A, A
+ 6a57 : c8          RET Z
+ 6a58 : fe ff       CP A, 0xff
 
- 6a5a : 28 f2       JR Z, 0xf2              
+ 6a5a : 28 f2       JR Z, 0xf2
 
- 6a5c : 77          LD (HL), A              
- 6a5d : 47          LD B, A                 
- 6a5e : 21 30 65    LD HL, 0x3065           
+ 6a5c : 77          LD (HL), A
+ 6a5d : 47          LD B, A
+ 6a5e : 21 30 65    LD HL, 0x3065
 
 
- 6a61 : e6 1f       AND A, 0x1f             
+ 6a61 : e6 1f       AND A, 0x1f
 
- 6a63 : cd ad 69    CALL 0xad69             
+ 6a63 : cd ad 69    CALL 0xad69
 
 
- 6a66 : cd 44 6b    CALL 0x446b             
+ 6a66 : cd 44 6b    CALL 0x446b
 
 
- 6a69 : cd 6d 6a    CALL 0x6d6a             
+ 6a69 : cd 6d 6a    CALL 0x6d6a
 
 
- 6a6c : c9          RET                     
- 6a6d : fa e9 df    LD A, (0xe9df)          
+ 6a6c : c9          RET
+ 6a6d : fa e9 df    LD A, (0xe9df)
 
 
- 6a70 : a7          AND A, A                
- 6a71 : c8          RET Z                   
- 6a72 : 21 ef 6a    LD HL, 0xef6a           
+ 6a70 : a7          AND A, A
+ 6a71 : c8          RET Z
+ 6a72 : 21 ef 6a    LD HL, 0xef6a
 
 
- 6a75 : 3d          DEC A                   
- 6a76 : 28 06       JR Z, 0x06              
+ 6a75 : 3d          DEC A
+ 6a76 : 28 06       JR Z, 0x06
 
- 6a78 : 23          INC HL                  
- 6a79 : 23          INC HL                  
- 6a7a : 23          INC HL                  
- 6a7b : 23          INC HL                  
- 6a7c : 18 f7       JR 0xf7                 
+ 6a78 : 23          INC HL
+ 6a79 : 23          INC HL
+ 6a7a : 23          INC HL
+ 6a7b : 23          INC HL
+ 6a7c : 18 f7       JR 0xf7
 
- 6a7e : 2a          LDI A, (HL)             
- 6a7f : ea 78 df    LD (0x78df), A          
+ 6a7e : 2a          LDI A, (HL)
+ 6a7f : ea 78 df    LD (0x78df), A
 
 
- 6a82 : 2a          LDI A, (HL)             
- 6a83 : ea 76 df    LD (0x76df), A          
+ 6a82 : 2a          LDI A, (HL)
+ 6a83 : ea 76 df    LD (0x76df), A
 
 
- 6a86 : 2a          LDI A, (HL)             
- 6a87 : ea 79 df    LD (0x79df), A          
+ 6a86 : 2a          LDI A, (HL)
+ 6a87 : ea 79 df    LD (0x79df), A
 
 
- 6a8a : 2a          LDI A, (HL)             
- 6a8b : ea 7a df    LD (0x7adf), A          
+ 6a8a : 2a          LDI A, (HL)
+ 6a8b : ea 7a df    LD (0x7adf), A
 
 
- 6a8e : af          XOR A, A                
- 6a8f : ea 75 df    LD (0x75df), A          
+ 6a8e : af          XOR A, A
+ 6a8f : ea 75 df    LD (0x75df), A
 
 
- 6a92 : ea 77 df    LD (0x77df), A          
+ 6a92 : ea 77 df    LD (0x77df), A
 
 
- 6a95 : c9          RET                     
- 6a96 : fa e9 df    LD A, (0xe9df)          
+ 6a95 : c9          RET
+ 6a96 : fa e9 df    LD A, (0xe9df)
 
 
- 6a99 : a7          AND A, A                
- 6a9a : 28 3d       JR Z, 0x3d              
+ 6a99 : a7          AND A, A
+ 6a9a : 28 3d       JR Z, 0x3d
 
- 6a9c : 21 75 df    LD HL, 0x75df           
+ 6a9c : 21 75 df    LD HL, 0x75df
 
 
- 6a9f : fa 78 df    LD A, (0x78df)          
+ 6a9f : fa 78 df    LD A, (0x78df)
 
 
- 6aa2 : fe 01       CP A, 0x01              
+ 6aa2 : fe 01       CP A, 0x01
 
- 6aa4 : 28 37       JR Z, 0x37              
+ 6aa4 : 28 37       JR Z, 0x37
 
- 6aa6 : fe 03       CP A, 0x03              
+ 6aa6 : fe 03       CP A, 0x03
 
- 6aa8 : 28 2f       JR Z, 0x2f              
+ 6aa8 : 28 2f       JR Z, 0x2f
 
- 6aaa : 34          INC (HL)                
- 6aab : 2a          LDI A, (HL)             
- 6aac : be          CP A, (HL)              
- 6aad : 20 33       JR NZ, 0x33             
+ 6aaa : 34          INC (HL)
+ 6aab : 2a          LDI A, (HL)
+ 6aac : be          CP A, (HL)
+ 6aad : 20 33       JR NZ, 0x33
 
- 6aaf : 2d          DEC L                   
- 6ab0 : 36 00       LD (HL), 0x00           
+ 6aaf : 2d          DEC L
+ 6ab0 : 36 00       LD (HL), 0x00
 
- 6ab2 : 2c          INC L                   
- 6ab3 : 2c          INC L                   
- 6ab4 : 34          INC (HL)                
- 6ab5 : fa 79 df    LD A, (0x79df)          
+ 6ab2 : 2c          INC L
+ 6ab3 : 2c          INC L
+ 6ab4 : 34          INC (HL)
+ 6ab5 : fa 79 df    LD A, (0x79df)
 
 
- 6ab8 : cb 46       BIT 0, (HL)             
+ 6ab8 : cb 46       BIT 0, (HL)
 
- 6aba : ca c0 6a    JP Z, 0xc06a            
+ 6aba : ca c0 6a    JP Z, 0xc06a
 
 
- 6abd : fa 7a df    LD A, (0x7adf)          
+ 6abd : fa 7a df    LD A, (0x7adf)
 
 
- 6ac0 : 47          LD B, A                 
- 6ac1 : fa f1 df    LD A, (0xf1df)          
+ 6ac0 : 47          LD B, A
+ 6ac1 : fa f1 df    LD A, (0xf1df)
 
 
- 6ac4 : a7          AND A, A                
- 6ac5 : 28 04       JR Z, 0x04              
+ 6ac4 : a7          AND A, A
+ 6ac5 : 28 04       JR Z, 0x04
 
 
 
 
 
- 6acb : fa f9 df    LD A, (0xf9df)          
+ 6acb : fa f9 df    LD A, (0xf9df)
 
 
- 6ace : a7          AND A, A                
- 6acf : 28 04       JR Z, 0x04              
+ 6ace : a7          AND A, A
+ 6acf : 28 04       JR Z, 0x04
 
- 6ad1 : cb d8       SET 3, B                
+ 6ad1 : cb d8       SET 3, B
 
- 6ad3 : cb f8       SET 7, B                
+ 6ad3 : cb f8       SET 7, B
 
- 6ad5 : 78          LD A, B                 
- 6ad6 : e0 25       LD (0xFF00 + 0x25), A   
+ 6ad5 : 78          LD A, B
+ 6ad6 : e0 25       LD (0xFF00 + 0x25), A
 
- 6ad8 : c9          RET                     
- 6ad9 : 3e ff       LD A, 0xff              
+ 6ad8 : c9          RET
+ 6ad9 : 3e ff       LD A, 0xff
 
- 6adb : 18 f9       JR 0xf9                 
+ 6adb : 18 f9       JR 0xf9
 
- 6add : fa 79 df    LD A, (0x79df)          
+ 6add : fa 79 df    LD A, (0x79df)
 
 
- 6ae0 : 18 de       JR 0xde                 
+ 6ae0 : 18 de       JR 0xde
 
- 6ae2 : fa f9 df    LD A, (0xf9df)          
+ 6ae2 : fa f9 df    LD A, (0xf9df)
 
 
- 6ae5 : a7          AND A, A                
- 6ae6 : 20 f1       JR NZ, 0xf1             
+ 6ae5 : a7          AND A, A
+ 6ae6 : 20 f1       JR NZ, 0xf1
 
- 6ae8 : fa f1 df    LD A, (0xf1df)          
+ 6ae8 : fa f1 df    LD A, (0xf1df)
 
 
- 6aeb : a7          AND A, A                
- 6aec : 20 eb       JR NZ, 0xeb             
+ 6aeb : a7          AND A, A
+ 6aec : 20 eb       JR NZ, 0xeb
 
- 6aee : c9          RET                     
+ 6aee : c9          RET
 
 
 
@@ -27441,318 +27441,318 @@
 
 
 
- 6b33 : 2a          LDI A, (HL)             
- 6b34 : 4f          LD C, A                 
- 6b35 : 7e          LD A, (HL)              
- 6b36 : 47          LD B, A                 
- 6b37 : 0a          LD A, (BC)              
- 6b38 : 12          LD (DE), A              
- 6b39 : 1c          INC E                   
- 6b3a : 03          INC BC                  
- 6b3b : 0a          LD A, (BC)              
- 6b3c : 12          LD (DE), A              
- 6b3d : c9          RET                     
- 6b3e : 2a          LDI A, (HL)             
- 6b3f : 12          LD (DE), A              
- 6b40 : 1c          INC E                   
- 6b41 : 2a          LDI A, (HL)             
- 6b42 : 12          LD (DE), A              
- 6b43 : c9          RET                     
- 6b44 : cd f8 69    CALL 0xf869             
+ 6b33 : 2a          LDI A, (HL)
+ 6b34 : 4f          LD C, A
+ 6b35 : 7e          LD A, (HL)
+ 6b36 : 47          LD B, A
+ 6b37 : 0a          LD A, (BC)
+ 6b38 : 12          LD (DE), A
+ 6b39 : 1c          INC E
+ 6b3a : 03          INC BC
+ 6b3b : 0a          LD A, (BC)
+ 6b3c : 12          LD (DE), A
+ 6b3d : c9          RET
+ 6b3e : 2a          LDI A, (HL)
+ 6b3f : 12          LD (DE), A
+ 6b40 : 1c          INC E
+ 6b41 : 2a          LDI A, (HL)
+ 6b42 : 12          LD (DE), A
+ 6b43 : c9          RET
+ 6b44 : cd f8 69    CALL 0xf869
 
 
- 6b47 : af          XOR A, A                
- 6b48 : ea 75 df    LD (0x75df), A          
+ 6b47 : af          XOR A, A
+ 6b48 : ea 75 df    LD (0x75df), A
 
 
- 6b4b : ea 77 df    LD (0x77df), A          
+ 6b4b : ea 77 df    LD (0x77df), A
 
 
- 6b4e : 11 80 df    LD DE, 0x80df           
+ 6b4e : 11 80 df    LD DE, 0x80df
 
 
- 6b51 : 06 00       LD B, 0x00              
+ 6b51 : 06 00       LD B, 0x00
 
- 6b53 : 2a          LDI A, (HL)             
- 6b54 : 12          LD (DE), A              
- 6b55 : 1c          INC E                   
- 6b56 : cd 3e 6b    CALL 0x3e6b             
+ 6b53 : 2a          LDI A, (HL)
+ 6b54 : 12          LD (DE), A
+ 6b55 : 1c          INC E
+ 6b56 : cd 3e 6b    CALL 0x3e6b
 
 
- 6b59 : 11 90 df    LD DE, 0x90df           
+ 6b59 : 11 90 df    LD DE, 0x90df
 
 
- 6b5c : cd 3e 6b    CALL 0x3e6b             
+ 6b5c : cd 3e 6b    CALL 0x3e6b
 
 
- 6b5f : 11 a0 df    LD DE, 0xa0df           
+ 6b5f : 11 a0 df    LD DE, 0xa0df
 
 
- 6b62 : cd 3e 6b    CALL 0x3e6b             
+ 6b62 : cd 3e 6b    CALL 0x3e6b
 
 
- 6b65 : 11 b0 df    LD DE, 0xb0df           
+ 6b65 : 11 b0 df    LD DE, 0xb0df
 
 
- 6b68 : cd 3e 6b    CALL 0x3e6b             
+ 6b68 : cd 3e 6b    CALL 0x3e6b
 
 
- 6b6b : 11 c0 df    LD DE, 0xc0df           
+ 6b6b : 11 c0 df    LD DE, 0xc0df
 
 
- 6b6e : cd 3e 6b    CALL 0x3e6b             
+ 6b6e : cd 3e 6b    CALL 0x3e6b
 
 
- 6b71 : 21 90 df    LD HL, 0x90df           
+ 6b71 : 21 90 df    LD HL, 0x90df
 
 
- 6b74 : 11 94 df    LD DE, 0x94df           
+ 6b74 : 11 94 df    LD DE, 0x94df
 
 
- 6b77 : cd 33 6b    CALL 0x336b             
+ 6b77 : cd 33 6b    CALL 0x336b
 
 
- 6b7a : 21 a0 df    LD HL, 0xa0df           
+ 6b7a : 21 a0 df    LD HL, 0xa0df
 
 
- 6b7d : 11 a4 df    LD DE, 0xa4df           
+ 6b7d : 11 a4 df    LD DE, 0xa4df
 
 
- 6b80 : cd 33 6b    CALL 0x336b             
+ 6b80 : cd 33 6b    CALL 0x336b
 
 
- 6b83 : 21 b0 df    LD HL, 0xb0df           
+ 6b83 : 21 b0 df    LD HL, 0xb0df
 
 
- 6b86 : 11 b4 df    LD DE, 0xb4df           
+ 6b86 : 11 b4 df    LD DE, 0xb4df
 
 
- 6b89 : cd 33 6b    CALL 0x336b             
+ 6b89 : cd 33 6b    CALL 0x336b
 
 
- 6b8c : 21 c0 df    LD HL, 0xc0df           
+ 6b8c : 21 c0 df    LD HL, 0xc0df
 
 
- 6b8f : 11 c4 df    LD DE, 0xc4df           
+ 6b8f : 11 c4 df    LD DE, 0xc4df
 
 
- 6b92 : cd 33 6b    CALL 0x336b             
+ 6b92 : cd 33 6b    CALL 0x336b
 
 
- 6b95 : 01 10 04    LD BC, 0x1004           
+ 6b95 : 01 10 04    LD BC, 0x1004
 
 
- 6b98 : 21 92 df    LD HL, 0x92df           
+ 6b98 : 21 92 df    LD HL, 0x92df
 
 
- 6b9b : 36 01       LD (HL), 0x01           
+ 6b9b : 36 01       LD (HL), 0x01
 
- 6b9d : 79          LD A, C                 
- 6b9e : 85          ADD A, L                
- 6b9f : 6f          LD L, A                 
- 6ba0 : 05          DEC B                   
- 6ba1 : 20 f8       JR NZ, 0xf8             
+ 6b9d : 79          LD A, C
+ 6b9e : 85          ADD A, L
+ 6b9f : 6f          LD L, A
+ 6ba0 : 05          DEC B
+ 6ba1 : 20 f8       JR NZ, 0xf8
 
- 6ba3 : af          XOR A, A                
- 6ba4 : ea 9e df    LD (0x9edf), A          
+ 6ba3 : af          XOR A, A
+ 6ba4 : ea 9e df    LD (0x9edf), A
 
 
- 6ba7 : ea ae df    LD (0xaedf), A          
+ 6ba7 : ea ae df    LD (0xaedf), A
 
 
- 6baa : ea be df    LD (0xbedf), A          
+ 6baa : ea be df    LD (0xbedf), A
 
 
- 6bad : c9          RET                     
- 6bae : e5          PUSH HL                 
- 6baf : af          XOR A, A                
- 6bb0 : e0 1a       LD (0xFF00 + 0x1a), A   
+ 6bad : c9          RET
+ 6bae : e5          PUSH HL
+ 6baf : af          XOR A, A
+ 6bb0 : e0 1a       LD (0xFF00 + 0x1a), A
 
- 6bb2 : 6b          LD L, E                 
- 6bb3 : 62          LD H, D                 
- 6bb4 : cd c9 69    CALL 0xc969             
+ 6bb2 : 6b          LD L, E
+ 6bb3 : 62          LD H, D
+ 6bb4 : cd c9 69    CALL 0xc969
 
 
- 6bb7 : e1          POP HL                  
- 6bb8 : 18 2a       JR 0x2a                 
+ 6bb7 : e1          POP HL
+ 6bb8 : 18 2a       JR 0x2a
 
- 6bba : cd ea 6b    CALL 0xea6b             
+ 6bba : cd ea 6b    CALL 0xea6b
 
 
- 6bbd : cd ff 6b    CALL 0xff6b             
+ 6bbd : cd ff 6b    CALL 0xff6b
 
 
- 6bc0 : 5f          LD E, A                 
- 6bc1 : cd ea 6b    CALL 0xea6b             
+ 6bc0 : 5f          LD E, A
+ 6bc1 : cd ea 6b    CALL 0xea6b
 
 
- 6bc4 : cd ff 6b    CALL 0xff6b             
+ 6bc4 : cd ff 6b    CALL 0xff6b
 
 
- 6bc7 : 57          LD D, A                 
- 6bc8 : cd ea 6b    CALL 0xea6b             
+ 6bc7 : 57          LD D, A
+ 6bc8 : cd ea 6b    CALL 0xea6b
 
 
- 6bcb : cd ff 6b    CALL 0xff6b             
+ 6bcb : cd ff 6b    CALL 0xff6b
 
 
- 6bce : 4f          LD C, A                 
- 6bcf : 2c          INC L                   
- 6bd0 : 2c          INC L                   
- 6bd1 : 73          LD (HL), E              
- 6bd2 : 2c          INC L                   
- 6bd3 : 72          LD (HL), D              
- 6bd4 : 2c          INC L                   
- 6bd5 : 71          LD (HL), C              
- 6bd6 : 2d          DEC L                   
- 6bd7 : 2d          DEC L                   
- 6bd8 : 2d          DEC L                   
- 6bd9 : 2d          DEC L                   
- 6bda : e5          PUSH HL                 
- 6bdb : 21 70 df    LD HL, 0x70df           
+ 6bce : 4f          LD C, A
+ 6bcf : 2c          INC L
+ 6bd0 : 2c          INC L
+ 6bd1 : 73          LD (HL), E
+ 6bd2 : 2c          INC L
+ 6bd3 : 72          LD (HL), D
+ 6bd4 : 2c          INC L
+ 6bd5 : 71          LD (HL), C
+ 6bd6 : 2d          DEC L
+ 6bd7 : 2d          DEC L
+ 6bd8 : 2d          DEC L
+ 6bd9 : 2d          DEC L
+ 6bda : e5          PUSH HL
+ 6bdb : 21 70 df    LD HL, 0x70df
 
 
- 6bde : 7e          LD A, (HL)              
- 6bdf : e1          POP HL                  
- 6be0 : fe 03       CP A, 0x03              
+ 6bde : 7e          LD A, (HL)
+ 6bdf : e1          POP HL
+ 6be0 : fe 03       CP A, 0x03
 
- 6be2 : 28 ca       JR Z, 0xca              
+ 6be2 : 28 ca       JR Z, 0xca
 
- 6be4 : cd ea 6b    CALL 0xea6b             
+ 6be4 : cd ea 6b    CALL 0xea6b
 
 
- 6be7 : c3 8f 6c    JP 0x8f6c               
+ 6be7 : c3 8f 6c    JP 0x8f6c
 
 
- 6bea : d5          PUSH DE                 
- 6beb : 2a          LDI A, (HL)             
- 6bec : 5f          LD E, A                 
- 6bed : 3a          LDD A, (HL)             
- 6bee : 57          LD D, A                 
- 6bef : 13          INC DE                  
- 6bf0 : 7b          LD A, E                 
- 6bf1 : 22          LDI (HL), A             
- 6bf2 : 7a          LD A, D                 
- 6bf3 : 32          LDD (HL), A             
- 6bf4 : d1          POP DE                  
- 6bf5 : c9          RET                     
- 6bf6 : d5          PUSH DE                 
- 6bf7 : 2a          LDI A, (HL)             
- 6bf8 : 5f          LD E, A                 
- 6bf9 : 3a          LDD A, (HL)             
- 6bfa : 57          LD D, A                 
- 6bfb : 13          INC DE                  
- 6bfc : 13          INC DE                  
- 6bfd : 18 f1       JR 0xf1                 
+ 6bea : d5          PUSH DE
+ 6beb : 2a          LDI A, (HL)
+ 6bec : 5f          LD E, A
+ 6bed : 3a          LDD A, (HL)
+ 6bee : 57          LD D, A
+ 6bef : 13          INC DE
+ 6bf0 : 7b          LD A, E
+ 6bf1 : 22          LDI (HL), A
+ 6bf2 : 7a          LD A, D
+ 6bf3 : 32          LDD (HL), A
+ 6bf4 : d1          POP DE
+ 6bf5 : c9          RET
+ 6bf6 : d5          PUSH DE
+ 6bf7 : 2a          LDI A, (HL)
+ 6bf8 : 5f          LD E, A
+ 6bf9 : 3a          LDD A, (HL)
+ 6bfa : 57          LD D, A
+ 6bfb : 13          INC DE
+ 6bfc : 13          INC DE
+ 6bfd : 18 f1       JR 0xf1
 
- 6bff : 2a          LDI A, (HL)             
- 6c00 : 4f          LD C, A                 
- 6c01 : 3a          LDD A, (HL)             
- 6c02 : 47          LD B, A                 
- 6c03 : 0a          LD A, (BC)              
- 6c04 : 47          LD B, A                 
- 6c05 : c9          RET                     
- 6c06 : e1          POP HL                  
- 6c07 : 18 2c       JR 0x2c                 
+ 6bff : 2a          LDI A, (HL)
+ 6c00 : 4f          LD C, A
+ 6c01 : 3a          LDD A, (HL)
+ 6c02 : 47          LD B, A
+ 6c03 : 0a          LD A, (BC)
+ 6c04 : 47          LD B, A
+ 6c05 : c9          RET
+ 6c06 : e1          POP HL
+ 6c07 : 18 2c       JR 0x2c
 
- 6c09 : fa 70 df    LD A, (0x70df)          
+ 6c09 : fa 70 df    LD A, (0x70df)
 
 
- 6c0c : fe 03       CP A, 0x03              
+ 6c0c : fe 03       CP A, 0x03
 
- 6c0e : 20 10       JR NZ, 0x10             
+ 6c0e : 20 10       JR NZ, 0x10
 
- 6c10 : fa b8 df    LD A, (0xb8df)          
+ 6c10 : fa b8 df    LD A, (0xb8df)
 
 
- 6c13 : cb 7f       BIT 7, A                
+ 6c13 : cb 7f       BIT 7, A
 
- 6c15 : 28 09       JR Z, 0x09              
+ 6c15 : 28 09       JR Z, 0x09
 
- 6c17 : 7e          LD A, (HL)              
- 6c18 : fe 06       CP A, 0x06              
+ 6c17 : 7e          LD A, (HL)
+ 6c18 : fe 06       CP A, 0x06
 
- 6c1a : 20 04       JR NZ, 0x04             
+ 6c1a : 20 04       JR NZ, 0x04
 
- 6c1c : 3e 40       LD A, 0x40              
+ 6c1c : 3e 40       LD A, 0x40
 
- 6c1e : e0 1c       LD (0xFF00 + 0x1c), A   
+ 6c1e : e0 1c       LD (0xFF00 + 0x1c), A
 
- 6c20 : e5          PUSH HL                 
- 6c21 : 7d          LD A, L                 
- 6c22 : c6 09       ADD A, 0x09             
+ 6c20 : e5          PUSH HL
+ 6c21 : 7d          LD A, L
+ 6c22 : c6 09       ADD A, 0x09
 
- 6c24 : 6f          LD L, A                 
- 6c25 : 7e          LD A, (HL)              
- 6c26 : a7          AND A, A                
- 6c27 : 20 dd       JR NZ, 0xdd             
+ 6c24 : 6f          LD L, A
+ 6c25 : 7e          LD A, (HL)
+ 6c26 : a7          AND A, A
+ 6c27 : 20 dd       JR NZ, 0xdd
 
- 6c29 : 7d          LD A, L                 
- 6c2a : c6 04       ADD A, 0x04             
+ 6c29 : 7d          LD A, L
+ 6c2a : c6 04       ADD A, 0x04
 
- 6c2c : 6f          LD L, A                 
- 6c2d : cb 7e       BIT 7, (HL)             
+ 6c2c : 6f          LD L, A
+ 6c2d : cb 7e       BIT 7, (HL)
 
- 6c2f : 20 d5       JR NZ, 0xd5             
+ 6c2f : 20 d5       JR NZ, 0xd5
 
- 6c31 : e1          POP HL                  
- 6c32 : cd 98 6d    CALL 0x986d             
+ 6c31 : e1          POP HL
+ 6c32 : cd 98 6d    CALL 0x986d
 
 
- 6c35 : 2d          DEC L                   
- 6c36 : 2d          DEC L                   
- 6c37 : c3 6a 6d    JP 0x6a6d               
+ 6c35 : 2d          DEC L
+ 6c36 : 2d          DEC L
+ 6c37 : c3 6a 6d    JP 0x6a6d
 
 
- 6c3a : 2d          DEC L                   
- 6c3b : 2d          DEC L                   
- 6c3c : 2d          DEC L                   
- 6c3d : 2d          DEC L                   
- 6c3e : cd f6 6b    CALL 0xf66b             
+ 6c3a : 2d          DEC L
+ 6c3b : 2d          DEC L
+ 6c3c : 2d          DEC L
+ 6c3d : 2d          DEC L
+ 6c3e : cd f6 6b    CALL 0xf66b
 
 
- 6c41 : 7d          LD A, L                 
- 6c42 : c6 04       ADD A, 0x04             
+ 6c41 : 7d          LD A, L
+ 6c42 : c6 04       ADD A, 0x04
 
- 6c44 : 5f          LD E, A                 
- 6c45 : 54          LD D, H                 
- 6c46 : cd 33 6b    CALL 0x336b             
+ 6c44 : 5f          LD E, A
+ 6c45 : 54          LD D, H
+ 6c46 : cd 33 6b    CALL 0x336b
 
 
- 6c49 : fe 00       CP A, 0x00              
+ 6c49 : fe 00       CP A, 0x00
 
- 6c4b : 28 1f       JR Z, 0x1f              
+ 6c4b : 28 1f       JR Z, 0x1f
 
- 6c4d : fe ff       CP A, 0xff              
+ 6c4d : fe ff       CP A, 0xff
 
- 6c4f : 28 04       JR Z, 0x04              
+ 6c4f : 28 04       JR Z, 0x04
 
- 6c51 : 2c          INC L                   
- 6c52 : c3 8d 6c    JP 0x8d6c               
+ 6c51 : 2c          INC L
+ 6c52 : c3 8d 6c    JP 0x8d6c
 
 
- 6c55 : 2d          DEC L                   
- 6c56 : e5          PUSH HL                 
- 6c57 : cd f6 6b    CALL 0xf66b             
+ 6c55 : 2d          DEC L
+ 6c56 : e5          PUSH HL
+ 6c57 : cd f6 6b    CALL 0xf66b
 
 
- 6c5a : cd ff 6b    CALL 0xff6b             
+ 6c5a : cd ff 6b    CALL 0xff6b
 
 
- 6c5d : 5f          LD E, A                 
- 6c5e : cd ea 6b    CALL 0xea6b             
+ 6c5d : 5f          LD E, A
+ 6c5e : cd ea 6b    CALL 0xea6b
 
 
- 6c61 : cd ff 6b    CALL 0xff6b             
+ 6c61 : cd ff 6b    CALL 0xff6b
 
 
- 6c64 : 57          LD D, A                 
- 6c65 : e1          POP HL                  
- 6c66 : 7b          LD A, E                 
- 6c67 : 22          LDI (HL), A             
- 6c68 : 7a          LD A, D                 
- 6c69 : 32          LDD (HL), A             
- 6c6a : 18 d5       JR 0xd5                 
+ 6c64 : 57          LD D, A
+ 6c65 : e1          POP HL
+ 6c66 : 7b          LD A, E
+ 6c67 : 22          LDI (HL), A
+ 6c68 : 7a          LD A, D
+ 6c69 : 32          LDD (HL), A
+ 6c6a : 18 d5       JR 0xd5
 
 
 
@@ -27763,281 +27763,281 @@
 
 
 
- 6c75 : 21 e9 df    LD HL, 0xe9df           
+ 6c75 : 21 e9 df    LD HL, 0xe9df
 
 
- 6c78 : 7e          LD A, (HL)              
- 6c79 : a7          AND A, A                
- 6c7a : c8          RET Z                   
- 6c7b : 3e 01       LD A, 0x01              
+ 6c78 : 7e          LD A, (HL)
+ 6c79 : a7          AND A, A
+ 6c7a : c8          RET Z
+ 6c7b : 3e 01       LD A, 0x01
 
- 6c7d : ea 70 df    LD (0x70df), A          
+ 6c7d : ea 70 df    LD (0x70df), A
 
 
- 6c80 : 21 90 df    LD HL, 0x90df           
+ 6c80 : 21 90 df    LD HL, 0x90df
 
 
- 6c83 : 2c          INC L                   
- 6c84 : 2a          LDI A, (HL)             
- 6c85 : a7          AND A, A                
- 6c86 : ca 35 6c    JP Z, 0x356c            
+ 6c83 : 2c          INC L
+ 6c84 : 2a          LDI A, (HL)
+ 6c85 : a7          AND A, A
+ 6c86 : ca 35 6c    JP Z, 0x356c
 
 
- 6c89 : 35          DEC (HL)                
- 6c8a : c2 09 6c    JP NZ, 0x096c           
+ 6c89 : 35          DEC (HL)
+ 6c8a : c2 09 6c    JP NZ, 0x096c
 
 
- 6c8d : 2c          INC L                   
- 6c8e : 2c          INC L                   
- 6c8f : cd ff 6b    CALL 0xff6b             
+ 6c8d : 2c          INC L
+ 6c8e : 2c          INC L
+ 6c8f : cd ff 6b    CALL 0xff6b
 
 
- 6c92 : fe 00       CP A, 0x00              
+ 6c92 : fe 00       CP A, 0x00
 
- 6c94 : ca 3a 6c    JP Z, 0x3a6c            
+ 6c94 : ca 3a 6c    JP Z, 0x3a6c
 
 
- 6c97 : fe 9d       CP A, 0x9d              
+ 6c97 : fe 9d       CP A, 0x9d
 
- 6c99 : ca ba 6b    JP Z, 0xba6b            
+ 6c99 : ca ba 6b    JP Z, 0xba6b
 
 
- 6c9c : e6 f0       AND A, 0xf0             
+ 6c9c : e6 f0       AND A, 0xf0
 
- 6c9e : fe a0       CP A, 0xa0              
+ 6c9e : fe a0       CP A, 0xa0
 
- 6ca0 : 20 1a       JR NZ, 0x1a             
+ 6ca0 : 20 1a       JR NZ, 0x1a
 
- 6ca2 : 78          LD A, B                 
- 6ca3 : e6 0f       AND A, 0x0f             
+ 6ca2 : 78          LD A, B
+ 6ca3 : e6 0f       AND A, 0x0f
 
- 6ca5 : 4f          LD C, A                 
- 6ca6 : 06 00       LD B, 0x00              
+ 6ca5 : 4f          LD C, A
+ 6ca6 : 06 00       LD B, 0x00
 
- 6ca8 : e5          PUSH HL                 
- 6ca9 : 11 81 df    LD DE, 0x81df           
+ 6ca8 : e5          PUSH HL
+ 6ca9 : 11 81 df    LD DE, 0x81df
 
 
- 6cac : 1a          LD A, (DE)              
- 6cad : 6f          LD L, A                 
- 6cae : 13          INC DE                  
- 6caf : 1a          LD A, (DE)              
- 6cb0 : 67          LD H, A                 
- 6cb1 : 09          ADD HL, BC              
- 6cb2 : 7e          LD A, (HL)              
- 6cb3 : e1          POP HL                  
- 6cb4 : 2d          DEC L                   
- 6cb5 : 22          LDI (HL), A             
- 6cb6 : cd ea 6b    CALL 0xea6b             
+ 6cac : 1a          LD A, (DE)
+ 6cad : 6f          LD L, A
+ 6cae : 13          INC DE
+ 6caf : 1a          LD A, (DE)
+ 6cb0 : 67          LD H, A
+ 6cb1 : 09          ADD HL, BC
+ 6cb2 : 7e          LD A, (HL)
+ 6cb3 : e1          POP HL
+ 6cb4 : 2d          DEC L
+ 6cb5 : 22          LDI (HL), A
+ 6cb6 : cd ea 6b    CALL 0xea6b
 
 
- 6cb9 : cd ff 6b    CALL 0xff6b             
+ 6cb9 : cd ff 6b    CALL 0xff6b
 
 
- 6cbc : 78          LD A, B                 
- 6cbd : 4f          LD C, A                 
- 6cbe : 06 00       LD B, 0x00              
+ 6cbc : 78          LD A, B
+ 6cbd : 4f          LD C, A
+ 6cbe : 06 00       LD B, 0x00
 
- 6cc0 : cd ea 6b    CALL 0xea6b             
+ 6cc0 : cd ea 6b    CALL 0xea6b
 
 
- 6cc3 : fa 70 df    LD A, (0x70df)          
+ 6cc3 : fa 70 df    LD A, (0x70df)
 
 
- 6cc6 : fe 04       CP A, 0x04              
+ 6cc6 : fe 04       CP A, 0x04
 
- 6cc8 : ca ed 6c    JP Z, 0xed6c            
+ 6cc8 : ca ed 6c    JP Z, 0xed6c
 
 
- 6ccb : e5          PUSH HL                 
- 6ccc : 7d          LD A, L                 
- 6ccd : c6 05       ADD A, 0x05             
+ 6ccb : e5          PUSH HL
+ 6ccc : 7d          LD A, L
+ 6ccd : c6 05       ADD A, 0x05
 
- 6ccf : 6f          LD L, A                 
- 6cd0 : 5d          LD E, L                 
- 6cd1 : 54          LD D, H                 
- 6cd2 : 2c          INC L                   
- 6cd3 : 2c          INC L                   
- 6cd4 : 79          LD A, C                 
- 6cd5 : fe 01       CP A, 0x01              
+ 6ccf : 6f          LD L, A
+ 6cd0 : 5d          LD E, L
+ 6cd1 : 54          LD D, H
+ 6cd2 : 2c          INC L
+ 6cd3 : 2c          INC L
+ 6cd4 : 79          LD A, C
+ 6cd5 : fe 01       CP A, 0x01
 
- 6cd7 : 28 0f       JR Z, 0x0f              
+ 6cd7 : 28 0f       JR Z, 0x0f
 
- 6cd9 : 36 00       LD (HL), 0x00           
+ 6cd9 : 36 00       LD (HL), 0x00
 
- 6cdb : 21 33 6e    LD HL, 0x336e           
+ 6cdb : 21 33 6e    LD HL, 0x336e
 
 
- 6cde : 09          ADD HL, BC              
- 6cdf : 2a          LDI A, (HL)             
- 6ce0 : 12          LD (DE), A              
- 6ce1 : 1c          INC E                   
- 6ce2 : 7e          LD A, (HL)              
- 6ce3 : 12          LD (DE), A              
- 6ce4 : e1          POP HL                  
- 6ce5 : c3 04 6d    JP 0x046d               
+ 6cde : 09          ADD HL, BC
+ 6cdf : 2a          LDI A, (HL)
+ 6ce0 : 12          LD (DE), A
+ 6ce1 : 1c          INC E
+ 6ce2 : 7e          LD A, (HL)
+ 6ce3 : 12          LD (DE), A
+ 6ce4 : e1          POP HL
+ 6ce5 : c3 04 6d    JP 0x046d
 
 
- 6ce8 : 36 01       LD (HL), 0x01           
+ 6ce8 : 36 01       LD (HL), 0x01
 
- 6cea : e1          POP HL                  
- 6ceb : 18 17       JR 0x17                 
+ 6cea : e1          POP HL
+ 6ceb : 18 17       JR 0x17
 
- 6ced : e5          PUSH HL                 
- 6cee : 11 c6 df    LD DE, 0xc6df           
+ 6ced : e5          PUSH HL
+ 6cee : 11 c6 df    LD DE, 0xc6df
 
 
- 6cf1 : 21 c5 6e    LD HL, 0xc56e           
+ 6cf1 : 21 c5 6e    LD HL, 0xc56e
 
 
- 6cf4 : 09          ADD HL, BC              
- 6cf5 : 2a          LDI A, (HL)             
- 6cf6 : 12          LD (DE), A              
- 6cf7 : 1c          INC E                   
- 6cf8 : 7b          LD A, E                 
- 6cf9 : fe cb       CP A, 0xcb              
+ 6cf4 : 09          ADD HL, BC
+ 6cf5 : 2a          LDI A, (HL)
+ 6cf6 : 12          LD (DE), A
+ 6cf7 : 1c          INC E
+ 6cf8 : 7b          LD A, E
+ 6cf9 : fe cb       CP A, 0xcb
 
- 6cfb : 20 f8       JR NZ, 0xf8             
+ 6cfb : 20 f8       JR NZ, 0xf8
 
- 6cfd : 0e 20       LD C, 0x20              
+ 6cfd : 0e 20       LD C, 0x20
 
- 6cff : 21 c4 df    LD HL, 0xc4df           
+ 6cff : 21 c4 df    LD HL, 0xc4df
 
 
- 6d02 : 18 2e       JR 0x2e                 
+ 6d02 : 18 2e       JR 0x2e
 
- 6d04 : e5          PUSH HL                 
- 6d05 : fa 70 df    LD A, (0x70df)          
+ 6d04 : e5          PUSH HL
+ 6d05 : fa 70 df    LD A, (0x70df)
 
 
- 6d08 : fe 01       CP A, 0x01              
+ 6d08 : fe 01       CP A, 0x01
 
- 6d0a : 28 21       JR Z, 0x21              
+ 6d0a : 28 21       JR Z, 0x21
 
- 6d0c : fe 02       CP A, 0x02              
+ 6d0c : fe 02       CP A, 0x02
 
- 6d0e : 28 19       JR Z, 0x19              
+ 6d0e : 28 19       JR Z, 0x19
 
- 6d10 : 0e 1a       LD C, 0x1a              
+ 6d10 : 0e 1a       LD C, 0x1a
 
- 6d12 : fa bf df    LD A, (0xbfdf)          
+ 6d12 : fa bf df    LD A, (0xbfdf)
 
 
- 6d15 : cb 7f       BIT 7, A                
+ 6d15 : cb 7f       BIT 7, A
 
- 6d17 : 20 05       JR NZ, 0x05             
+ 6d17 : 20 05       JR NZ, 0x05
 
- 6d19 : af          XOR A, A                
- 6d1a : e2          LD (C), A               
- 6d1b : 3e 80       LD A, 0x80              
+ 6d19 : af          XOR A, A
+ 6d1a : e2          LD (C), A
+ 6d1b : 3e 80       LD A, 0x80
 
- 6d1d : e2          LD (C), A               
- 6d1e : 0c          INC C                   
- 6d1f : 2c          INC L                   
- 6d20 : 2c          INC L                   
- 6d21 : 2c          INC L                   
- 6d22 : 2c          INC L                   
- 6d23 : 2a          LDI A, (HL)             
- 6d24 : 5f          LD E, A                 
- 6d25 : 16 00       LD D, 0x00              
+ 6d1d : e2          LD (C), A
+ 6d1e : 0c          INC C
+ 6d1f : 2c          INC L
+ 6d20 : 2c          INC L
+ 6d21 : 2c          INC L
+ 6d22 : 2c          INC L
+ 6d23 : 2a          LDI A, (HL)
+ 6d24 : 5f          LD E, A
+ 6d25 : 16 00       LD D, 0x00
 
- 6d27 : 18 15       JR 0x15                 
+ 6d27 : 18 15       JR 0x15
 
- 6d29 : 0e 16       LD C, 0x16              
+ 6d29 : 0e 16       LD C, 0x16
 
- 6d2b : 18 05       JR 0x05                 
+ 6d2b : 18 05       JR 0x05
 
- 6d2d : 0e 10       LD C, 0x10              
+ 6d2d : 0e 10       LD C, 0x10
 
- 6d2f : 3e 00       LD A, 0x00              
+ 6d2f : 3e 00       LD A, 0x00
 
- 6d31 : 0c          INC C                   
- 6d32 : 2c          INC L                   
- 6d33 : 2c          INC L                   
- 6d34 : 2c          INC L                   
- 6d35 : 3a          LDD A, (HL)             
- 6d36 : a7          AND A, A                
- 6d37 : 20 4f       JR NZ, 0x4f             
+ 6d31 : 0c          INC C
+ 6d32 : 2c          INC L
+ 6d33 : 2c          INC L
+ 6d34 : 2c          INC L
+ 6d35 : 3a          LDD A, (HL)
+ 6d36 : a7          AND A, A
+ 6d37 : 20 4f       JR NZ, 0x4f
 
- 6d39 : 2a          LDI A, (HL)             
- 6d3a : 5f          LD E, A                 
- 6d3b : 2c          INC L                   
- 6d3c : 2a          LDI A, (HL)             
- 6d3d : 57          LD D, A                 
- 6d3e : e5          PUSH HL                 
- 6d3f : 2c          INC L                   
- 6d40 : 2c          INC L                   
- 6d41 : 2a          LDI A, (HL)             
- 6d42 : a7          AND A, A                
- 6d43 : 28 02       JR Z, 0x02              
+ 6d39 : 2a          LDI A, (HL)
+ 6d3a : 5f          LD E, A
+ 6d3b : 2c          INC L
+ 6d3c : 2a          LDI A, (HL)
+ 6d3d : 57          LD D, A
+ 6d3e : e5          PUSH HL
+ 6d3f : 2c          INC L
+ 6d40 : 2c          INC L
+ 6d41 : 2a          LDI A, (HL)
+ 6d42 : a7          AND A, A
+ 6d43 : 28 02       JR Z, 0x02
 
- 6d45 : 1e 01       LD E, 0x01              
+ 6d45 : 1e 01       LD E, 0x01
 
- 6d47 : 2c          INC L                   
- 6d48 : 2c          INC L                   
- 6d49 : 36 00       LD (HL), 0x00           
+ 6d47 : 2c          INC L
+ 6d48 : 2c          INC L
+ 6d49 : 36 00       LD (HL), 0x00
 
- 6d4b : 2c          INC L                   
- 6d4c : 7e          LD A, (HL)              
- 6d4d : e1          POP HL                  
- 6d4e : cb 7f       BIT 7, A                
+ 6d4b : 2c          INC L
+ 6d4c : 7e          LD A, (HL)
+ 6d4d : e1          POP HL
+ 6d4e : cb 7f       BIT 7, A
 
- 6d50 : 20 13       JR NZ, 0x13             
+ 6d50 : 20 13       JR NZ, 0x13
 
- 6d52 : 7a          LD A, D                 
- 6d53 : e2          LD (C), A               
- 6d54 : 0c          INC C                   
- 6d55 : 7b          LD A, E                 
- 6d56 : e2          LD (C), A               
- 6d57 : 0c          INC C                   
- 6d58 : 2a          LDI A, (HL)             
- 6d59 : e2          LD (C), A               
- 6d5a : 0c          INC C                   
- 6d5b : 7e          LD A, (HL)              
- 6d5c : f6 80       OR A, 0x80              
+ 6d52 : 7a          LD A, D
+ 6d53 : e2          LD (C), A
+ 6d54 : 0c          INC C
+ 6d55 : 7b          LD A, E
+ 6d56 : e2          LD (C), A
+ 6d57 : 0c          INC C
+ 6d58 : 2a          LDI A, (HL)
+ 6d59 : e2          LD (C), A
+ 6d5a : 0c          INC C
+ 6d5b : 7e          LD A, (HL)
+ 6d5c : f6 80       OR A, 0x80
 
- 6d5e : e2          LD (C), A               
- 6d5f : 7d          LD A, L                 
- 6d60 : f6 05       OR A, 0x05              
+ 6d5e : e2          LD (C), A
+ 6d5f : 7d          LD A, L
+ 6d60 : f6 05       OR A, 0x05
 
- 6d62 : 6f          LD L, A                 
- 6d63 : cb 86       RES 0, (HL)             
+ 6d62 : 6f          LD L, A
+ 6d63 : cb 86       RES 0, (HL)
 
- 6d65 : e1          POP HL                  
- 6d66 : 2d          DEC L                   
- 6d67 : 3a          LDD A, (HL)             
- 6d68 : 32          LDD (HL), A             
- 6d69 : 2d          DEC L                   
- 6d6a : 11 70 df    LD DE, 0x70df           
+ 6d65 : e1          POP HL
+ 6d66 : 2d          DEC L
+ 6d67 : 3a          LDD A, (HL)
+ 6d68 : 32          LDD (HL), A
+ 6d69 : 2d          DEC L
+ 6d6a : 11 70 df    LD DE, 0x70df
 
 
- 6d6d : 1a          LD A, (DE)              
- 6d6e : fe 04       CP A, 0x04              
+ 6d6d : 1a          LD A, (DE)
+ 6d6e : fe 04       CP A, 0x04
 
- 6d70 : 28 09       JR Z, 0x09              
+ 6d70 : 28 09       JR Z, 0x09
 
- 6d72 : 3c          INC A                   
- 6d73 : 12          LD (DE), A              
- 6d74 : 11 10 00    LD DE, 0x1000           
+ 6d72 : 3c          INC A
+ 6d73 : 12          LD (DE), A
+ 6d74 : 11 10 00    LD DE, 0x1000
 
 
- 6d77 : 19          ADD HL, DE              
- 6d78 : c3 83 6c    JP 0x836c               
+ 6d77 : 19          ADD HL, DE
+ 6d78 : c3 83 6c    JP 0x836c
 
 
- 6d7b : 21 9e df    LD HL, 0x9edf           
+ 6d7b : 21 9e df    LD HL, 0x9edf
 
 
- 6d7e : 34          INC (HL)                
- 6d7f : 21 ae df    LD HL, 0xaedf           
+ 6d7e : 34          INC (HL)
+ 6d7f : 21 ae df    LD HL, 0xaedf
 
 
- 6d82 : 34          INC (HL)                
- 6d83 : 21 be df    LD HL, 0xbedf           
+ 6d82 : 34          INC (HL)
+ 6d83 : 21 be df    LD HL, 0xbedf
 
 
- 6d86 : 34          INC (HL)                
- 6d87 : c9          RET                     
+ 6d86 : 34          INC (HL)
+ 6d87 : c9          RET
 
 
 
@@ -28054,42 +28054,42 @@
 
 
 
- 6d98 : e5          PUSH HL                 
- 6d99 : 7d          LD A, L                 
- 6d9a : c6 06       ADD A, 0x06             
+ 6d98 : e5          PUSH HL
+ 6d99 : 7d          LD A, L
+ 6d9a : c6 06       ADD A, 0x06
 
- 6d9c : 6f          LD L, A                 
- 6d9d : 7e          LD A, (HL)              
- 6d9e : e6 0f       AND A, 0x0f             
+ 6d9c : 6f          LD L, A
+ 6d9d : 7e          LD A, (HL)
+ 6d9e : e6 0f       AND A, 0x0f
 
- 6da0 : 28 18       JR Z, 0x18              
+ 6da0 : 28 18       JR Z, 0x18
 
- 6da2 : ea 71 df    LD (0x71df), A          
+ 6da2 : ea 71 df    LD (0x71df), A
 
 
- 6da5 : fa 70 df    LD A, (0x70df)          
+ 6da5 : fa 70 df    LD A, (0x70df)
 
 
- 6da8 : 0e 13       LD C, 0x13              
+ 6da8 : 0e 13       LD C, 0x13
 
- 6daa : fe 01       CP A, 0x01              
+ 6daa : fe 01       CP A, 0x01
 
- 6dac : 28 0e       JR Z, 0x0e              
+ 6dac : 28 0e       JR Z, 0x0e
 
- 6dae : 0e 18       LD C, 0x18              
+ 6dae : 0e 18       LD C, 0x18
 
- 6db0 : fe 02       CP A, 0x02              
+ 6db0 : fe 02       CP A, 0x02
 
- 6db2 : 28 08       JR Z, 0x08              
+ 6db2 : 28 08       JR Z, 0x08
 
- 6db4 : 0e 1d       LD C, 0x1d              
+ 6db4 : 0e 1d       LD C, 0x1d
 
- 6db6 : fe 03       CP A, 0x03              
+ 6db6 : fe 03       CP A, 0x03
 
- 6db8 : 28 02       JR Z, 0x02              
+ 6db8 : 28 02       JR Z, 0x02
 
- 6dba : e1          POP HL                  
- 6dbb : c9          RET                     
+ 6dba : e1          POP HL
+ 6dbb : c9          RET
 
 
 
@@ -32750,10 +32750,10 @@
 
 
 
- 7ff0 : c3 53 65    JP 0x5365               
+ 7ff0 : c3 53 65    JP 0x5365
 
 
- 7ff3 : c3 d6 69    JP 0xd669               
+ 7ff3 : c3 d6 69    JP 0xd669
 
 
 
@@ -65460,16 +65460,16 @@
 
 
 
- ffb6 : 3e c0       LD A, 0xc0              
+ ffb6 : 3e c0       LD A, 0xc0
 
- ffb8 : e0 46       LD (0xFF00 + 0x46), A   
+ ffb8 : e0 46       LD (0xFF00 + 0x46), A
 
- ffba : 3e 28       LD A, 0x28              
+ ffba : 3e 28       LD A, 0x28
 
- ffbc : 3d          DEC A                   
- ffbd : 20 fd       JR NZ, 0xfd             
+ ffbc : 3d          DEC A
+ ffbd : 20 fd       JR NZ, 0xfd
 
- ffbf : c9          RET                     
+ ffbf : c9          RET
 
 
 
