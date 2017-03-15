@@ -726,7 +726,7 @@
  02cc : 3e ff       LD A, 0xff                      // Sets A to 0xff
 
  02ce : 32          LDD (HL), A                     // Writes 0xff to ff25 which makes the sound mono (I guess) FIXME
- 02cf : 36 77       LD (HL), 0x77
+ 02cf : 36 77       LD (HL), 0x77                   // Writes 0xff to ff24, enabling both sound outputs at maximum volume
 
  02d1 : 3e 01       LD A, 0x01                      // Sets A to 0x01
 
@@ -746,67 +746,67 @@
  02e0 : 05          DEC B                           // but that range should already be zero
  02e1 : 20 fc       JR NZ, 0xfc                     // TODO review this
 
- 02e3 : 21 ff cf    LD HL, 0xffcf
+ 02e3 : 21 ff cf    LD HL, 0xffcf                   // Sets HL to cfff again, why
 
 
- 02e6 : 0e 10       LD C, 0x10
+ 02e6 : 0e 10       LD C, 0x10                      // Sets C to 0x10
 
- 02e8 : 06 00       LD B, 0x00
+ 02e8 : 06 00       LD B, 0x00                      // and b to 0x00
 
- 02ea : 32          LDD (HL), A
- 02eb : 05          DEC B
- 02ec : 20 fc       JR NZ, 0xfc
+ 02ea : 32          LDD (HL), A                     // the same as 028f
+ 02eb : 05          DEC B                           //
+ 02ec : 20 fc       JR NZ, 0xfc                     //
 
- 02ee : 0d          DEC C
- 02ef : 20 f9       JR NZ, 0xf9
+ 02ee : 0d          DEC C                           //
+ 02ef : 20 f9       JR NZ, 0xf9                     //
 
- 02f1 : 21 ff 9f    LD HL, 0xff9f
-
-
- 02f4 : 0e 20       LD C, 0x20
-
- 02f6 : af          XOR A, A
- 02f7 : 06 00       LD B, 0x00
-
- 02f9 : 32          LDD (HL), A
- 02fa : 05          DEC B
- 02fb : 20 fc       JR NZ, 0xfc
-
- 02fd : 0d          DEC C
- 02fe : 20 f9       JR NZ, 0xf9
-
- 0300 : 21 ff fe    LD HL, 0xfffe
+ 02f1 : 21 ff 9f    LD HL, 0xff9f                   // set HL to 0x9fff, the last byte at VRAM, the window map
 
 
- 0303 : 06 00       LD B, 0x00
+ 02f4 : 0e 20       LD C, 0x20                      // Sets C to 0x20
 
- 0305 : 32          LDD (HL), A
- 0306 : 05          DEC B
- 0307 : 20 fc       JR NZ, 0xfc
+ 02f6 : af          XOR A, A                        // Zeroes A
+ 02f7 : 06 00       LD B, 0x00                      // Zeroes B
 
- 0309 : 21 fe ff    LD HL, 0xfeff
+ 02f9 : 32          LDD (HL), A                     // This is the same as 028b, but for clearing the vram
+ 02fa : 05          DEC B                           // starts at 9fff and goes down to 8000
+ 02fb : 20 fc       JR NZ, 0xfc                     //
 
+ 02fd : 0d          DEC C                           //
+ 02fe : 20 f9       JR NZ, 0xf9                     //
 
- 030c : 06 80       LD B, 0x80
-
- 030e : 32          LDD (HL), A
- 030f : 05          DEC B
- 0310 : 20 fc       JR NZ, 0xfc
-
- 0312 : 0e b6       LD C, 0xb6
-
- 0314 : 06 0c       LD B, 0x0c
-
- 0316 : 21 c7 2a    LD HL, 0xc72a
+ 0300 : 21 ff fe    LD HL, 0xfffe                   // Sets HL to efff
 
 
- 0319 : 2a          LDI A, (HL)
- 031a : e2          LD (C), A
- 031b : 0c          INC C
- 031c : 05          DEC B
- 031d : 20 fa       JR NZ, 0xfa
+ 0303 : 06 00       LD B, 0x00                      // sets B to 0
 
- 031f : cd e9 27    CALL 0xe927
+ 0305 : 32          LDD (HL), A                     // Loops from feff to fe00
+ 0306 : 05          DEC B                           // which cleans the OAM and some unused stuff from fea0 to feff ? FIXME
+ 0307 : 20 fc       JR NZ, 0xfc                     //
+
+ 0309 : 21 fe ff    LD HL, 0xfeff                   // Sets HL to fffe
+
+
+ 030c : 06 80       LD B, 0x80                      // Sets B to 0x80
+
+ 030e : 32          LDD (HL), A                     // Loops from fffe to ff7f
+ 030f : 05          DEC B                           //
+ 0310 : 20 fc       JR NZ, 0xfc                     //
+
+ 0312 : 0e b6       LD C, 0xb6                      // Sets C to 0xb6
+
+ 0314 : 06 0c       LD B, 0x0c                      // Sets B to 0x0c
+
+ 0316 : 21 c7 2a    LD HL, 0xc72a                   // Sets HL to 0x2a72
+
+
+ 0319 : 2a          LDI A, (HL)                     // Reads the rom at (HL)
+ 031a : e2          LD (C), A                       // and writes it to (C)
+ 031b : 0c          INC C                           // increases C
+ 031c : 05          DEC B                           // decreases B
+ 031d : 20 fa       JR NZ, 0xfa                     // Loops - Copies 2a72 to 2ac7 into some weird address based on BC, WHY? FIXME
+
+ 031f : cd e9 27    CALL 0xe927                     // CALL 0x28e9
 
 
  0322 : cd f3 7f    CALL 0xf37f
