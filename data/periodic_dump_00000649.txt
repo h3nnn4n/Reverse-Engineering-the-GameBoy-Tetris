@@ -655,8 +655,8 @@
 ----------------------------------------------------
 
  // Function to initialize the memory
- // 028b to 0298 is a loop to clear the WRAM ( d000 to dfff ), note that e000-dfff is mapped to c000-ddff,
- // which means that all the WRAM is cleared ( c000 to dfff )
+ // 028b to 0298 is a loop to clear the WRAM ( d000 to dfff ), note that e000-dfff is mapped to c000-ddff, which means that all the WRAM is cleared ( c000 to dfff )
+ //
 
  028b : af          XOR A, A                        // Looks like it starts here, since the RETI is always executed. This is also the entry point
  028c : 21 ff df    LD HL, 0xffdf                   // Loads the value 0xffdf in HL
@@ -806,10 +806,10 @@
  031c : 05          DEC B                           // decreases B
  031d : 20 fa       JR NZ, 0xfa                     // Loops - Copies 2a72 to 2ac7 into some weird address based on BC, WHY? FIXME
 
- 031f : cd e9 27    CALL 0xe927                     // CALL 0x28e9
+ 031f : cd e9 27    CALL 0xe927                     // CALL 0x28e9 ( Clears/inits the bgtiles )
 
 
- 0322 : cd f3 7f    CALL 0xf37f
+ 0322 : cd f3 7f    CALL 0xf37f                     // CALLS 0x7ff3, which is just a jmp to 0x69d6
 
 
  0325 : 3e 09       LD A, 0x09
@@ -10223,22 +10223,26 @@
 
 
 
-
- 27e9 : 21 ff 9b    LD HL, 0xff9b
-
-
- 27ec : 01 00 04    LD BC, 0x0004
+// -------------------------------
+// Function that clear the window/bg tilemap
+ 27e9 : 21 ff 9b    LD HL, 0xff9b                   // Sets HL to 9bff (End of window/bg tilemap)
 
 
- 27ef : 3e 2f       LD A, 0x2f
+ 27ec : 01 00 04    LD BC, 0x0004                   // Sets BC to 0x04 and C to 0x00
 
- 27f1 : 32          LDD (HL), A
- 27f2 : 0b          DEC BC
- 27f3 : 78          LD A, B
- 27f4 : b1          OR A, C
- 27f5 : 20 f8       JR NZ, 0xf8
 
- 27f7 : c9          RET
+ 27ef : 3e 2f       LD A, 0x2f                      // Sets a to 0x2f FIXME what is this value
+
+ 27f1 : 32          LDD (HL), A                     // loops from 0x9bff to 0x9800 (all of the first window/bg tilemap block)
+ 27f2 : 0b          DEC BC                          //
+ 27f3 : 78          LD A, B                         //
+ 27f4 : b1          OR A, C                         //
+ 27f5 : 20 f8       JR NZ, 0xf8                     //
+
+ 27f7 : c9          RET                             // Returns to 0x031f
+ // ------------------
+
+
  27f8 : 2a          LDI A, (HL)
  27f9 : 12          LD (DE), A
  27fa : 13          INC DE
@@ -27101,62 +27105,67 @@
 
  69d4 : c1          POP BC
  69d5 : c9          RET
- 69d6 : af          XOR A, A
- 69d7 : ea e1 df    LD (0xe1df), A
+ // --------------------
+ // Function that initializes some unknow(for now) address
+ // and sets up some of the sound
+ 69d6 : af          XOR A, A                        // Zeroes A
+ 69d7 : ea e1 df    LD (0xe1df), A                  // Writes zero to 0xdfe1
 
 
- 69da : ea e9 df    LD (0xe9df), A
+ 69da : ea e9 df    LD (0xe9df), A                  // Writes zero to 0xdfe9
 
 
- 69dd : ea f1 df    LD (0xf1df), A
+ 69dd : ea f1 df    LD (0xf1df), A                  // Writes zero to 0xdff1
 
 
- 69e0 : ea f9 df    LD (0xf9df), A
+ 69e0 : ea f9 df    LD (0xf9df), A                  // Writes zero to 0xdff9
 
 
- 69e3 : ea 9f df    LD (0x9fdf), A
+ 69e3 : ea 9f df    LD (0x9fdf), A                  // Writes zero to 0xdf9f
 
 
- 69e6 : ea af df    LD (0xafdf), A
+ 69e6 : ea af df    LD (0xafdf), A                  // Writes zero to 0xdfaf
 
 
- 69e9 : ea bf df    LD (0xbfdf), A
+ 69e9 : ea bf df    LD (0xbfdf), A                  // Writes zero to 0xdfbf
 
 
- 69ec : ea cf df    LD (0xcfdf), A
+ 69ec : ea cf df    LD (0xcfdf), A                  // Writes zero to 0xdfcf
 
 
- 69ef : 3e ff       LD A, 0xff
+ 69ef : 3e ff       LD A, 0xff                      // Writes 0xff to A
 
- 69f1 : e0 25       LD (0xFF00 + 0x25), A
+ 69f1 : e0 25       LD (0xFF00 + 0x25), A           // This was alread set to 0xff, due to 0x02ce
 
- 69f3 : 3e 03       LD A, 0x03
+ 69f3 : 3e 03       LD A, 0x03                      // Sets 0x03 to A
 
- 69f5 : ea 78 df    LD (0x78df), A
+ 69f5 : ea 78 df    LD (0x78df), A                  // And writes ot 0xdf78
 
 
- 69f8 : 3e 08       LD A, 0x08
+ 69f8 : 3e 08       LD A, 0x08                      // Writes 0x08 to A
 
- 69fa : e0 12       LD (0xFF00 + 0x12), A
+ 69fa : e0 12       LD (0xFF00 + 0x12), A           // Sets NR12 (channel 1 volume envelope, tone and sweep) to half the volume, I guess FIXME
 
- 69fc : e0 17       LD (0xFF00 + 0x17), A
+ 69fc : e0 17       LD (0xFF00 + 0x17), A           // Same for NR22(channel 2 volume envelop, tone)
 
- 69fe : e0 21       LD (0xFF00 + 0x21), A
+ 69fe : e0 21       LD (0xFF00 + 0x21), A           // Same for NR42(channel 4 volume envelop, noise)
 
- 6a00 : 3e 80       LD A, 0x80
+ 6a00 : 3e 80       LD A, 0x80                      // Sets A to 0x80
 
- 6a02 : e0 14       LD (0xFF00 + 0x14), A
+ 6a02 : e0 14       LD (0xFF00 + 0x14), A           // Resets sound and sets lowest freq for NR14 - Channel 1 Frequency hi
 
- 6a04 : e0 19       LD (0xFF00 + 0x19), A
+ 6a04 : e0 19       LD (0xFF00 + 0x19), A           // same for NR24 - Channel 2 Frequency hi data
 
- 6a06 : e0 23       LD (0xFF00 + 0x23), A
+ 6a06 : e0 23       LD (0xFF00 + 0x23), A           // and NR44 - Channel 4 Counter/consecutive; Inital, there is no freq here to be set though
 
- 6a08 : af          XOR A, A
- 6a09 : e0 10       LD (0xFF00 + 0x10), A
+ 6a08 : af          XOR A, A                        // Zeroes A
+ 6a09 : e0 10       LD (0xFF00 + 0x10), A           // Disable NR10 - Channel 1 Sweep 
 
- 6a0b : e0 1a       LD (0xFF00 + 0x1a), A
+ 6a0b : e0 1a       LD (0xFF00 + 0x1a), A           // and turns NR30 - Channel 3 Sound off
 
- 6a0d : c9          RET
+ 6a0d : c9          RET                             // Retuns to 0x0322
+ // -------------------------------
+
  6a0e : 11 e0 df    LD DE, 0xe0df
 
 
