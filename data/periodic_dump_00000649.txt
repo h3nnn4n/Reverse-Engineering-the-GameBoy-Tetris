@@ -508,17 +508,15 @@
 
 
 
-
- 01fd : f5          PUSH AF
- 01fe : c5          PUSH BC
- 01ff : d5          PUSH DE
- 0200 : e5          PUSH HL
- 0201 : f0 ce       LD A, (0xFF00 + 0xce)
-
- 0203 : a7          AND A, A
- 0204 : 28 12       JR Z, 0x12
-
-
+// VBLANK interrupt jumps here
+ 01fd : f5          PUSH AF                         // Stores all the registers
+ 01fe : c5          PUSH BC                         //
+ 01ff : d5          PUSH DE                         //
+ 0200 : e5          PUSH HL                         //
+ 0201 : f0 ce       LD A, (0xFF00 + 0xce)           // Reads 0xffce to A. Why read into A and then zero it before using?
+                                                    // maybe reading that has some effect? I dont think so
+ 0203 : a7          AND A, A                        // Zeroes A
+ 0204 : 28 12       JR Z, 0x12                      // Jumps to 0x0218
 
 
 
@@ -536,70 +534,72 @@
 
 
 
- 0218 : cd 40 22    CALL 0x4022
 
 
- 021b : cd 2c 24    CALL 0x2c24
+ 0218 : cd 40 22    CALL 0x4022                     // Calls 0x2240. I dont know the function does
 
 
- 021e : cd 17 24    CALL 0x1724
+ 021b : cd 2c 24    CALL 0x2c24                     // Calls 0x242c
 
 
- 0221 : cd fe 23    CALL 0xfe23
+ 021e : cd 17 24    CALL 0x1724                     // Calls 0x2417
 
 
- 0224 : cd ec 23    CALL 0xec23
+ 0221 : cd fe 23    CALL 0xfe23                     // Calls 0x23fe
 
 
- 0227 : cd dd 23    CALL 0xdd23
+ 0224 : cd ec 23    CALL 0xec23                     // Calls
 
 
- 022a : cd ce 23    CALL 0xce23
+ 0227 : cd dd 23    CALL 0xdd23                     // Calls
 
 
- 022d : cd bf 23    CALL 0xbf23
+ 022a : cd ce 23    CALL 0xce23                     // Calls
 
 
- 0230 : cd b0 23    CALL 0xb023
+ 022d : cd bf 23    CALL 0xbf23                     // Calls
 
 
- 0233 : cd a1 23    CALL 0xa123
+ 0230 : cd b0 23    CALL 0xb023                     // Calls
 
 
- 0236 : cd 92 23    CALL 0x9223
+ 0233 : cd a1 23    CALL 0xa123                     // Calls
 
 
- 0239 : cd 83 23    CALL 0x8323
+ 0236 : cd 92 23    CALL 0x9223                     // Calls
 
 
- 023c : cd 58 23    CALL 0x5823
+ 0239 : cd 83 23    CALL 0x8323                     // Calls
 
 
- 023f : cd 49 23    CALL 0x4923
+ 023c : cd 58 23    CALL 0x5823                     // Calls
 
 
- 0242 : cd 3a 23    CALL 0x3a23
+ 023f : cd 49 23    CALL 0x4923                     // Calls
 
 
- 0245 : cd 2b 23    CALL 0x2b23
+ 0242 : cd 3a 23    CALL 0x3a23                     // Calls
 
 
- 0248 : cd 1c 23    CALL 0x1c23
+ 0245 : cd 2b 23    CALL 0x2b23                     // Calls
 
 
- 024b : cd 0d 23    CALL 0x0d23
+ 0248 : cd 1c 23    CALL 0x1c23                     // Calls
 
 
- 024e : cd fe 22    CALL 0xfe22
+ 024b : cd 0d 23    CALL 0x0d23                     // Calls
 
 
- 0251 : cd 32 1f    CALL 0x321f
+ 024e : cd fe 22    CALL 0xfe22                     // Calls
 
 
- 0254 : cd b6 ff    CALL 0xb6ff
+ 0251 : cd 32 1f    CALL 0x321f                     // Calls
 
 
- 0257 : cd 2e 19    CALL 0x2e19
+ 0254 : cd b6 ff    CALL 0xb6ff                     // Calls
+
+
+ 0257 : cd 2e 19    CALL 0x2e19                     // Calls
 
 
  025a : fa ce c0    LD A, (0xcec0)
@@ -809,31 +809,31 @@
  031f : cd e9 27    CALL 0xe927                     // CALL 0x28e9 ( Clears/inits the bgtiles )
 
 
- 0322 : cd f3 7f    CALL 0xf37f                     // CALLS 0x7ff3, which is just a jmp to 0x69d6
+ 0322 : cd f3 7f    CALL 0xf37f                     // CALLS 0x7ff3, which is just a jmp to 0x69d6, a function to initialize some sound
 
 
- 0325 : 3e 09       LD A, 0x09
+ 0325 : 3e 09       LD A, 0x09                      // Sets A to 0x09
 
- 0327 : e0 ff       LD (0xFF00 + 0xff), A
+ 0327 : e0 ff       LD (0xFF00 + 0xff), A           // Sets the IME (interrupt master enable) to 9, which activates interrupts for VBLANK and serial
 
- 0329 : 3e 37       LD A, 0x37
+ 0329 : 3e 37       LD A, 0x37                      // Sets A to 0x37
 
- 032b : e0 c0       LD (0xFF00 + 0xc0), A
+ 032b : e0 c0       LD (0xFF00 + 0xc0), A           // Writes 0x37 to ffc0, I dont what what this does FIXME
 
- 032d : 3e 1c       LD A, 0x1c
+ 032d : 3e 1c       LD A, 0x1c                      // Sets A to 0x1c
 
- 032f : e0 c1       LD (0xFF00 + 0xc1), A
+ 032f : e0 c1       LD (0xFF00 + 0xc1), A           // Writes 0x1c to 0xffc1, unknow reason FIXME
 
- 0331 : 3e 24       LD A, 0x24
+ 0331 : 3e 24       LD A, 0x24                      // Sets A to 0x24
 
- 0333 : e0 e1       LD (0xFF00 + 0xe1), A
+ 0333 : e0 e1       LD (0xFF00 + 0xe1), A           // Same as above
 
- 0335 : 3e 80       LD A, 0x80
+ 0335 : 3e 80       LD A, 0x80                      // Sets A to 0x80
 
- 0337 : e0 40       LD (0xFF00 + 0x40), A
+ 0337 : e0 40       LD (0xFF00 + 0x40), A           // Writes 0x80 to the first byte of the wave pattern ram
 
- 0339 : fb          EI
- 033a : af          XOR A, A
+ 0339 : fb          EI                              // Enables Interrupts, there was a vlank int pending, that was manually set at 0x029d
+ 033a : af          XOR A, A                        // Zeroes A, then the interrupt kicks in and the code goes to 0x0040, then 0x01fd
  033b : e0 0f       LD (0xFF00 + 0x0f), A
 
  033d : e0 4a       LD (0xFF00 + 0x4a), A
@@ -8774,29 +8774,37 @@
 
 
 
+// -----------------
+// VBLANK leads here
+// Sneaky stuff going on here
+// 0xff98 and 0xffa6 are beign read from and the value there is changing. What is there
+// This codes changes A and reads from 0xff98, 0xffa6, 0xff9c and 0xc0a3
+// I cant see any side effect here
+// TODO Verify this
 
- 2240 : f0 98       LD A, (0xFF00 + 0x98)
+ 2240 : f0 98       LD A, (0xFF00 + 0x98)           // Stores 0xff98 into A, what is there? FIXME
 
- 2242 : fe 03       CP A, 0x03
+ 2242 : fe 03       CP A, 0x03                      // Checks if the value equals to 3
 
- 2244 : c0          RET NZ
- 2245 : f0 a6       LD A, (0xFF00 + 0xa6)
+ 2244 : c0          RET NZ                          // If not, returns
+ 2245 : f0 a6       LD A, (0xFF00 + 0xa6)           // Stores 0xffa6 into A, what is there? FIXME
 
- 2247 : a7          AND A, A
- 2248 : c0          RET NZ
- 2249 : 11 a3 c0    LD DE, 0xa3c0
+ 2247 : a7          AND A, A                        // Tests if A is not zero
+ 2248 : c0          RET NZ                          // Returns if not zero. A will always be zero here
+ 2249 : 11 a3 c0    LD DE, 0xa3c0                   // Sets E to 0xa3 and D to 0xc0
 
 
- 224c : f0 9c       LD A, (0xFF00 + 0x9c)
+ 224c : f0 9c       LD A, (0xFF00 + 0x9c)           // Reads 0xff9c to A, what is thre? FIXME
 
- 224e : cb 47       BIT 0, A
+ 224e : cb 47       BIT 0, A                        // Tests if first bit is zero
 
- 2250 : 20 3c       JR NZ, 0x3c
+ 2250 : 20 3c       JR NZ, 0x3c                     // If not goes somewhere. I think it is 4 bytes ahead, which is 0x2254
 
- 2252 : 1a          LD A, (DE)
- 2253 : a7          AND A, A
- 2254 : 28 52       JR Z, 0x52
-
+ 2252 : 1a          LD A, (DE)                      // Reads the content of 0xc0a3 into A, what is there? FIXME
+ 2253 : a7          AND A, A                        // Tests if it is not zero
+ 2254 : 28 52       JR Z, 0x52                      // Jumps 18 bytes back, at 0x2242, else it goes on, but it never did on my tests TODO (check this)
+ // -----------------------------
+ // I guess that here is some more code here that was never run during my tests, which for now are quite short
 
 
 
@@ -9246,16 +9254,14 @@
 
 
 
- 2417 : f0 e3       LD A, (0xFF00 + 0xe3)
+// ----------------------------
+// Function called during VBLANK
+ 2417 : f0 e3       LD A, (0xFF00 + 0xe3)           // Reads frim 0xffe3, what is there? FIXME
 
- 2419 : fe 12       CP A, 0x12
+ 2419 : fe 12       CP A, 0x12                      // Tests if it equals to 0x12
 
- 241b : c0          RET NZ
-
-
-
-
-
+ 241b : c0          RET NZ                          // returns if it is different
+ // -- There should be some code after here, but it never got executed during my tests
 
 
 
@@ -9267,11 +9273,19 @@
 
 
 
- 242c : f0 e3       LD A, (0xFF00 + 0xe3)
 
- 242e : fe 13       CP A, 0x13
 
- 2430 : c0          RET NZ
+
+
+// ----------------------------
+// Function called during VBLANK
+
+ 242c : f0 e3       LD A, (0xFF00 + 0xe3)           // Reads from 0xffe3, what is there? FIXME
+
+ 242e : fe 13       CP A, 0x13                      // Checks if it equals to 0x13
+
+ 2430 : c0          RET NZ                          // Returns if it is diffent
+ // -- There should be some code after here, but it never got executed during my tests
 
 
 
@@ -27159,7 +27173,7 @@
  6a06 : e0 23       LD (0xFF00 + 0x23), A           // and NR44 - Channel 4 Counter/consecutive; Inital, there is no freq here to be set though
 
  6a08 : af          XOR A, A                        // Zeroes A
- 6a09 : e0 10       LD (0xFF00 + 0x10), A           // Disable NR10 - Channel 1 Sweep 
+ 6a09 : e0 10       LD (0xFF00 + 0x10), A           // Disable NR10 - Channel 1 Sweep
 
  6a0b : e0 1a       LD (0xFF00 + 0x1a), A           // and turns NR30 - Channel 3 Sound off
 
