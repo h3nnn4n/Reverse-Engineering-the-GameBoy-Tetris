@@ -730,7 +730,7 @@
 
  02d1 : 3e 01       LD A, 0x01                      // Sets A to 0x01
 
- 02d3 : ea 00 20    LD (0x0020), A                  // Writes 0x01 to the pointer at 2000. 2000 is read only, but since this is a pointer, I think it reads the address at 2000 from the rom and places 0x01 there FIXME
+ 02d3 : ea 00 20    LD (0x0020), A                  // Writes 0x01 to 0x2000, which sets the rom bank. Ps: There is not MBC on tetris
 
 
  02d6 : 31 ff cf    LD SP, (0xffcf)                 // sets  the stackpointer to the content at cfff, which should be zero, see 0293
