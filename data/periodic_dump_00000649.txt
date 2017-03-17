@@ -10770,56 +10770,60 @@
 
 
 
+// -----------------------
+// I got this function by intercepting the access to 0xff00
+// in the hope that I would find something useful
+// This code is the same as the one from Ms. Pacman
+ 29fa : 3e 20       LD A, 0x20                      // Sets a to 0x20, which is bit 5
 
- 29fa : 3e 20       LD A, 0x20
+ 29fc : e0 00       LD (0xFF00 + 0x00), A           // Writes 0x20 to the gamepad register, which selects P14 (right, left, up, down)
 
- 29fc : e0 00       LD (0xFF00 + 0x00), A
+ 29fe : f0 00       LD A, (0xFF00 + 0x00)           // Reads the state into A
 
- 29fe : f0 00       LD A, (0xFF00 + 0x00)
+ 2a00 : f0 00       LD A, (0xFF00 + 0x00)           // Reads again, maybe to remove noise.
 
- 2a00 : f0 00       LD A, (0xFF00 + 0x00)
+ 2a02 : 2f          CPL                             // Takes the complement of A
+ 2a03 : e6 0f       AND A, 0x0f                     // Stores the first 4 bits and drops(zeroes) the rest
 
- 2a02 : 2f          CPL
- 2a03 : e6 0f       AND A, 0x0f
+ 2a05 : cb 37       SWAP A                          // Swap the 2 nibbles of A
 
- 2a05 : cb 37       SWAP A
+ 2a07 : 47          LD B, A                         // Copies A into B
+ 2a08 : 3e 10       LD A, 0x10                      // Sets a to 0x10, which sets bit 6
 
- 2a07 : 47          LD B, A
- 2a08 : 3e 10       LD A, 0x10
+ 2a0a : e0 00       LD (0xFF00 + 0x00), A           // Writes 0x10 to 0xff00, which enables P15 (A, B, Start, Select)
 
- 2a0a : e0 00       LD (0xFF00 + 0x00), A
+ 2a0c : f0 00       LD A, (0xFF00 + 0x00)           // Reads the state a couple of times, to remove some noise?
 
- 2a0c : f0 00       LD A, (0xFF00 + 0x00)
+ 2a0e : f0 00       LD A, (0xFF00 + 0x00)           //
 
- 2a0e : f0 00       LD A, (0xFF00 + 0x00)
+ 2a10 : f0 00       LD A, (0xFF00 + 0x00)           //
 
- 2a10 : f0 00       LD A, (0xFF00 + 0x00)
+ 2a12 : f0 00       LD A, (0xFF00 + 0x00)           //
 
- 2a12 : f0 00       LD A, (0xFF00 + 0x00)
+ 2a14 : f0 00       LD A, (0xFF00 + 0x00)           //
 
- 2a14 : f0 00       LD A, (0xFF00 + 0x00)
+ 2a16 : f0 00       LD A, (0xFF00 + 0x00)           //
 
- 2a16 : f0 00       LD A, (0xFF00 + 0x00)
+ 2a18 : 2f          CPL                             // Takes the complement of A
+ 2a19 : e6 0f       AND A, 0x0f                     // Zeroes the first nibble and stores the other one
 
- 2a18 : 2f          CPL
- 2a19 : e6 0f       AND A, 0x0f
+ 2a1b : b0          OR A, B                         // This adds A and B
+ 2a1c : 4f          LD C, A                         // Stores A into C
+ 2a1d : f0 80       LD A, (0xFF00 + 0x80)           // Reads the old state from 0xff80
 
- 2a1b : b0          OR A, B
- 2a1c : 4f          LD C, A
- 2a1d : f0 80       LD A, (0xFF00 + 0x80)
+ 2a1f : a9          XOR A, C                        // XOR's the stuff from 0xff80 with C, that will mark with 1 what changed
+ 2a20 : a1          AND A, C                        // Makes an AND, which will leave only the transitions that turned the button on
+ 2a21 : e0 81       LD (0xFF00 + 0x81), A           // Saves the result at 0xff81. So 0xff81 will have a bitmask of the buttons that where turned on since the last call
 
- 2a1f : a9          XOR A, C
- 2a20 : a1          AND A, C
- 2a21 : e0 81       LD (0xFF00 + 0x81), A
+ 2a23 : 79          LD A, C                         // Copies C into A
+ 2a24 : e0 80       LD (0xFF00 + 0x80), A           // Stores A into 0xff80
 
- 2a23 : 79          LD A, C
- 2a24 : e0 80       LD (0xFF00 + 0x80), A
+ 2a26 : 3e 30       LD A, 0x30                      // Sets 0x30 to A, bit 5 and 6
 
- 2a26 : 3e 30       LD A, 0x30
+ 2a28 : e0 00       LD (0xFF00 + 0x00), A           // Which disables P14 and P15
 
- 2a28 : e0 00       LD (0xFF00 + 0x00), A
-
- 2a2a : c9          RET
+ 2a2a : c9          RET                             // Returns to the caller
+ // ------------------------------
  2a2b : f0 b2       LD A, (0xFF00 + 0xb2)
 
  2a2d : d6 10       SUB A, 0x10
@@ -65491,17 +65495,21 @@
 
 
 
+// ----------------
+// This call a dma and waits for it to finish
+// TODO Figure out what is being copied
 
- ffb6 : 3e c0       LD A, 0xc0
+ ffb6 : 3e c0       LD A, 0xc0                      // Sets A to 0xc0
 
- ffb8 : e0 46       LD (0xFF00 + 0x46), A
+ ffb8 : e0 46       LD (0xFF00 + 0x46), A           // Writes it to the DMA register
 
- ffba : 3e 28       LD A, 0x28
+ ffba : 3e 28       LD A, 0x28                      // Sets A to 0x28
 
- ffbc : 3d          DEC A
- ffbd : 20 fd       JR NZ, 0xfd
+ ffbc : 3d          DEC A                           // Loops until A gets to zero
+ ffbd : 20 fd       JR NZ, 0xfd                     //
 
- ffbf : c9          RET
+ ffbf : c9          RET                             // Returns
+ // -----------
 
 
 
