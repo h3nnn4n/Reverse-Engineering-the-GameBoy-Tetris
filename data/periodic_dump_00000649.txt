@@ -7224,6 +7224,8 @@
 
 
 
+// -----------------------------
+// This might be the code that runs on the actual game screen, when 0xffe1 = 0x00
  1c29 : cd 68 1c    CALL 0x681c
 
 
@@ -7262,13 +7264,13 @@
 
 
  1c4e : c9          RET
- 1c4f : cb 57       BIT 2, A
+ 1c4f : cb 57       BIT 2, A                        // Tests if A has bit 2 set, for 0xff{80,81} is means Up
 
- 1c51 : c8          RET Z
+ 1c51 : c8          RET Z                           // If so, returns, aka does nothing
  1c52 : fa de c0    LD A, (0xdec0)
 
 
- 1c55 : ee 01       XOR A, 0x01
+ 1c55 : ee 01       XOR A, 0x01                     // Wip here
 
  1c57 : ea de c0    LD (0xdec0), A
 
@@ -7287,24 +7289,24 @@
 
 
 
- 1c68 : f0 80       LD A, (0xFF00 + 0x80)
+ 1c68 : f0 80       LD A, (0xFF00 + 0x80)           // Reads the current keypress
 
- 1c6a : e6 0f       AND A, 0x0f
+ 1c6a : e6 0f       AND A, 0x0f                     // Filters only the Up, Down, Left, Right buttons
 
- 1c6c : fe 0f       CP A, 0x0f
+ 1c6c : fe 0f       CP A, 0x0f                      // Checks if any of it was pressed
 
- 1c6e : ca 9a 02    JP Z, 0x9a02
+ 1c6e : ca 9a 02    JP Z, 0x9a02                    // if so, jump to 0x029a
 
 
  1c71 : f0 e4       LD A, (0xFF00 + 0xe4)
 
  1c73 : a7          AND A, A
  1c74 : c0          RET NZ
- 1c75 : f0 81       LD A, (0xFF00 + 0x81)
+ 1c75 : f0 81       LD A, (0xFF00 + 0x81)           // Loads 0xff81 into A
 
- 1c77 : cb 5f       BIT 3, A
+ 1c77 : cb 5f       BIT 3, A                        // Checks if bit 3 is ser, which happens to be Down
 
- 1c79 : 28 d4       JR Z, 0xd4
+ 1c79 : 28 d4       JR Z, 0xd4                      // if so, jumps to 1c4f
 
 
 
@@ -9593,43 +9595,45 @@
 
 
 
+// --------------
+// More gamepad stuff
+// The actions for A and B might be here
+ 255d : 21 02 c2    LD HL, 0x02c2                   // Sets H to 0xc2 and L to 0x02
 
- 255d : 21 02 c2    LD HL, 0x02c2
 
+ 2560 : f0 81       LD A, (0xFF00 + 0x81)           // Reads the old gamepad state
 
- 2560 : f0 81       LD A, (0xFF00 + 0x81)
+ 2562 : 47          LD B, A                         // And stores it on B
+ 2563 : f0 80       LD A, (0xFF00 + 0x80)           // Reads the current gamepad state
 
- 2562 : 47          LD B, A
- 2563 : f0 80       LD A, (0xFF00 + 0x80)
+ 2565 : 4f          LD C, A                         // And stores it at C
+ 2566 : 7e          LD A, (HL)                      // Reads (0xc202) and stores into A
+ 2567 : e0 a0       LD (0xFF00 + 0xa0), A           // Copies taht ox 0xffa0
 
- 2565 : 4f          LD C, A
- 2566 : 7e          LD A, (HL)
- 2567 : e0 a0       LD (0xFF00 + 0xa0), A
+ 2569 : cb 60       BIT 4, B                        // Tests bit 4 (A) for the old gamepad state
 
- 2569 : cb 60       BIT 4, B
+ 256b : 3e 17       LD A, 0x17                      // Writes 0x17 to A
 
- 256b : 3e 17       LD A, 0x17
+ 256d : 20 0c       JR NZ, 0x0c                     // If bit 4 is zero, if it is not, jumps to 257b
 
- 256d : 20 0c       JR NZ, 0x0c
+ 256f : cb 61       BIT 4, C                        // Otherwise tests if bit $ for the current state
+                                                    // i.e. it detects if a 'raising edge'
+ 2571 : 28 2d       JR Z, 0x2d                      // if it is zero, jumps to 25a0
 
- 256f : cb 61       BIT 4, C
+ 2573 : f0 aa       LD A, (0xFF00 + 0xaa)           // Reads from 0xffaa into A
 
- 2571 : 28 2d       JR Z, 0x2d
+ 2575 : 3d          DEC A                           // Decreases A
+ 2576 : e0 aa       LD (0xFF00 + 0xaa), A           // Write the result back to 0xffaa
 
- 2573 : f0 aa       LD A, (0xFF00 + 0xaa)
+ 2578 : c0          RET NZ                          // retuns if A is not zero. This looks like a timer
+ 2579 : 3e 09       LD A, 0x09                      // Write 0x09 to A
 
- 2575 : 3d          DEC A
- 2576 : e0 aa       LD (0xFF00 + 0xaa), A
+ 257b : e0 aa       LD (0xFF00 + 0xaa), A           // stores 0x09 at 0xffaa
 
- 2578 : c0          RET NZ
- 2579 : 3e 09       LD A, 0x09
+ 257d : 7e          LD A, (HL)                      // reads (0xc202) into A
+ 257e : c6 08       ADD A, 0x08                     // Adds 0x08 to it
 
- 257b : e0 aa       LD (0xFF00 + 0xaa), A
-
- 257d : 7e          LD A, (HL)
- 257e : c6 08       ADD A, 0x08
-
- 2580 : 77          LD (HL), A
+ 2580 : 77          LD (HL), A                      // stores back to 0xc202
  2581 : cd d7 26    CALL 0xd726
 
 
@@ -9972,6 +9976,8 @@
 
 
  26d6 : c9          RET
+ // ---------------
+ // WIP here
  26d7 : 3e 01       LD A, 0x01
 
  26d9 : e0 8f       LD (0xFF00 + 0x8f), A
