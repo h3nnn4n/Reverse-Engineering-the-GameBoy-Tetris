@@ -2,6 +2,14 @@ Memory Locations
 ================
 
  * 0xff80: The current keypress on the joypad
+   * bit 0 A
+   * bit 1 B
+   * bit 2 Select
+   * bit 3 Start
+   * bit 4 Right
+   * bit 5 Left
+   * bit 6 Up
+   * bit 7 Down
  * 0xff81: The joypad keypess for the past frame
  * 0xffb4: Something Related to the Y pos of the falling piece
  * 0xffb5: No idea what this does, but it is related to the falling piece
