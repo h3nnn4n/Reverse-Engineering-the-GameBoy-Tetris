@@ -44,7 +44,14 @@ Memory Locations
  * 0xffa6: Seems to be a generic counter for some screen transistions, like 0xffe1 = 0x0d
  * 0xffa7: Is a timer for the softdrop, might be used to control how fast it falls
 
- * 0xc203: Stores the piece ID and Rotation at the same number
+ * 0xc203: Stores the piece ID and Rotation at the same number. The first id is the default rotation, the others are the next 3 CCW rotations (B press)
+   * 0x12, 0x13, 0x14, 0x15: The Square Piece
+   * 0x04, 0x05, 0x06, 0x06: The J Piece
+   * 0x00, 0x01, 0x02, 0x03: The L Piece
+   * 0x08, 0x09, 0x0a, 0x0b: The I Piece
+   * 0x14, 0x15, 0x16, 0x17: The S Piece
+   * 0x10, 0x11, 0x12, 0x13: The Z Piece
+   * 0x18, 0x19, 0x1a, 0x1b: The T Piece
 
 All of the address below are somehow related to the falling piece ID
 
