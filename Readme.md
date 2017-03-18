@@ -25,7 +25,7 @@ All the code related comments is stored as a comment in the respective line. For
 Contribuiting
 ------------
 
-If you want to do so, plase do a pull request.
+If you want to do so, plase do a pull request. You can also findme on [EmuDev's Slack](https://slofile.com/slack/emudev).
 
 
 License
