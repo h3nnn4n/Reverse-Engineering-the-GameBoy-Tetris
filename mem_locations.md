@@ -3,6 +3,8 @@ Memory Locations
 
  * 0xff80: The current keypress on the joypad
  * 0xff81: The joypad keypess for the past frame
+ * 0xffb4: Something Related to the Y pos of the falling piece
+ * 0xffb5: No idea what this does, but it is related to the falling piece
  * 0xffe1: The screen state;
    * 0xff this seems to be the initial value, maybe it is just junk from my RAM
    * 0x24 a pre credits menu frame
@@ -23,3 +25,10 @@ Memory Locations
    * 0x13 B-Type game screen
    * 0x05 Transition to the B-Type game score screen
    * 0x0b B-Type game score screen
+
+
+ * 0xff92: The X position for the falling piece
+ * 0xff93: The Y position for the falling piece
+
+ * 0xffb2: The Y position for the falling piece
+ * 0xffb3: The X position for the falling piece
