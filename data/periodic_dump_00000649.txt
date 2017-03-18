@@ -37,19 +37,20 @@
 
 
 
+// -----------------
+// RST 28 leads here and CALL 0x0377
+ 0028 : 87          ADD A, A                    // Doubles the value at A
+ 0029 : e1          POP HL                      // Pops the value at the top of the stack in HL
+ 002a : 5f          LD E, A                     // WIP
+ 002b : 16 00       LD D, 0x00                  //
 
- 0028 : 87          ADD A, A
- 0029 : e1          POP HL
- 002a : 5f          LD E, A
- 002b : 16 00       LD D, 0x00
-
- 002d : 19          ADD HL, DE
- 002e : 5e          LD E, (HL)
- 002f : 23          INC HL
- 0030 : 56          LD D, (HL)
- 0031 : d5          PUSH DE
- 0032 : e1          POP HL
- 0033 : e9          JP HL
+ 002d : 19          ADD HL, DE                  //
+ 002e : 5e          LD E, (HL)                  //
+ 002f : 23          INC HL                      //
+ 0030 : 56          LD D, (HL)                  //
+ 0031 : d5          PUSH DE                     //
+ 0032 : e1          POP HL                      //
+ 0033 : e9          JP HL                       //
 
 
 
@@ -894,9 +895,15 @@
  0374 : c3 43 03    JP 0x4303
 
 
- 0377 : f0 e1       LD A, (0xFF00 + 0xe1)
+// ----------------------------
+// Crazy simple function
+// Maybe it is not so crazy, since it jumps around based on some values
+ 0377 : f0 e1       LD A, (0xFF00 + 0xe1)           // Reads some value from HIGHRAM, looks like the game likes to store stuff there, looks like the game likes to store stuff there
 
- 0379 : ef          RST 0x28
+
+ 0379 : ef          RST 0x28                        // A.K.A rst 40 (decimal), goes to 0x28
+// ----------------------------
+
 
 
 
