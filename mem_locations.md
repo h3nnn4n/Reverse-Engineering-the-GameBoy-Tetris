@@ -40,3 +40,6 @@ Memory Locations
 
  * 0xffb2: The Y position for the falling piece
  * 0xffb3: The X position for the falling piece
+
+ * 0xffa6: Seems to be a generic counter for some screen transistions, like 0xffe1 = 0x0d
+ * 0xffa7: Is a timer for the softdrop, might be used to control how fast it falls
