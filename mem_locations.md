@@ -35,8 +35,8 @@ Memory Locations
    * 0x0b B-Type game score screen
 
 
- * 0xff92: The X position for the falling piece
- * 0xff93: The Y position for the falling piece
+ * 0xff93: The X position for the falling piece
+ * 0xff92: The Y position for the falling piece
 
  * 0xffb2: The Y position for the falling piece
  * 0xffb3: The X position for the falling piece
