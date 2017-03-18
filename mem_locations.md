@@ -43,3 +43,18 @@ Memory Locations
 
  * 0xffa6: Seems to be a generic counter for some screen transistions, like 0xffe1 = 0x0d
  * 0xffa7: Is a timer for the softdrop, might be used to control how fast it falls
+
+ * 0xc203: Stores the piece ID and Rotation at the same number
+
+All of the address below are somehow related to the falling piece ID
+
+ * 0xc012
+ * 0xc016
+ * 0xc01a
+ * 0xc01e
+ * 0xc203
+ * 0xfe12
+ * 0xfe16
+ * 0xfe1a
+ * 0xfe1e
+ * 0xff89
