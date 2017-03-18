@@ -39,18 +39,19 @@
 
 // -----------------
 // RST 28 leads here and CALL 0x0377
+// Looks like this is a simple table with functions for each screen
  0028 : 87          ADD A, A                    // Doubles the value at A
  0029 : e1          POP HL                      // Pops the value at the top of the stack in HL
- 002a : 5f          LD E, A                     // WIP
- 002b : 16 00       LD D, 0x00                  //
+ 002a : 5f          LD E, A                     // Copies A to E
+ 002b : 16 00       LD D, 0x00                  // Writes 0x00 to D
 
- 002d : 19          ADD HL, DE                  //
- 002e : 5e          LD E, (HL)                  //
- 002f : 23          INC HL                      //
- 0030 : 56          LD D, (HL)                  //
- 0031 : d5          PUSH DE                     //
- 0032 : e1          POP HL                      //
- 0033 : e9          JP HL                       //
+ 002d : 19          ADD HL, DE                  // Sums DE into HL
+ 002e : 5e          LD E, (HL)                  // reads (HL) into E
+ 002f : 23          INC HL                      // Bumps HL
+ 0030 : 56          LD D, (HL)                  // reads (HL) into D
+ 0031 : d5          PUSH DE                     // Pushes DE in the stack
+ 0032 : e1          POP HL                      // Pops it into HL
+ 0033 : e9          JP HL                       // Jumps to HL
 
 
 
@@ -835,69 +836,69 @@
 
  0339 : fb          EI                              // Enables Interrupts, there was a vlank int pending, that was manually set at 0x029d
  033a : af          XOR A, A                        // Zeroes A, then the interrupt kicks in and the code goes to 0x0040, then 0x01fd
- 033b : e0 0f       LD (0xFF00 + 0x0f), A
+ 033b : e0 0f       LD (0xFF00 + 0x0f), A           // Zeoes 0xff0f, the interupt flag
 
- 033d : e0 4a       LD (0xFF00 + 0x4a), A
+ 033d : e0 4a       LD (0xFF00 + 0x4a), A           // Zeroes the Window Position Y
 
- 033f : e0 4b       LD (0xFF00 + 0x4b), A
+ 033f : e0 4b       LD (0xFF00 + 0x4b), A           // same for X
 
- 0341 : e0 06       LD (0xFF00 + 0x06), A
+ 0341 : e0 06       LD (0xFF00 + 0x06), A           // Zeroes TMA (timer modulo)
 
- 0343 : cd fa 29    CALL 0xfa29
-
-
- 0346 : cd 77 03    CALL 0x7703
+ 0343 : cd fa 29    CALL 0xfa29                     // Reads joypad button presses
 
 
- 0349 : cd f0 7f    CALL 0xf07f
+ 0346 : cd 77 03    CALL 0x7703                     //
 
 
- 034c : f0 80       LD A, (0xFF00 + 0x80)
-
- 034e : e6 0f       AND A, 0x0f
-
- 0350 : fe 0f       CP A, 0x0f
-
- 0352 : ca 9a 02    JP Z, 0x9a02
+ 0349 : cd f0 7f    CALL 0xf07f                     //
 
 
- 0355 : 21 a6 ff    LD HL, 0xa6ff
+ 034c : f0 80       LD A, (0xFF00 + 0x80)           // Reads the preprocessed keypress from 0xff80
+
+ 034e : e6 0f       AND A, 0x0f                     // Moves only the keypresses of A/B/Start/Select to A
+
+ 0350 : fe 0f       CP A, 0x0f                      // Tests if any of if was pressed.
+
+ 0352 : ca 9a 02    JP Z, 0x9a02                    // If so jumps to 0x029a, which runs back some of the initialization code.
+
+// ---------------
+// This block changes the 0xffa6 and 0xffa7
+ 0355 : 21 a6 ff    LD HL, 0xa6ff                   // Else it sets H to 0xff and L to 0xa6
 
 
- 0358 : 06 02       LD B, 0x02
+ 0358 : 06 02       LD B, 0x02                      // Sets B to 0x02
 
- 035a : 7e          LD A, (HL)
- 035b : a7          AND A, A
- 035c : 28 01       JR Z, 0x01
+ 035a : 7e          LD A, (HL)                      // Reads (0xff6a) into A
+ 035b : a7          AND A, A                        // Checks if it is not zero
+ 035c : 28 01       JR Z, 0x01                      // If it is zero it skips the next instruction
 
- 035e : 35          DEC (HL)
- 035f : 2c          INC L
- 0360 : 05          DEC B
- 0361 : 20 f7       JR NZ, 0xf7
+ 035e : 35          DEC (HL)                        // Decreases what is in HL
+ 035f : 2c          INC L                           // Increases L
+ 0360 : 05          DEC B                           // Decreases B
+ 0361 : 20 f7       JR NZ, 0xf7                     // Loops to 0x035a while B is not 0
 
- 0363 : f0 c5       LD A, (0xFF00 + 0xc5)
+ 0363 : f0 c5       LD A, (0xFF00 + 0xc5)           // Reads from 0xffc5Writes zero to 0xff85
 
- 0365 : a7          AND A, A
- 0366 : 28 04       JR Z, 0x04
-
-
-
+ 0365 : a7          AND A, A                        // Checks if it is zero
+ 0366 : 28 04       JR Z, 0x04                      // Jumps to 036c if so
+// ---------------
 
 
- 036c : f0 85       LD A, (0xFF00 + 0x85)
 
- 036e : a7          AND A, A
- 036f : 28 fb       JR Z, 0xfb
 
- 0371 : af          XOR A, A
- 0372 : e0 85       LD (0xFF00 + 0x85), A
+ 036c : f0 85       LD A, (0xFF00 + 0x85)           // Reads from this memory location, which seems to be some kind of flag
 
- 0374 : c3 43 03    JP 0x4303
+ 036e : a7          AND A, A                        // Checks if it is zero
+ 036f : 28 fb       JR Z, 0xfb                      // if so, it loops back to 036c
+
+ 0371 : af          XOR A, A                        // Zeroes A
+ 0372 : e0 85       LD (0xFF00 + 0x85), A           // Writes zero to 0xff85
+
+ 0374 : c3 43 03    JP 0x4303                       // This jumps to the CALL to the joypad read function
 
 
 // ----------------------------
-// Crazy simple function
-// Maybe it is not so crazy, since it jumps around based on some values
+// This function, which is spreads all over, jumps to the code specific to each screen. 0xffe1 controls it
  0377 : f0 e1       LD A, (0xFF00 + 0xe1)           // Reads some value from HIGHRAM, looks like the game likes to store stuff there, looks like the game likes to store stuff there
 
 
