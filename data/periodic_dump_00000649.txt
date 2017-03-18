@@ -9977,20 +9977,20 @@
 
  26d6 : c9          RET
  // ---------------
- // WIP here
- 26d7 : 3e 01       LD A, 0x01
+ // This initializes some values that I have no idea of what it does
+ 26d7 : 3e 01       LD A, 0x01                      //
 
- 26d9 : e0 8f       LD (0xFF00 + 0x8f), A
+ 26d9 : e0 8f       LD (0xFF00 + 0x8f), A           // Writes 0x01 to 0xff8f
 
- 26db : 3e 10       LD A, 0x10
+ 26db : 3e 10       LD A, 0x10                      //
 
- 26dd : e0 8e       LD (0xFF00 + 0x8e), A
+ 26dd : e0 8e       LD (0xFF00 + 0x8e), A           // Writes 0x10 to 0xff8f
 
- 26df : 3e c0       LD A, 0xc0
+ 26df : 3e c0       LD A, 0xc0                      //
 
- 26e1 : e0 8d       LD (0xFF00 + 0x8d), A
+ 26e1 : e0 8d       LD (0xFF00 + 0x8d), A           // Writes 0xc0 to 0xff8f
 
- 26e3 : 21 00 c2    LD HL, 0x00c2
+ 26e3 : 21 00 c2    LD HL, 0x00c2                   // Writex 0x00c2 to HL
 
 
  26e6 : cd d1 2a    CALL 0xd12a
