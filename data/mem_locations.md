@@ -3,9 +3,9 @@ Memory Locations
 
 
 
- - [0xff80] - The current keypress on the joypad
- - [0xff81] - The joypad keypess for the past frame
- - [0xffe1] - The screen state;
+ - 0xff80: The current keypress on the joypad
+ - 0xff81: The joypad keypess for the past frame
+ - 0xffe1: The screen state;
   - 0xff this seems to be the initial value, maybe it is just junk from my RAM
   - 0x24 a pre credits menu frame
   - 0x25 is the credits screen
