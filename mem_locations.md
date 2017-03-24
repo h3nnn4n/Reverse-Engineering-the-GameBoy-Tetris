@@ -33,6 +33,12 @@ Memory Locations
    * 0x13 B-Type game screen
    * 0x05 Transition to the B-Type game score screen
    * 0x0b B-Type game score screen
+   * 0x34 This is one of the winning screens. I was afk when I got it, so I am not sure what code corresponds to what part
+   * 0x2f same as ab:ve
+   * 0x30 same as above
+   * 0x31 same as above
+   * 0x32 same as above
+   * 0x33 same as above
 
  * 0xff9e: The number of lines cleared. This value is shown in hexadecimal, but it skips 0xa to 0xe, so the hexadecimal value can be read as decimal. This is incremented as soon as the piece lands.
  * 0xffe7: Is the last digit of the total lines cleared. Maybe the rest is in another address. This is incremented as soon as the piece lands.
