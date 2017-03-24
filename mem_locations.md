@@ -34,6 +34,11 @@ Memory Locations
    * 0x05 Transition to the B-Type game score screen
    * 0x0b B-Type game score screen
 
+ * 0xff9e: The number of lines cleared. This value is shown in hexadecimal, but it skips 0xa to 0xe, so the hexadecimal value can be read as decimal. This is incremented as soon as the piece lands.
+ * 0xffe7: Is the last digit of the total lines cleared. Maybe the rest is in another address. This is incremented as soon as the piece lands.
+ * 0x9951: The first digit of the total of lines cleared that is show at the screen.
+ * 0x9950: The second digit of the total of lines cleared that is show at the screen. This has the default value of 0x2f, which means "Dont print me"
+ * 0x994f: The third digit of the total of lines cleared that is show at the screen. This has the default value of 0x2f, which means "Dont print me"
 
  * 0xff93: The X position for the falling piece
  * 0xff92: The Y position for the falling piece
