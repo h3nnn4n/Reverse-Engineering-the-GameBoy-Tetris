@@ -34,6 +34,7 @@ Memory Locations
    * 0x05 Transition to the B-Type game score screen
    * 0x0b B-Type game score screen
    * 0x34 This is one of the winning screens. I was afk when I got it, so I am not sure what code corresponds to what part
+   * 0x2e same as ab:ve
    * 0x2f same as ab:ve
    * 0x30 same as above
    * 0x31 same as above
