@@ -9984,11 +9984,11 @@
 
  26db : 3e 10       LD A, 0x10                      //
 
- 26dd : e0 8e       LD (0xFF00 + 0x8e), A           // Writes 0x10 to 0xff8f
+ 26dd : e0 8e       LD (0xFF00 + 0x8e), A           // Writes 0x10 to 0xff8e
 
  26df : 3e c0       LD A, 0xc0                      //
 
- 26e1 : e0 8d       LD (0xFF00 + 0x8d), A           // Writes 0xc0 to 0xff8f
+ 26e1 : e0 8d       LD (0xFF00 + 0x8d), A           // Writes 0xc0 to 0xff8d
 
  26e3 : 21 00 c2    LD HL, 0x00c2                   // Writex 0x00c2 to HL
 
@@ -65511,7 +65511,6 @@
 
 // ----------------
 // This call a dma and waits for it to finish
-// TODO Figure out what is being copied
 
  ffb6 : 3e c0       LD A, 0xc0                      // Sets A to 0xc0
 
