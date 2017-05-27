@@ -77,3 +77,20 @@ All of the address below are somehow related to the falling piece ID
  * 0xfe1a
  * 0xfe1e
  * 0xff89
+
+
+Gravity measured by frames spent at each line. Version 1.0 and 1.1 have the values but at different locations. For 1.0 it is at `0x1b06` and for 1.0 it is at `0x1b06`.
+The hexdump for 1.0 is:
+
+
+```
+0x00001b61  3430 2c28 2420 1b15 100a 0908 0706 0505  40,($ ..........
+0x00001b71  0404 0303                                ....
+```
+
+and for 1.1 is:
+
+```
+0x00001b06  3430 2c28 2420 1b15 100a 0908 0706 0505  40,($ ..........
+0x00001b16  0404 0303                                ....
+```
