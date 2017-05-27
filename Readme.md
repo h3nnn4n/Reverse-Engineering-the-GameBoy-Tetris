@@ -3,8 +3,15 @@ Reverse Engineering the GameBoy Tetris
 
 This is my first attempt at rever engineering something "big".
 
-So far I am using only tools that I wrote, all of which are available on https://github.com/h3nnn4n/here-comes-dat-gameboi/tree/lelmark
+The tools and documentations that I used are listed below:
 
+#### Tools:
+ - [My own emulator:](https://github.com/h3nnn4n/garapa) with some custom hacks
+ - [Radare2](https://github.com/radare/radare2)
+
+#### Documentation:
+ - [Harddrop page on the GMB Tetris](http://harddrop.com/wiki/Tetris_(Game_Boy))
+ - [MrWint docs on his TAS](https://github.com/MrWint/gb-tas-gen)
 
 Structure
 ---------
