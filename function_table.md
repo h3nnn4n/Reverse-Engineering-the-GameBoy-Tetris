@@ -39,6 +39,7 @@ No pun intended
 Functions List
 ==============
 
+* 0x01fd: Start of VBLANK routine
 * 0x028b: Clears all of WRAM. Entry point leads here
 * 0x0355: Changes `0xffa6` and `0xffa7`
 * 0x0377: Reads from `0xffe1`. Possibly is related to the main game loop
@@ -51,4 +52,21 @@ Functions List
 * 0x27e9: Clears from 0x9800 to 0x9bff (BG/Window tilemaps)
 * 0x29fa: The function that reads from `0xff00` and updates `0xff80` and `0xff81`
 * 0x69d6: Some of the initialization routines run at boot (TODO: Confirm this)
-* 0xffb6: Routine that waits for the DMA to finish
+* 0xffb6: Routine that waits for the DMA to finish. This function is in HIRAM, which means that something has to write it there first
+
+##### Reset Vector
+
+* 0x0000: rst0     - Not used
+* 0x0008: rst8     - Not used
+* 0x0010: rst16    - Not used
+* 0x0018: rst24    - Not used
+* 0x0020: rst32    - Not used
+* 0x0028: rst40    - 0x0377 leads here
+* 0x0030: rst48    - C Not used but contains code, but isnt called upon. rst40 code just spills over its size
+* 0x0038: rst56    - Not used
+* 0x0040: VBLANK   - Jumps to 0xfd01
+* 0x0048: LCD-STAT - Not used
+* 0x0050: TIMER    - Not used
+* 0x0058: SERIAL   - Not used
+* 0x0060: JOYPAD   - Not used
+
