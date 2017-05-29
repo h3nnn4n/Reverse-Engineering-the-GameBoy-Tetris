@@ -1,16 +1,26 @@
 Memory Locations
 ================
 
+--------------------------
+### Gamepad
+
  * 0xff80: The current keypress on the joypad
-   * bit 4 A
-   * bit 5 B
-   * bit 6 Select
-   * bit 7 Start
-   * bit 0 Right
-   * bit 1 Left
-   * bit 2 Up
-   * bit 3 Down
  * 0xff81: The joypad keypess for the past frame
+
+The bits at both address have the same meaning and are listed below:
+
+ * bit 0 Right
+ * bit 1 Left
+ * bit 2 Up
+ * bit 3 Down
+ * bit 4 A
+ * bit 5 B
+ * bit 6 Select
+ * bit 7 Start
+
+--------------------------
+### Game State
+
  * 0xffe1: The screen state;
    * 0xff this seems to be the initial value, maybe it is just junk from my RAM
    * 0x24 a pre credits menu frame
@@ -39,24 +49,19 @@ Memory Locations
    * 0x32 same as above
    * 0x33 same as above
 
+--------------------------
+### Points and such
+
  * 0xff9e: The number of lines cleared. This value is shown in hexadecimal, but it skips 0xa to 0xe, so the hexadecimal value can be read as decimal. This is incremented as soon as the piece lands.
  * 0xff9f: The next numbers of cleared lines.
  * 0xffe7: Is the last digit of the total lines cleared. Maybe the rest is in another address. This is incremented as soon as the piece lands.
  * 0x9951: The first digit of the total of lines cleared that is show at the screen.
  * 0x9950: The second digit of the total of lines cleared that is show at the screen. This has the default value of 0x2f, which means "Dont print me"
  * 0x994f: The third digit of the total of lines cleared that is show at the screen. This has the default value of 0x2f, which means "Dont print me"
-
- * 0xc202: The X position for the center of the piece
- * 0xc201: The Y position for the center of the piece
-
- * 0xff92: The X position for the rightmost lowest block for the piece
- * 0xff93: The Y position for the same of above
-
- * 0xffb3: A mirror for `0xff92`, but only updated after the first piece moves
- * 0xffb2: Same as above, but for `0xff93`
-
  * 0xffa6: Seems to be a generic counter for some screen transistions, like 0xffe1 = 0x0d
- * 0xffa7: Is a timer for the softdrop, might be used to control how fast it falls
+
+--------------------------
+### Pieces
 
  * 0xc203: Stores the piece ID and Rotation at the same number. The first id is the default rotation, the others are the next 3 CCW rotations (B press)
    * 0x0c, 0x0d, 0x0e, 0x0f: The Square Piece
@@ -67,6 +72,33 @@ Memory Locations
    * 0x10, 0x11, 0x12, 0x13: The Z Piece
    * 0x18, 0x19, 0x1a, 0x1b: The T Piece
 
+ * 0xc202: The X position for the center of the piece
+ * 0xc201: The Y position for the center of the piece
+ * 0xff92: The X position of the rightmost lowest piece block
+ * 0xff93: The Y position for the same of above
+ * 0xffb3: A mirror for `0xff92`, but only updated after the first piece moves
+ * 0xffb2: Same as above, but for `0xff93`
+
+Gravity measured by frames spent at each line. Version 1.0 and 1.1 have the same values but at different locations. For 1.0 it is at `0x1b06` and for 1.0 it is at `0x1b06`.
+The hexdump for 1.0 is:
+
+
+```
+0x00001b61  3430 2c28 2420 1b15 100a 0908 0706 0505  40,($ ..........
+0x00001b71  0404 0303                                ....
+```
+
+and for 1.1 is:
+
+```
+0x00001b06  3430 2c28 2420 1b15 100a 0908 0706 0505  40,($ ..........
+0x00001b16  0404 0303                                ....
+```
+
+ * 0xffa7: Is a timer for the softdrop, might be used to control how fast it falls
+
+---------------------------
+### TODO
 All of the address below are somehow related to the falling piece ID
 
  * 0xc012
@@ -80,8 +112,8 @@ All of the address below are somehow related to the falling piece ID
  * 0xfe1e
  * 0xff89
 
-
 ---------------------------
+### Board
 
 The board is stored as follows:
  * 0xc822 0xc823 0xc824 ... 0xc82b
@@ -112,21 +144,3 @@ The possible values are anything between `0xc822` and `0xca22` with a step of `0
 
 The text matrix on the rop right is the ingame board. The values on the left are the points, on top, and the pointers to the cleared lines right below.
 The blue sections shows that the board and the inmemory board are the same.
-
----------------------------
-
-Gravity measured by frames spent at each line. Version 1.0 and 1.1 have the values but at different locations. For 1.0 it is at `0x1b06` and for 1.0 it is at `0x1b06`.
-The hexdump for 1.0 is:
-
-
-```
-0x00001b61  3430 2c28 2420 1b15 100a 0908 0706 0505  40,($ ..........
-0x00001b71  0404 0303                                ....
-```
-
-and for 1.1 is:
-
-```
-0x00001b06  3430 2c28 2420 1b15 100a 0908 0706 0505  40,($ ..........
-0x00001b16  0404 0303                                ....
-```
