@@ -755,6 +755,7 @@
 
  02e8 : 06 00       LD B, 0x00                      // and b to 0x00
 
+// Clears the RAM region that is used to hold the stack
  02ea : 32          LDD (HL), A                     // the same as 028f
  02eb : 05          DEC B                           //
  02ec : 20 fc       JR NZ, 0xfc                     //
@@ -769,6 +770,7 @@
 
  02f6 : af          XOR A, A                        // Zeroes A
  02f7 : 06 00       LD B, 0x00                      // Zeroes B
+/////////// Ends here
 
  02f9 : 32          LDD (HL), A                     // This is the same as 028b, but for clearing the vram
  02fa : 05          DEC B                           // starts at 9fff and goes down to 8000
