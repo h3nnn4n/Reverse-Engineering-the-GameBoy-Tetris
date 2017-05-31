@@ -8309,39 +8309,36 @@
  205f : 20 f6       JR NZ, 0xf6
 
  2061 : c9          RET
- 2062 : 21 00 c2    LD HL, 0x00c2
+////// Possibly the RNG function
+ 2062 : 21 00 c2    LD HL, 0x00c2         // Sets HL t0 0xc200
 
 
- 2065 : 36 00       LD (HL), 0x00
+ 2065 : 36 00       LD (HL), 0x00         // Writes 0 to [0xc200] - The Y position for the piece
 
- 2067 : 2c          INC L
- 2068 : 36 18       LD (HL), 0x18
+ 2067 : 2c          INC L                 // Increments L
+ 2068 : 36 18       LD (HL), 0x18         // Writes 0x18 to [0xc201] - The X position for the piece
 
- 206a : 2c          INC L
- 206b : 36 3f       LD (HL), 0x3f
+ 206a : 2c          INC L                 // Increments L
+ 206b : 36 3f       LD (HL), 0x3f         // Writes 0x3f to [0xc202]
 
- 206d : 2c          INC L
- 206e : fa 13 c2    LD A, (0x13c2)
-
-
- 2071 : 77          LD (HL), A
- 2072 : e6 fc       AND A, 0xfc
-
- 2074 : 4f          LD C, A
- 2075 : f0 e4       LD A, (0xFF00 + 0xe4)
-
- 2077 : a7          AND A, A
- 2078 : 20 05       JR NZ, 0x05
-
- 207a : f0 c5       LD A, (0xFF00 + 0xc5)
-
- 207c : a7          AND A, A
- 207d : 28 1d       JR Z, 0x1d
+ 206d : 2c          INC L                 // Increments L
+ 206e : fa 13 c2    LD A, (0x13c2)        // Copies 0xc213 (next piece) into A...
 
 
+ 2071 : 77          LD (HL), A            // Copies a to the current piece (0xc203)
+ 2072 : e6 fc       AND A, 0xfc           // AND A (current piece) with 0xfc = 0b11111100
 
+ 2074 : 4f          LD C, A               // Copies A to C
+ 2075 : f0 e4       LD A, (0xFF00 + 0xe4) // Reads 0xffe4 into A - MrWint`s TAS docs says this is the demo state i.e. if the demo is running
 
+ 2077 : a7          AND A, A              // Tests if it is zero
+ 2078 : 20 05       JR NZ, 0x05           // if not, jumps to 0x20. If there is a demo running something different is run
 
+ 207a : f0 c5       LD A, (0xFF00 + 0xc5) // Reads 0xffc5
+                                          // Acording to MrWint`s TAS docs this counts how long since Down was pressed. Zero means that it is being pressed
+
+ 207c : a7          AND A, A              // Tests for zero
+ 207d : 28 1d       JR Z, 0x1d            // If zero jumps to 0x209c
 
 
 
@@ -8367,22 +8364,27 @@
 
 
 
- 209c : 26 03       LD H, 0x03
 
- 209e : f0 04       LD A, (0xFF00 + 0x04)
 
- 20a0 : 47          LD B, A
- 20a1 : af          XOR A, A
- 20a2 : 05          DEC B
- 20a3 : 28 0a       JR Z, 0x0a
 
- 20a5 : 3c          INC A
- 20a6 : 3c          INC A
+
+
+ 209c : 26 03       LD H, 0x03            // Writes 0x03 to H, previously was 0xc2 ?
+
+ 209e : f0 04       LD A, (0xFF00 + 0x04) // Reads 0xff04 - DIV
+
+ 20a0 : 47          LD B, A               // Copies A to B
+ 20a1 : af          XOR A, A              // Zeroes A
+ 20a2 : 05          DEC B                 // Decreases B
+ 20a3 : 28 0a       JR Z, 0x0a            // Jumpts 0x20af if B is zero, i.e. DIV was 1
+
+ 20a5 : 3c          INC A                 // Increas A four times, was zero previously due to 0x20a1
+ 20a6 : 3c          INC A                 // Radare tells that no code jumps here
  20a7 : 3c          INC A
  20a8 : 3c          INC A
- 20a9 : fe 1c       CP A, 0x1c
+ 20a9 : fe 1c       CP A, 0x1c            // Compares 0x1c to A
 
- 20ab : 28 f4       JR Z, 0xf4
+ 20ab : 28 f4       JR Z, 0xf4            // Jumps back to 0x20a1 if A is 0x1c - WIP stoped here
 
  20ad : 18 f3       JR 0xf3
 
