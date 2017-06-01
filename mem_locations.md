@@ -21,6 +21,8 @@ The bits at both address have the same meaning and are listed below:
 --------------------------
 ### Game State
 
+ * 0xff9a: The Level Frame Delay for piece drops i.e. how fast a piece falls
+ * 0xff99: The remaining Frame Delay
  * 0xffe1: The screen state;
    * 0xff this seems to be the initial value, maybe it is just junk from my RAM
    * 0x24 a pre credits menu frame
@@ -64,13 +66,16 @@ The bits at both address have the same meaning and are listed below:
 ### Pieces
 
  * 0xc203: Stores the piece ID and Rotation at the same number. The first id is the default rotation, the others are the next 3 CCW rotations (B press)
-   * 0x0c, 0x0d, 0x0e, 0x0f: The Square Piece
-   * 0x04, 0x05, 0x06, 0x07: The J Piece
    * 0x00, 0x01, 0x02, 0x03: The L Piece
+   * 0x04, 0x05, 0x06, 0x07: The J Piece
    * 0x08, 0x09, 0x0a, 0x0b: The I Piece
-   * 0x14, 0x15, 0x16, 0x17: The S Piece
+   * 0x0c, 0x0d, 0x0e, 0x0f: The Square Piece
    * 0x10, 0x11, 0x12, 0x13: The Z Piece
+   * 0x14, 0x15, 0x16, 0x17: The S Piece
    * 0x18, 0x19, 0x1a, 0x1b: The T Piece
+
+ * 0xc213: The preview piece
+ * 0xffae: The next preview piece
 
  * 0xc202: The X position for the center of the piece
  * 0xc201: The Y position for the center of the piece

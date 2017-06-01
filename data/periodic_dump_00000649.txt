@@ -8309,7 +8309,7 @@
  205f : 20 f6       JR NZ, 0xf6
 
  2061 : c9          RET
-////// Possibly the RNG function
+////// Updates the current piece, preview piece, the next preview piece and call the RNG function to generate the next piece
  2062 : 21 00 c2    LD HL, 0x00c2         // Sets HL t0 0xc200
 
 
@@ -8374,49 +8374,58 @@
  209e : f0 04       LD A, (0xFF00 + 0x04) // Reads 0xff04 - DIV
 
  20a0 : 47          LD B, A               // Copies A to B
+ // ------------------------------------------------------------------------------
+ // This code loops a number of times based on the value read from DIV (stored at B)
+ // B will always be 0 at the end of the loop. A will have a value between 0 and 0x1b
+ // The piece range is also goes from 0 to 0x1c and each 4 numbers indicates a new piece
+ // which explains why A increases 4 by 4
  20a1 : af          XOR A, A              // Zeroes A
  20a2 : 05          DEC B                 // Decreases B
- 20a3 : 28 0a       JR Z, 0x0a            // Jumpts 0x20af if B is zero, i.e. DIV was 1
+ 20a3 : 28 0a       JR Z, 0x0a            // Jumps 0x20af if B is zero, i.e. DIV was 1. This quits the loop
 
  20a5 : 3c          INC A                 // Increas A four times, was zero previously due to 0x20a1
- 20a6 : 3c          INC A                 // Radare tells that no code jumps here
- 20a7 : 3c          INC A
- 20a8 : 3c          INC A
+ 20a6 : 3c          INC A                 // Radare tells that no code jumps here...
+ 20a7 : 3c          INC A                 // here...
+ 20a8 : 3c          INC A                 // or here
  20a9 : fe 1c       CP A, 0x1c            // Compares 0x1c to A
 
- 20ab : 28 f4       JR Z, 0xf4            // Jumps back to 0x20a1 if A is 0x1c - WIP stoped here
+ 20ab : 28 f4       JR Z, 0xf4            // Jumps back to 0x20a1 if A is 0x1c
 
- 20ad : 18 f3       JR 0xf3
+ 20ad : 18 f3       JR 0xf3               // Jumps to 0x20a2
+ // ------------------------------------------------------------------------------
 
- 20af : 57          LD D, A
- 20b0 : f0 ae       LD A, (0xFF00 + 0xae)
+ 20af : 57          LD D, A               // Copies A into D
+ 20b0 : f0 ae       LD A, (0xFF00 + 0xae) // Reads 0xffae into A - The next preview piece
 
- 20b2 : 5f          LD E, A
- 20b3 : 25          DEC H
- 20b4 : 28 07       JR Z, 0x07
+ 20b2 : 5f          LD E, A               // Copies the next piece into E
+ 20b3 : 25          DEC H                 // Decreases H
+ 20b4 : 28 07       JR Z, 0x07            // This jumps to 0x20bd if zero
 
- 20b6 : b2          OR A, D
- 20b7 : b1          OR A, C
- 20b8 : e6 fc       AND A, 0xfc
+                                          // D has the potential next preview piece
+                                          // A has the current next preview piece
+ 20b6 : b2          OR A, D               // Or the current and the potential next piece into A
+ 20b7 : b1          OR A, C               // C was set back in 0x2074 and has the current piece AND'ed with 0b11111100
+ 20b8 : e6 fc       AND A, 0xfc           // AND A (the next preview piece) with 0xfc = 0b11111100
 
- 20ba : b9          CP A, C
- 20bb : 28 e1       JR Z, 0xe1
+ 20ba : b9          CP A, C               // Tests if A equals C
+ 20bb : 28 e1       JR Z, 0xe1            // if it is equal, jumps back to 0x20a0 to generate a new piece
 
- 20bd : 7a          LD A, D
- 20be : e0 ae       LD (0xFF00 + 0xae), A
+ 20bd : 7a          LD A, D               // Copies D into A...
+ 20be : e0 ae       LD (0xFF00 + 0xae), A // and Writes A to the next preview piece
 
- 20c0 : 7b          LD A, E
- 20c1 : ea 13 c2    LD (0x13c2), A
-
-
- 20c4 : cd ea 26    CALL 0xea26
+ 20c0 : 7b          LD A, E               // Copies E(which had a copy of the piece being tested) into A...
+ 20c1 : ea 13 c2    LD (0x13c2), A        // and A into the Preview Piece
 
 
- 20c7 : f0 9a       LD A, (0xFF00 + 0x9a)
+ 20c4 : cd ea 26    CALL 0xea26           // Calls a wrapper to the RNG function
 
- 20c9 : e0 99       LD (0xFF00 + 0x99), A
 
- 20cb : c9          RET
+ 20c7 : f0 9a       LD A, (0xFF00 + 0x9a) // Copies the result of 0xff9a(Level Frame Delay) into A...
+
+ 20c9 : e0 99       LD (0xFF00 + 0x99), A // into 0xff99 (Remaining Frame Delay), i.e. resets it
+
+ 20cb : c9          RET                   // Returns
+ // ------------------------------------------------------------------------------
  20cc : fa c7 c0    LD A, (0xc7c0)
 
 
@@ -10001,6 +10010,8 @@
 
 
  26e9 : c9          RET
+ // ---------------
+ // Small wrapper for the RNG function
  26ea : 3e 01       LD A, 0x01
 
  26ec : e0 8f       LD (0xFF00 + 0x8f), A
@@ -10016,10 +10027,11 @@
  26f6 : 21 10 c2    LD HL, 0x10c2
 
 
- 26f9 : cd d1 2a    CALL 0xd12a
+ 26f9 : cd d1 2a    CALL 0xd12a // Calls the RNG function
 
 
  26fc : c9          RET
+ // ---------------
  26fd : 06 20       LD B, 0x20
 
  26ff : 3e 8e       LD A, 0x8e
@@ -11007,7 +11019,7 @@
 
 
 
-
+// The RNG function
  2ad1 : 7c          LD A, H
  2ad2 : e0 96       LD (0xFF00 + 0x96), A
 

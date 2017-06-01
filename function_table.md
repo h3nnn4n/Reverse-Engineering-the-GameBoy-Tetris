@@ -32,6 +32,11 @@ No pun intended
 ### LOGIC
 * 0x0377
 
+## RNG
+* 0x2062
+* 0x26ea
+* 0x2ad1
+
 ### Unknow
 * 0x0355
 
@@ -53,6 +58,9 @@ Functions List
 * 0x29fa: The function that reads from `0xff00` and updates `0xff80` and `0xff81`
 * 0x69d6: Some of the initialization routines run at boot (TODO: Confirm this)
 * 0xffb6: Routine that waits for the DMA to finish. This function is in HIRAM, which means that something has to write it there first
+* 0x2062: Updates the current piece, preview piece and the next preview piece. Calls the RNG function also
+* 0x26ea: A Wrapper for the RNG function. Sets up some register values
+* 0x2ad1: The RNG function itself
 
 ##### Reset Vector
 
