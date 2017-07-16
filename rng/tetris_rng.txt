@@ -1,0 +1,103 @@
+; # Gameboy Tetris 1.0 RNG function #
+; Updates the piece on the board, its X and Y position.
+; Updates the preview piece with the hidden preview piece
+; Generates a new hidden preview piece
+; Updates the piece fall rate
+; Updates the piece sprite (not in this function, but it is called from here)
+
+; ## Workings ##
+; Function starts at 0x2062
+; It has 2 sub routines based on if the demo is running or not. I dont care about the demo (for now)
+; 0x209e Reads DIV into a. DIV is a time counter and is used to generate the piece
+; Register a is set to zero and is increased at steps of 4
+; Steps happens 4 by 4 to always generate the pieces at the same rotation. Check next session
+; It is possible to replace 0x20a6 - 0x20a8 with NOP instructions and have any rotation bein generated
+; Since the last piece is 0x1b, the code a 0x20ab wraps it around to only generate valid pieces
+; From 0x20b6 to 0x20bb some bitbanging is made to decide if a new piece has to be generated. I do not fully understand it so far. Will look into it later (TODO)
+
+; ** Pieces **
+; 0x00, 0x01, 0x02, 0x03: The L Piece
+; 0x04, 0x05, 0x06, 0x07: The J Piece
+; 0x08, 0x09, 0x0a, 0x0b: The I Piece
+; 0x0c, 0x0d, 0x0e, 0x0f: The O Piece
+; 0x10, 0x11, 0x12, 0x13: The Z Piece
+; 0x14, 0x15, 0x16, 0x17: The S Piece
+; 0x18, 0x19, 0x1a, 0x1b: The T Piece
+
+; ## Observations ##
+; The code below was parsed using radare2 - https://github.com/radare/radare2
+
+/ (fcn) fcn.00002062 106                                               ;
+|   fcn.00002062 ();                                                   ;
+|              ; CALL XREF from 0x000022a8 (fcn.00002240)              ;
+|              ; CALL XREF from 0x0000248b (fcn.0000242c)              ;
+|              ; CALL XREF from 0x00001b04 (fcn.00001a63 + 161)        ;
+|              ; CALL XREF from 0x00001b07 (fcn.00001a63 + 164)        ;
+|              ; CALL XREF from 0x00001b01 (fcn.00001a63 + 158)        ;
+|           0x00002062      2100c2         ld hl, 0xc200               ; Writes HL to 0xc200
+|           0x00002065      3600           ld [hl], 0x00               ; Writes 0 to [0xc200] - What is here?
+|           0x00002067      2c             inc l                       ; Increments L, HL is now 0xc201
+|           0x00002068      3618           ld [hl], 0x18               ; Writes 0x18 to [0xc201] - The Y Position for the piece
+|           0x0000206a      2c             inc l                       ; Increments L, HL is now 0xc202
+|           0x0000206b      363f           ld [hl], 0x3f               ; Writes 0x3f to [0xc202] - The X Position for the piece
+|           0x0000206d      2c             inc l                       ; Increments L, HL is now 0xc203
+|           0x0000206e      fa13c2         ld a, [0xc213]              ; Reads the value at [0xc213] into a. This is the piece preview
+|           0x00002071      77             ld [hl], a                  ; Writes the piece previw to the current piece
+|           0x00002072      e6fc           and 0xfc                    ; ANDs a with 0xfc and store the result in a - TODO show in binary
+|           0x00002074      4f             ld c, a                     ; Copies a into c
+|           0x00002075      f0e4           ld a, [0xffe4]              ; Writes [0xffe4] into a - (Stores if a demo is running or not)
+|           0x00002077      a7             and a                       ; Tests if it is zero (zero means no demo)
+|       ,=< 0x00002078      2005           jr nZ, 0x05                 ; 0x02 is a signed integer. If [0xffe4] is not zero (demo not running) this jumps to 0x209c
+|       |   0x0000207a      f0c5           ld a, [0xffc5]              ;
+|       |   0x0000207c      a7             and a                       ;
+|      ,==< 0x0000207d      281d           jr Z, 0x1d                  ; ** This block was not tested **
+|      |`-> 0x0000207f      26c3           ld h, 0xc3                  ;
+|      |    0x00002081      f0b0           ld a, [0xffb0]              ;
+|      |    0x00002083      6f             ld l, a                     ;
+|      |    0x00002084      5e             ld e, [hl]                  ;
+|      |    0x00002085      23             inc hl                      ;
+|      |    0x00002086      7c             ld a, h                     ;
+|      |    0x00002087      fec4           cp 0xc4                     ;
+|      |,=< 0x00002089      2003           jr nZ, 0x03                 ;
+|      ||   0x0000208b      2100c3         ld hl, 0xc300               ;
+|      |`-> 0x0000208e      7d             ld a, l                     ;
+|      |    0x0000208f      e0b0           ld [0xffb0], a              ;
+|      |    0x00002091      f0d3           ld a, [0xffd3]              ;
+|      |    0x00002093      a7             and a                       ;
+|      |,=< 0x00002094      282a           jr Z, 0x2a                  ;
+|      ||   0x00002096      f680           or 0x80                     ;
+|      ||   0x00002098      e0d3           ld [0xffd3], a              ;
+|     ,===< 0x0000209a      1824           jr 0x24                     ;
+|     |`--> 0x0000209c      2603           ld h, 0x03                  ; Writes 0x03 to h
+|     |.--> 0x0000209e      f004           ld a, [0xff04]              ; Reads DIV into a - TODO verify what this loop does in detail
+|     |||   0x000020a0      47             ld b, a                     ; Copies a to b
+|    .----> 0x000020a1      af             xor a                       ; Zeroes a
+|    !|!|      ; JMP XREF from 0x000020ad (fcn.00002062)               ;
+|   .-----> 0x000020a2      05             dec b                       ; Decreases b
+|  ,======< 0x000020a3      280a           jr Z, 0x0a                  ; Tests if b is zero, if so, jumps to 0x20af
+|  ||||||   0x000020a5      3c             inc a                       ; Increases a four times
+|  ||||||   0x000020a6      3c             inc a                       ; ...
+|  ||||||   0x000020a7      3c             inc a                       ; ...
+|  ||||||   0x000020a8      3c             inc a                       ; ...
+|  ||||||   0x000020a9      fe1c           cp 0x1c                     ; Compares to 0x1c
+|  ||`====< 0x000020ab      28f4           jr Z, 0xf4                  ; Jumps to 0x20a1 if it is zero. This resets a
+|  |`=====< 0x000020ad      18f3           jr 0xf3                     ; Otherwise jumps to 0x20a2
+|  `------> 0x000020af      57             ld d, a                     ; Copies the value of a into d
+|     |||   0x000020b0      f0ae           ld a, [0xffae]              ; Reads [0xffae] into a, the hidden preview piece
+|     |||   0x000020b2      5f             ld e, a                     ; Copies a to e
+|     |||   0x000020b3      25             dec h                       ; Decreases h - h can assume any value from 3 to 0
+|    ,====< 0x000020b4      2807           jr Z, 0x07                  ; If h is zero, jumps to 0x20bd
+|    ||||   0x000020b6      b2             or d                        ; ORs a with d (d is the "random" value based on DIV)
+|    ||||   0x000020b7      b1             or c                        ; ORs a with c (the preview piece ORed with 0xfc)
+|    ||||   0x000020b8      e6fc           and 0xfc                    ; ANDs a with 0xfc
+|    ||||   0x000020ba      b9             cp c                        ; compares if a equals c...
+|    ||`==< 0x000020bb      28e1           jr Z, 0xe1                  ; if so, jumps to 0x20a0
+|    `----> 0x000020bd      7a             ld a, d                     ; Copies d to a (d is the "random" value based on DIV)
+|     | |   0x000020be      e0ae           ld [0xffae], a              ; Writes a to [0xffae] - The hidden preview piece
+|     | |      ; JMP XREF from 0x0000209a (fcn.00002062)               ;
+|     `-`-> 0x000020c0      7b             ld a, e                     ; Copies e to a - e was holding the hidden preview piece
+|           0x000020c1      ea13c2         ld [0xc213], a              ; writes e to [0xc213], i.e. updates the preview on screen
+|           0x000020c4      cdea26         call fcn.000026ea           ; Call 0x26ea - This updates the preview piece sprite
+|           0x000020c7      f09a           ld a, [0xff9a]              ; Reads [0xff9a] into a - The piece fall rate i.e. how many frames it spends per line
+|           0x000020c9      e099           ld [0xff99], a              ; writes it to [0xff99] - The piece remaining frames
+\           0x000020cb      c9             ret                         ; Returns to the callee

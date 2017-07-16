@@ -32,10 +32,8 @@ No pun intended
 ### LOGIC
 * 0x0377
 
-## RNG
+### RNG
 * 0x2062
-* 0x26ea
-* 0x2ad1
 
 ### Unknow
 * 0x0355
@@ -59,8 +57,8 @@ Functions List
 * 0x69d6: Some of the initialization routines run at boot (TODO: Confirm this)
 * 0xffb6: Routine that waits for the DMA to finish. This function is in HIRAM, which means that something has to write it there first
 * 0x2062: Updates the current piece, preview piece and the next preview piece. Calls the RNG function also
-* 0x26ea: A Wrapper for the RNG function. Sets up some register values
-* 0x2ad1: The RNG function itself
+* 0x26ea: A Wrapper for function that updates the piece sprite
+* 0x2ad1: The sprite update function called by 0x26ea
 
 ##### Reset Vector
 
