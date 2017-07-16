@@ -8335,7 +8335,7 @@
  2078 : 20 05       JR NZ, 0x05           // if not, jumps to 0x20. If there is a demo running something different is run
 
  207a : f0 c5       LD A, (0xFF00 + 0xc5) // Reads 0xffc5
-                                          // Acording to MrWint`s TAS docs this counts how long since Down was pressed. Zero means that it is being pressed
+                                          // TODO - What is there
 
  207c : a7          AND A, A              // Tests for zero
  207d : 28 1d       JR Z, 0x1d            // If zero jumps to 0x209c
@@ -8417,7 +8417,7 @@
  20c1 : ea 13 c2    LD (0x13c2), A        // and A into the Preview Piece
 
 
- 20c4 : cd ea 26    CALL 0xea26           // Calls a wrapper to the RNG function
+ 20c4 : cd ea 26    CALL 0xea26           // Calls a wrapper to the Sprite update function
 
 
  20c7 : f0 9a       LD A, (0xFF00 + 0x9a) // Copies the result of 0xff9a(Level Frame Delay) into A...
@@ -10011,7 +10011,7 @@
 
  26e9 : c9          RET
  // ---------------
- // Small wrapper for the RNG function
+ // Small wrapper for the Sprite update function
  26ea : 3e 01       LD A, 0x01
 
  26ec : e0 8f       LD (0xFF00 + 0x8f), A
@@ -10027,7 +10027,7 @@
  26f6 : 21 10 c2    LD HL, 0x10c2
 
 
- 26f9 : cd d1 2a    CALL 0xd12a // Calls the RNG function
+ 26f9 : cd d1 2a    CALL 0xd12a // Calls the Sprite update function
 
 
  26fc : c9          RET
